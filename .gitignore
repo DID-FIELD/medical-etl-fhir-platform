@@ -1,0 +1,24 @@
+# Python 缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.idea/
+.vscode/
+
+# 数据文件（避免上传大体积原始数据）
+data/dicom/*.dcm
+data/emr/*.csv
+
+# 输出文件
+output/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
