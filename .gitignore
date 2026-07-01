@@ -10,8 +10,8 @@ venv/
 .vscode/
 
 # 数据文件（避免上传大体积原始数据）
-data/dicom/*.dcm
 data/emr/*.csv
+data/dicom/
 
 # 输出文件
 output/
@@ -22,3 +22,8 @@ Thumbs.db
 
 # 日志
 *.log
+
+# Office 文档与临时缓存文件
+*.docx
+# Office 打开文档时自动生成的临时锁文件（~$ 开头）
+~$*

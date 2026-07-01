@@ -16,3 +16,5 @@ annotated-doc==0.0.4
 pydantic>=2.9.0
 typing-extensions>=4.8.0
 typing-inspection>=0.4.2
+# 调度引擎（可选，Linux/WSL环境下安装）
+apache-airflow>=2.6.0
