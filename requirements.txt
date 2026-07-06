@@ -1,20 +1,29 @@
-# PostgreSQL 数据库驱动
+# Data processing
+pandas>=2.0.0
+pyspark==3.5.1
+
+# PostgreSQL
 psycopg2-binary==2.9.12
-# DICOM 医学影像解析库
+
+# DICOM
 pydicom==3.0.2
-# FHIR 医疗标准资源包
+
+# FHIR R4
 fhir-core==1.1.9
 fhir.resources==8.2.0
-# FastAPI 接口框架及依赖
+
+# API
 fastapi==0.138.2
 uvicorn==0.49.0
 starlette==1.3.1
 h11==0.16.0
 anyio==4.14.1
-# 文档与类型注解
-annotated-doc==0.0.4
 pydantic>=2.9.0
 typing-extensions>=4.8.0
 typing-inspection>=0.4.2
-# 调度引擎（可选，Linux/WSL环境下安装）
+
+# Orchestration
 apache-airflow>=2.6.0
+
+# Tests
+pytest>=8.0.0

@@ -1,42 +1,46 @@
 import json
 import os
-from fhir.resources.patient import Patient
-from fhir.resources.observation import Observation
+
 from fhir.resources.codeableconcept import CodeableConcept
+from fhir.resources.observation import Observation
+from fhir.resources.patient import Patient
+
 from src.config import FHIR_OUTPUT_DIR
 
+
 def convert_to_fhir_patient(patient_row: dict) -> dict:
-    """单条患者数据转换为FHIR Patient资源"""
+    """Convert one patient row to a FHIR R4 Patient resource."""
+    gender = str(patient_row.get("gender", "unknown")).lower()
+    gender_map = {"m": "male", "male": "male", "f": "female", "female": "female"}
     patient = Patient(
         id=str(patient_row["patient_id"]),
-        gender=patient_row.get("gender", "unknown"),
-        active=True
+        gender=gender_map.get(gender, "unknown"),
+        active=True,
     )
-    return patient.dict()
+    return patient.model_dump(exclude_none=True)
+
 
 def convert_to_fhir_observation(obs_row: dict) -> dict:
-    """单条检查记录转换为FHIR Observation资源"""
+    """Convert one exam row to a FHIR Observation resource."""
     observation = Observation(
-        id=str(obs_row.get("obs_id", "obs_001")),
+        id=str(obs_row.get("obs_id", obs_row.get("patient_id", "obs_001"))),
         status="final",
         code=CodeableConcept(text=obs_row.get("exam_type", "imaging study")),
         subject={"reference": f"Patient/{obs_row['patient_id']}"},
-        effectiveDateTime=obs_row.get("study_date", "")
+        effectiveDateTime=obs_row.get("study_date"),
     )
-    return observation.dict()
+    return observation.model_dump(exclude_none=True)
+
 
 def save_fhir_json(data_list: list, resource_type: str):
-    """批量保存FHIR资源为JSON文件"""
+    """Save FHIR resources to a JSON file."""
     os.makedirs(FHIR_OUTPUT_DIR, exist_ok=True)
     output_path = os.path.join(FHIR_OUTPUT_DIR, f"{resource_type.lower()}.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data_list, f, ensure_ascii=False, indent=2)
-    print(f"✅ FHIR {resource_type} 已保存到 {output_path}")
+    print(f"Saved FHIR {resource_type} resources to {output_path}")
 
-# 本地单测
+
 if __name__ == "__main__":
-    test_patient = {"patient_id": "P001", "gender": "M"}
-    fhir_p = convert_to_fhir_patient(test_patient)
-    print("=== FHIR Patient 示例 ===")
-    print(json.dumps(fhir_p, indent=2, ensure_ascii=False))
-    save_fhir_json([fhir_p], "Patient")
+    test_patient = {"patient_id": "PID_DEMO", "gender": "M"}
+    print(json.dumps(convert_to_fhir_patient(test_patient), indent=2))

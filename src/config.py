@@ -1,17 +1,23 @@
-# 数据库配置
+import os
+
+
 DB_CONFIG = {
-    "host": "localhost",
-    "port": 5432,
-    "user": "postgres",
-    "password": "已隐藏",
-    "dbname": "medical_etl"
+    "host": os.getenv("POSTGRES_HOST", "localhost"),
+    "port": int(os.getenv("POSTGRES_PORT", "5432")),
+    "user": os.getenv("POSTGRES_USER", "postgres"),
+    "password": os.getenv("POSTGRES_PASSWORD", "postgres"),
+    "dbname": os.getenv("POSTGRES_DB", "medical_etl"),
 }
 
-# 文件路径配置
+
 DATA_PATH = {
-    "dicom_dir": "./data/dicom",
-    "emr_csv": "./data/emr/patients.csv"
+    "dicom_dir": os.getenv("DICOM_DIR", "./data/dicom"),
+    "emr_csv": os.getenv("EMR_CSV", "./data/emr/patients.csv"),
 }
 
-# FHIR资源配置
-FHIR_OUTPUT_DIR = "./output/fhir"
+
+FHIR_OUTPUT_DIR = os.getenv("FHIR_OUTPUT_DIR", "./output/fhir")
+
+
+WAREHOUSE_PATH = os.getenv("WAREHOUSE_PATH", "./output/warehouse")
+QUALITY_REPORT_DIR = os.getenv("QUALITY_REPORT_DIR", "./output/quality")

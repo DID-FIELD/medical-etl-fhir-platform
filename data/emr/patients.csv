@@ -1,0 +1,4 @@
+patient_id,patient_name,gender,birth_date,exam_type,study_date
+P001,Zhang San,M,1990-05-15,Chest CT,20240110
+P002,Li Si,F,1985-11-22,Chest X-ray,20240215
+P003,Wang Wu,M,1992-03-08,CT Scan,20240320

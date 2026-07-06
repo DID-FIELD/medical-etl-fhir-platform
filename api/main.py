@@ -1,91 +1,112 @@
 from fastapi import FastAPI, HTTPException
+
 from src.database.db_manager import get_db_conn
 
 app = FastAPI(
-    title="医疗多源数据ETL与FHIR标准化平台 API",
-    description="支持患者信息、检查记录查询及FHIR标准格式输出",
-    version="1.0.0"
+    title="Medical ETL and FHIR Data Platform API",
+    description="Query patient profiles, exam records and FHIR resources from the layered warehouse.",
+    version="2.0.0",
 )
 
 
-@app.get("/api/patient/{patient_id}", summary="查询患者基础信息")
+@app.get("/api/patient/{patient_id}", summary="Get patient profile")
 def get_patient_info(patient_id: str):
-    """根据脱敏后的患者ID查询基础信息"""
     conn = get_db_conn()
     cur = conn.cursor()
-    cur.execute("""
+    cur.execute(
+        """
         SELECT patient_id, patient_name, gender, birth_year
-        FROM dwd_patient
+        FROM dim_patient
         WHERE patient_id = %s
-    """, (patient_id,))
+        """,
+        (patient_id,),
+    )
     result = cur.fetchone()
     cur.close()
     conn.close()
 
     if not result:
-        raise HTTPException(status_code=404, detail="患者信息未找到")
+        raise HTTPException(status_code=404, detail="Patient not found")
 
     return {
         "patient_id": result[0],
         "patient_name": result[1],
         "gender": result[2],
-        "birth_year": result[3]
+        "birth_year": result[3],
     }
 
 
-@app.get("/api/patient/{patient_id}/observations", summary="查询患者检查记录")
+@app.get("/api/patient/{patient_id}/observations", summary="Get patient exam records")
 def get_patient_observations(patient_id: str):
-    """查询指定患者的所有检查记录"""
     conn = get_db_conn()
     cur = conn.cursor()
-    cur.execute("""
-        SELECT obs_id, study_date, exam_type, body_part
-        FROM dwd_observation
+    cur.execute(
+        """
+        SELECT exam_record_id, study_date, exam_type, body_part
+        FROM dwd_exam_record_detail
         WHERE patient_id = %s
         ORDER BY study_date DESC
-    """, (patient_id,))
+        """,
+        (patient_id,),
+    )
     results = cur.fetchall()
     cur.close()
     conn.close()
 
     observations = [
         {
-            "obs_id": row[0],
+            "exam_record_id": row[0],
             "study_date": str(row[1]),
             "exam_type": row[2],
-            "body_part": row[3]
+            "body_part": row[3],
         }
         for row in results
     ]
 
-    return {
-        "patient_id": patient_id,
-        "total": len(observations),
-        "observations": observations
-    }
+    return {"patient_id": patient_id, "total": len(observations), "observations": observations}
 
 
-@app.get("/api/fhir/patient/{patient_id}", summary="获取FHIR格式患者数据")
-def get_fhir_patient(patient_id: str):
-    """实时生成并返回标准FHIR R4格式的患者资源"""
+@app.get("/api/ads/patient-360/{patient_id}", summary="Get ADS patient 360 view")
+def get_patient_360(patient_id: str):
     conn = get_db_conn()
     cur = conn.cursor()
-    cur.execute("""
-        SELECT patient_id, gender
-        FROM dwd_patient
+    cur.execute(
+        """
+        SELECT patient_id, patient_name, gender, birth_year, exam_count, latest_exam_date
+        FROM ads_patient_360_view
         WHERE patient_id = %s
-    """, (patient_id,))
+        """,
+        (patient_id,),
+    )
     result = cur.fetchone()
     cur.close()
     conn.close()
 
     if not result:
-        raise HTTPException(status_code=404, detail="患者信息未找到")
+        raise HTTPException(status_code=404, detail="Patient 360 view not found")
 
-    from fhir.resources.patient import Patient
-    patient = Patient(
-        id=str(result[0]),
-        gender=result[1],
-        active=True
-    )
-    return patient.dict()
+    return {
+        "patient_id": result[0],
+        "patient_name": result[1],
+        "gender": result[2],
+        "birth_year": result[3],
+        "exam_count": result[4],
+        "latest_exam_date": str(result[5]),
+    }
+
+
+@app.get("/api/fhir/patient/{patient_id}", summary="Get FHIR Patient resource")
+def get_fhir_patient(patient_id: str):
+    conn = get_db_conn()
+    cur = conn.cursor()
+    cur.execute("SELECT patient_id, gender FROM dim_patient WHERE patient_id = %s", (patient_id,))
+    result = cur.fetchone()
+    cur.close()
+    conn.close()
+
+    if not result:
+        raise HTTPException(status_code=404, detail="Patient not found")
+
+    from src.fhir.converter import convert_to_fhir_patient
+
+    return convert_to_fhir_patient({"patient_id": result[0], "gender": result[1]})

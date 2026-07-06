@@ -1,4 +1,4 @@
-# Python 缓存文件
+# Python cache and virtual environments
 __pycache__/
 *.pyc
 *.pyo
@@ -9,21 +9,23 @@ venv/
 .idea/
 .vscode/
 
-# 数据文件（避免上传大体积原始数据）
+# Data files
+# Keep the small sample EMR CSV for reproducible demos, but ignore large raw datasets.
 data/emr/*.csv
-data/dicom/
+!data/emr/patients.csv
+data/dicom/*
+!data/dicom/.gitkeep
 
-# 输出文件
+# Generated outputs
 output/
 
-# 系统文件
+# System files
 .DS_Store
 Thumbs.db
 
-# 日志
+# Logs
 *.log
 
-# Office 文档与临时缓存文件
+# Office documents and temporary lock files
 *.docx
-# Office 打开文档时自动生成的临时锁文件（~$ 开头）
 ~$*
