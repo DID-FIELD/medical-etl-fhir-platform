@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-09-23 11:20 +08:00",
+  "classification": "INCOMPLETE_NO_LIVE_ACCEPTANCE_PROCESS",
+  "raw_acceptance_status": "RUNNING",
+  "spark_status": "SUCCESS",
+  "database_status": "SUCCESS",
+  "database_content_comparisons": 11,
+  "database_all_equal": true,
+  "fhir_try_1": "TimeoutExpired after 1800 seconds at 01:07:15",
+  "fhir_try_2": "RUNNING receipt remains; no completion log",
+  "host_events": [
+    {
+      "time": "2026-09-23 03:24:45",
+      "id": 1074
+    },
+    {
+      "time": "2026-09-23 03:24:54",
+      "id": 6006
+    },
+    {
+      "time": "2026-09-23 10:12:45",
+      "id": 6005
+    }
+  ],
+  "scheduler_acceptance_complete": false,
+  "whole_dag_accepted": false
+}

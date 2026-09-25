@@ -1,0 +1,15 @@
+{
+  "population_requested": 1000,
+  "quarantine_reasons": {
+    "encounter_before_birth": 45
+  },
+  "birth_flags_resolved_by_UTC_plus_8_date_comparison": 45,
+  "interpretation": "Diagnostic comparison only; pipeline rules and exported data were not modified. Consistent with source default-zone date versus UTC timestamp mismatch.",
+  "largest_study_instance_counts": [
+    500,
+    498,
+    498,
+    497,
+    496
+  ]
+}

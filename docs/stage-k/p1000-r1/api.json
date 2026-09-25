@@ -1,0 +1,66 @@
+{
+  "status": "SUCCESS",
+  "phase": "api_missing",
+  "schema": "synthea_scale_consumers_p1000_r1",
+  "run_id": "source",
+  "code_sha256": {
+    "src/database/streaming_load.py": "14acfd836904c944123a2eb7efce8e4b5afe0146b9ceec36c26649a74e548a18",
+    "src/database/synthea_store.py": "92ecad0086732e113f9c391f9185a818697cf655f90a3a365a472a2553adf48f",
+    "src/json_stream.py": "744f82983ed7106d5842e021c0a0d03cce89b03f46ed755b2b56300edd87dd38",
+    "api/synthea.py": "917193e61e8584326de43e37a4c7e7c1313798a12f351ec719a99fdc5f6af123",
+    "scripts/verify_database_scale.py": "494efc2ac1a48a4c7048e91799dc9b32b4e816800bcc09b863f2ac119084e2cd"
+  },
+  "load": {
+    "run_id": "spark-full-p1000-r1",
+    "status": "ALREADY_LOADED"
+  },
+  "load_wall_seconds": 0.219,
+  "api_checks": {
+    "api_status": true,
+    "patient_profiles": true,
+    "patient_studies": true,
+    "lineage": true,
+    "unknown_patient_404": true
+  },
+  "api_latency": {
+    "status": {
+      "requests": 1,
+      "min_ms": 49.961,
+      "median_ms": 49.961,
+      "p95_ms": 49.961,
+      "max_ms": 49.961
+    },
+    "patient": {
+      "requests": 60,
+      "min_ms": 42.886,
+      "median_ms": 46.654,
+      "p95_ms": 50.789,
+      "max_ms": 142.744
+    },
+    "studies": {
+      "requests": 60,
+      "min_ms": 43.732,
+      "median_ms": 47.544,
+      "p95_ms": 52.17,
+      "max_ms": 52.894
+    },
+    "lineage": {
+      "requests": 10,
+      "min_ms": 47.336,
+      "median_ms": 49.386,
+      "p95_ms": 156.688,
+      "max_ms": 156.688
+    },
+    "missing": {
+      "requests": 1,
+      "min_ms": 44.818,
+      "median_ms": 44.818,
+      "p95_ms": 44.818,
+      "max_ms": 44.818
+    }
+  },
+  "sampled_patients": 60,
+  "sampled_zero_exam_patients": 10,
+  "sampled_studies": 10,
+  "api_method": "Serial ASGI TestClient with real PostgreSQL; not HTTP concurrency or throughput"
+}

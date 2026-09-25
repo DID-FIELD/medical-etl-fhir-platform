@@ -1,0 +1,5 @@
+{
+  "try_number": 1,
+  "manifest": "/mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p10000-r6/results/b442df85e6a7703b2564079629808f2328172956621323080a32d7dd38a0378e/fhir/attempt-0001/manifest.json",
+  "manifest_sha256": "1fe1c81ff52c86dad3c8102c55cf1fabce7618579d3b1353570f24aa1329dd59"
+}

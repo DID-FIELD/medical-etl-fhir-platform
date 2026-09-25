@@ -1,0 +1,22 @@
+{
+  "status": "SUCCESS",
+  "command": [
+    "/opt/medical-etl-airflow/runtime/worker-venv/bin/python",
+    "-m",
+    "src.spark.synthea_full",
+    "--archive",
+    "data/generated/scale-v4-p1000/source.zip",
+    "--baseline",
+    "output/scale-stream-final/runs/p1000-stream-local-r1",
+    "--output",
+    "/opt/medical-etl-airflow/runs/spark-full-p1000-r1/snapshot",
+    "--run-id",
+    "spark-full-p1000-r1",
+    "--birth-date-offset",
+    "+08:00"
+  ],
+  "memory_method": "Sum of driver and descendants VmRSS from /proc every 250 ms; shared pages may be counted multiple times. Includes Spark JVM and Python workers; no 500 MiB claim.",
+  "exit_code": 0,
+  "elapsed_seconds": 84.59676229799999,
+  "sampled_peak_tree_rss_bytes": 2432512000
+}

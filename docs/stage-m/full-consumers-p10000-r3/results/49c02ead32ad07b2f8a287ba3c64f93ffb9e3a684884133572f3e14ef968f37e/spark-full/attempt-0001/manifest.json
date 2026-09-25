@@ -1,0 +1,100 @@
+{
+  "status": "FAILED",
+  "run_id": "manual__2026-09-23T04:20:36.289785+00:00",
+  "backend": "spark-full-csv-etl",
+  "birth_date_offset": "+08:00",
+  "scope": "Lossless Python CSV ingestion; Spark quality governance, joins and nine model tables",
+  "code_sha256": {
+    "synthea_compare.py": "d6e0a01536e4ce80f285eb7fda43dbff089e6f6f21828f925293e38fd08c0645",
+    "synthea_etl.py": "b44cd11736af3a3bc0150ee843cfc89d42bd116785eb52a37a71cce7fea825a2",
+    "synthea_full.py": "99451a6ffecac9c7318922c2985fdb17d1da0e079c2d5b845756d5caedb80d06",
+    "synthea_ingest.py": "6f4ebf4a51504272ab4451f1ca835a118cb8fb14779da260c5b60863a3950d0b",
+    "synthea_rules.py": "a7d5b0c7f9e481df2f8c0e02ed5cd77b524802b472ec48779b3dcab25795801e"
+  },
+  "archive_sha256": "cde7f394763863dae3123799a54fd21dbc90683c650ceb17fe7db85f79a28559",
+  "source": {
+    "patients": {
+      "file": "patients.csv",
+      "rows": 11476,
+      "bytes": 3447943,
+      "sha256": "bd3259af247e047ae3d8f60601aa73bab3c0fb1211670e845db62686fbca6b49",
+      "columns": [
+        "Id",
+        "BIRTHDATE",
+        "DEATHDATE",
+        "SSN",
+        "DRIVERS",
+        "PASSPORT",
+        "PREFIX",
+        "FIRST",
+        "MIDDLE",
+        "LAST",
+        "SUFFIX",
+        "MAIDEN",
+        "MARITAL",
+        "RACE",
+        "ETHNICITY",
+        "GENDER",
+        "BIRTHPLACE",
+        "ADDRESS",
+        "CITY",
+        "STATE",
+        "COUNTY",
+        "FIPS",
+        "ZIP",
+        "LAT",
+        "LON",
+        "HEALTHCARE_EXPENSES",
+        "HEALTHCARE_COVERAGE",
+        "INCOME"
+      ]
+    },
+    "encounters": {
+      "file": "encounters.csv",
+      "rows": 677836,
+      "bytes": 225421496,
+      "sha256": "76328ca744b8d9422855ae76173c9d7f9b6165d30d1a151e9e75719488bdc020",
+      "columns": [
+        "Id",
+        "START",
+        "STOP",
+        "PATIENT",
+        "ORGANIZATION",
+        "PROVIDER",
+        "PAYER",
+        "ENCOUNTERCLASS",
+        "CODE",
+        "DESCRIPTION",
+        "BASE_ENCOUNTER_COST",
+        "TOTAL_CLAIM_COST",
+        "PAYER_COVERAGE",
+        "REASONCODE",
+        "REASONDESCRIPTION"
+      ]
+    },
+    "imaging_studies": {
+      "file": "imaging_studies.csv",
+      "rows": 1036348,
+      "bytes": 362207353,
+      "sha256": "5d3b454dda6a291f0cd2f2700160f28606aa1097efb19b16d0e1b27eb0c5870d",
+      "columns": [
+        "Id",
+        "DATE",
+        "PATIENT",
+        "ENCOUNTER",
+        "SERIES_UID",
+        "BODYSITE_CODE",
+        "BODYSITE_DESCRIPTION",
+        "MODALITY_CODE",
+        "MODALITY_DESCRIPTION",
+        "INSTANCE_UID",
+        "SOP_CODE",
+        "SOP_DESCRIPTION",
+        "PROCEDURE_CODE"
+      ]
+    }
+  },
+  "spark_version": "4.0.1",
+  "error_type": "Py4JJavaError",
+  "elapsed_seconds": 209.15094743400005
+}

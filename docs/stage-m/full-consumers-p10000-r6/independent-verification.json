@@ -1,0 +1,12 @@
+{
+  "failed_spark_attempts": [],
+  "status": "PASSED",
+  "population": 10000,
+  "fhir_resources": 708747,
+  "database_comparisons": 11,
+  "api_requests": 132,
+  "acceptance_sha256": "4fd36d53f7f41edf4d8e08e57d4a1135abfa0fc3be71c0f0b8a07456ca7abdc4",
+  "verifier_sha256": "fda81bd49d0ee8279fef8cd05e2aa591636d8a5d7fc21602bf47168cef2fcfdb",
+  "spark_artifact_inventories_verified": 2,
+  "scheduler_status_lock_retries": 8
+}

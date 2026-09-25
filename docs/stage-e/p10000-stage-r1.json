@@ -1,0 +1,58 @@
+{
+  "measurement": {
+    "command": [
+      "F:\\project\\medical-etl-fhir-platform\\.venv\\Scripts\\python.exe",
+      "-m",
+      "src.streaming_pipeline",
+      "--archive",
+      "F:\\project\\medical-etl-fhir-platform\\data\\generated\\scale-v4-p10000\\source.zip",
+      "--output-root",
+      "F:\\project\\medical-etl-fhir-platform\\output\\scale-stream",
+      "--run-id",
+      "p10000-stage-r1"
+    ],
+    "exit_code": 1,
+    "seconds": 28.181,
+    "sampled_peak_tree_rss_bytes": 114302976,
+    "memory_method": "sum of launcher and descendant RSS sampled every 250ms; shared pages may be counted twice",
+    "minimum_available_memory_bytes": 4987686912,
+    "stop_reason": null,
+    "log": "data\\generated\\scale-v4-p10000\\stage-r1.log"
+  },
+  "manifest": {
+    "run_id": "p10000-stage-r1",
+    "status": "FAILED",
+    "model_version": "synthea-stream-v1",
+    "backend": "sqlite+parquet",
+    "counts": {
+      "patients": 11476,
+      "encounters": 677836,
+      "imaging_studies": 1036348
+    },
+    "source": {
+      "patients": {
+        "file": "patients.csv",
+        "rows": 11476,
+        "sha256": "344fbbd907b1b868f89fb64e155e43e713e0665d0ae8488745c3b5339a2cd32f"
+      },
+      "encounters": {
+        "file": "encounters.csv",
+        "rows": 677836,
+        "sha256": "cc98fbc2871be9b53bfe35fb67dd36d499a82443cde83c4860707a3bed11346a"
+      },
+      "imaging_studies": {
+        "file": "imaging_studies.csv",
+        "rows": 1036348,
+        "sha256": "28a1c622046fab5c8b78d035eadd985339b50b0941d177e5277ad7af4610f99b"
+      }
+    },
+    "elapsed_seconds": 24.789,
+    "limitations": [
+      "Raw rows are disk-backed in SQLite.",
+      "DWD/DWS/ADS streaming writers are not enabled by this prototype.",
+      "The existing full-memory run remains the publishable contract."
+    ],
+    "error_type": "PermissionError",
+    "error": "[WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'F:\\\\project\\\\medical-etl-fhir-platform\\\\output\\\\scale-stream\\\\synthea-stage-_481mhe0\\\\stage.sqlite'"
+  }
+}

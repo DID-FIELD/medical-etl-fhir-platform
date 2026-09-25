@@ -1,0 +1,17 @@
+{
+  "run_id": "manual__2026-09-22T10:49:48.619158+00:00",
+  "schema": "synthea_airflow_3dac2edb120ad71dab3da76e630295dc",
+  "formal_run": "stage-c-verified",
+  "schema_exists": true,
+  "committed_runs": [
+    [
+      "manual__2026-09-22T10:49:48.619158+00:00"
+    ]
+  ],
+  "connections": [
+    [
+      "active",
+      1
+    ]
+  ]
+}

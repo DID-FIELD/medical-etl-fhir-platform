@@ -1,0 +1,4 @@
+Airflow Python 3.12 / SQLAlchemy runtime + existing pytest files:
+13 passed in 1.66s
+Windows core venv (SQLAlchemy not installed):
+8 passed, 5 skipped in 0.35s

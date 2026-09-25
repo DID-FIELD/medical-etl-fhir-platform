@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-09-23T04:29:30.514336+00:00",
+  "processes": [
+    {
+      "pid": 1300,
+      "heap_arguments": [
+        "-Xmx1g"
+      ],
+      "memory_environment": []
+    }
+  ]
+}

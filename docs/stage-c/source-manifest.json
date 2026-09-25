@@ -1,0 +1,122 @@
+{
+  "run_id": "stage-c-verified",
+  "status": "SUCCESS",
+  "model_version": "synthea-v1",
+  "backend": "parquet",
+  "python": "3.13.9",
+  "pandas": "3.0.6",
+  "code_sha256": "d3dce1d5885c47764bfa55378241167ea1917f920094c34b0f0a8698a103fe49",
+  "started_at": "2026-09-18T05:37:25.192442+00:00",
+  "source": {
+    "patients": {
+      "file": "patients.csv",
+      "rows": 108,
+      "bytes": 32471,
+      "sha256": "0e8a61760644976571e7ede02e8be5bfece5111bc179d2139af87f84b630c859"
+    },
+    "encounters": {
+      "file": "encounters.csv",
+      "rows": 5571,
+      "bytes": 1857081,
+      "sha256": "16d209cb1429605c90c80cd859ac16569108dc46890f50eb6a125a0602235b3a"
+    },
+    "imaging_studies": {
+      "file": "imaging_studies.csv",
+      "rows": 478,
+      "bytes": 187543,
+      "sha256": "bebfa122958cde7522706dddc1187663f11d34136dbf63a5a2aa16128638aa3f"
+    }
+  },
+  "archive_sha256": "d61417b551e5b0997c33851b339c157421751f0ea68c18ea686ceb1850907c35",
+  "counts": {
+    "dim_patient": 108,
+    "dwd_encounter": 5571,
+    "dwd_imaging_study": 413,
+    "dwd_imaging_series": 413,
+    "dwd_imaging_instance": 478,
+    "bridge_study_modality": 413,
+    "dws_patient_imaging_summary": 108,
+    "dws_imaging_daily_modality": 401,
+    "ads_patient_imaging_profile": 108
+  },
+  "quality": {
+    "patients": {
+      "accepted": 108,
+      "quarantined": 0,
+      "duplicate": 0
+    },
+    "encounters": {
+      "accepted": 5571,
+      "quarantined": 0,
+      "duplicate": 0
+    },
+    "imaging_studies": {
+      "accepted": 478,
+      "quarantined": 0,
+      "duplicate": 0
+    }
+  },
+  "checks": {
+    "dim_patient.unique_key": true,
+    "dwd_encounter.unique_key": true,
+    "dwd_imaging_study.unique_key": true,
+    "dwd_imaging_series.unique_key": true,
+    "dwd_imaging_instance.unique_key": true,
+    "bridge_study_modality.unique_key": true,
+    "dws_patient_imaging_summary.unique_key": true,
+    "dws_imaging_daily_modality.unique_key": true,
+    "ads_patient_imaging_profile.unique_key": true,
+    "patients.input_balance": true,
+    "encounters.input_balance": true,
+    "imaging_studies.input_balance": true,
+    "encounter_patient_fk": true,
+    "study_parent_consistency": true,
+    "series_study_fk": true,
+    "instance_series_fk": true,
+    "bridge_study_fk": true,
+    "dws_patient_imaging_summary.patient_coverage": true,
+    "dws_patient_imaging_summary.exam_balance": true,
+    "ads_patient_imaging_profile.patient_coverage": true,
+    "ads_patient_imaging_profile.exam_balance": true,
+    "daily_bridge_balance": true,
+    "dim_patient.accepted_lineage": true,
+    "dwd_encounter.accepted_lineage": true,
+    "dwd_imaging_instance.accepted_lineage": true,
+    "dim_patient.readback": true,
+    "dwd_encounter.readback": true,
+    "dwd_imaging_study.readback": true,
+    "dwd_imaging_series.readback": true,
+    "dwd_imaging_instance.readback": true,
+    "bridge_study_modality.readback": true,
+    "dws_patient_imaging_summary.readback": true,
+    "dws_imaging_daily_modality.readback": true,
+    "ads_patient_imaging_profile.readback": true
+  },
+  "warnings": [],
+  "zero_exam_patients": 12,
+  "elapsed_seconds": 0.6348,
+  "artifacts": {
+    "ads_patient_imaging_profile.json": "483376f4017c9b9b41b57078593bcd19dce88db4f3fb922dfe406ad31f0410f2",
+    "ads_patient_imaging_profile.parquet": "13a617b4e4ebad5b6e182b796bdf33b3eca8c25cf4ac05821766600f55718565",
+    "bridge_study_modality.json": "d005276710bba8dd39718a9867f4a98cdf397de7edf6532d53bccaf096dceacd",
+    "bridge_study_modality.parquet": "3fba6a3d72df8846e0225ff33ba6bb3530b5187cba832b2a89f6200c9c9cc5c1",
+    "dim_patient.json": "3ca83aa69e8e4f5d55e3234be164bc4a8bba4b616d60f388495602057e8fcd7c",
+    "dim_patient.parquet": "82623bb35a6c2656eb0c8002339e3144e61e9f664524aa6e76e8fe9f4bec8782",
+    "dispositions.json": "d6ec19fc1eb71ad4467d14f23322e3c0a605437d3e28fef9c0c066f4e0dd30eb",
+    "dwd_encounter.json": "f4b770b4da09ab6efd62a8a6bdfc3c061907610cc0679bfa44b1140d7c68d4d4",
+    "dwd_encounter.parquet": "a6bccd9c3958d25f017d8d2845bd7dcb41e649e59bf102ba2afb9a8feb5b91c8",
+    "dwd_imaging_instance.json": "9be92a9beb317aafc2ad25f45559258dec120130c150d8000b111c3b2eb56f4e",
+    "dwd_imaging_instance.parquet": "306fece7c513a9ce52d825fda1a057d9da2e437c0f4724d99ee370eec97dc462",
+    "dwd_imaging_series.json": "6d5c51374745ffd7db5171ceb705afff2eadd68fc9d539266ef8b19a57d52f2c",
+    "dwd_imaging_series.parquet": "369a31386def0dfc003db6525d8b9617e22fabe9ea5f56d52cd9a0866229317f",
+    "dwd_imaging_study.json": "c140a5c2458dc8c4dfd5bb92a112816210914b7d3cb8541ac5b9176a59cdbf8b",
+    "dwd_imaging_study.parquet": "7336652af559e41add386640fa95c253900a9050e2ff7dc617754fd12e1f3113",
+    "dws_imaging_daily_modality.json": "acc75b80f903d6c53cd242491753e473fbbcdbaea5955d7e1265cea28d4ef578",
+    "dws_imaging_daily_modality.parquet": "497177824ad28ee9763714b8caf3eeb672a62145c8a8273f4793ce7120b08379",
+    "dws_patient_imaging_summary.json": "1e340a4ebf82b3b62c5f6234868d0815418adcb07fa887125e7d74778023df9b",
+    "dws_patient_imaging_summary.parquet": "1fc06c91dd0e3999a7e8ec3a6d2e11cbf1340d253f3ac9767cee726ca1c77f10",
+    "ods_encounters.json": "1451f20b0c4ecf5c7d88b851e6782b9e5b40b30ba8aa0b57d74ebb6571852379",
+    "ods_imaging_studies.json": "c08e8c48261111d5e2cd608d0feb27aff5d4788aa4d6b6c4f98849f9b36c5d1e",
+    "ods_patients.json": "eacb8e2bfad033199dc0e0ce4fdc1eac936648f7b33f2df0c1a08059b96eb83c"
+  }
+}

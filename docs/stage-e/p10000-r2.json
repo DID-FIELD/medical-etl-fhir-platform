@@ -1,0 +1,35 @@
+{
+  "population_requested": 10000,
+  "repeat": 2,
+  "measurement": {
+    "command": [
+      "F:\\project\\medical-etl-fhir-platform\\.venv\\Scripts\\python.exe",
+      "-m",
+      "src.synthea_pipeline",
+      "--archive",
+      "F:\\project\\medical-etl-fhir-platform\\data\\generated\\scale-v4-p10000\\source.zip",
+      "--output-root",
+      "F:\\project\\medical-etl-fhir-platform\\output\\scale-v4",
+      "--run-id",
+      "p10000-r2"
+    ],
+    "exit_code": 15,
+    "seconds": 5.482,
+    "sampled_peak_tree_rss_bytes": 4338479104,
+    "memory_method": "sum of launcher and descendant RSS sampled every 250ms; shared pages may be counted twice",
+    "minimum_available_memory_bytes": 2008727552,
+    "stop_reason": "process_tree_rss_above_3.5GiB",
+    "log": "data\\generated\\scale-v4-p10000\\etl-r2.log"
+  },
+  "manifest": {
+    "run_id": "p10000-r2",
+    "status": "RUNNING",
+    "model_version": "synthea-v1",
+    "backend": "parquet",
+    "python": "3.13.9",
+    "pandas": "3.0.6",
+    "code_sha256": "7728fbeec248afdef709b1f0d7ca65eaf6e151399db609d8b65570e9534ae20e",
+    "started_at": "2026-09-20T12:51:03.736926+00:00"
+  },
+  "etl_manifest_status": "FAILED"
+}

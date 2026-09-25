@@ -1,0 +1,140 @@
+{
+  "status": "SUCCESS",
+  "session": "full-spark-airflow-p1000-r1",
+  "source_run_id": "p1000-stream-local-r1",
+  "source_manifest_sha256": "20f048ccc48e9359ae21600d0c69a34bdacb6a8ae1d0281e80eb5de5b908e5b7",
+  "source_read_only": true,
+  "runtime": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "population": 1000,
+  "archive_sha256": "6775a19d38b29f363b025bf7676c2d21268b831c4afa44e92f00a17b2259ad2d",
+  "file_publication_before": {
+    "run_id": "stage-c-verified"
+  },
+  "airflow_version": "2.11.2",
+  "dagbag": "PASSED",
+  "dag_test": {
+    "state": "success",
+    "run_id": "manual__2026-09-21T14:16:20.242978+00:00"
+  },
+  "scheduler_run": {
+    "run_id": "manual__full-spark-airflow-p1000-r1",
+    "state": "success",
+    "tasks": [
+      {
+        "task_id": "verify_inputs",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "full_spark_etl",
+        "state": "success",
+        "try_number": 2
+      }
+    ]
+  },
+  "retry_reused_success": true,
+  "full_spark_result": {
+    "manifest": "/opt/medical-etl-airflow/runs/full-spark-airflow-p1000-r1/results/7da312b1c314c5dea271fcc3afdc792292088302f9c396f5ddd0c2134af62cef/spark-full/attempt-0001/manifest.json",
+    "counts": {
+      "dim_patient": 1159,
+      "dwd_encounter": 70229,
+      "dwd_imaging_study": 2239,
+      "dwd_imaging_series": 2239,
+      "dwd_imaging_instance": 89354,
+      "bridge_study_modality": 2239,
+      "dws_patient_imaging_summary": 1159,
+      "dws_imaging_daily_modality": 2155,
+      "ads_patient_imaging_profile": 1159
+    },
+    "baseline": {
+      "source_manifest_sha256": "20f048ccc48e9359ae21600d0c69a34bdacb6a8ae1d0281e80eb5de5b908e5b7",
+      "checks": {
+        "dim_patient": {
+          "missing": 0,
+          "extra": 0
+        },
+        "dwd_encounter": {
+          "missing": 0,
+          "extra": 0
+        },
+        "dwd_imaging_study": {
+          "missing": 0,
+          "extra": 0
+        },
+        "dwd_imaging_series": {
+          "missing": 0,
+          "extra": 0
+        },
+        "dwd_imaging_instance": {
+          "missing": 0,
+          "extra": 0
+        },
+        "bridge_study_modality": {
+          "missing": 0,
+          "extra": 0
+        },
+        "dws_patient_imaging_summary": {
+          "missing": 0,
+          "extra": 0
+        },
+        "dws_imaging_daily_modality": {
+          "missing": 0,
+          "extra": 0
+        },
+        "ads_patient_imaging_profile": {
+          "missing": 0,
+          "extra": 0
+        },
+        "dispositions": {
+          "missing": 0,
+          "extra": 0
+        },
+        "warnings": {
+          "missing": 0,
+          "extra": 0
+        },
+        "ods_patients": {
+          "missing": 0,
+          "extra": 0
+        },
+        "ods_encounters": {
+          "missing": 0,
+          "extra": 0
+        },
+        "ods_imaging_studies": {
+          "missing": 0,
+          "extra": 0
+        }
+      }
+    },
+    "checks": {
+      "dim_patient.unique_key": true,
+      "dwd_encounter.unique_key": true,
+      "dwd_imaging_study.unique_key": true,
+      "dwd_imaging_series.unique_key": true,
+      "dwd_imaging_instance.unique_key": true,
+      "bridge_study_modality.unique_key": true,
+      "dws_patient_imaging_summary.unique_key": true,
+      "dws_imaging_daily_modality.unique_key": true,
+      "ads_patient_imaging_profile.unique_key": true,
+      "patients.input_balance": true,
+      "encounters.input_balance": true,
+      "imaging_studies.input_balance": true,
+      "encounter_patient_fk": true,
+      "study_patient_fk": true,
+      "study_parent_consistency": true,
+      "series_study_fk": true,
+      "instance_series_fk": true,
+      "bridge_study_fk": true,
+      "dws_patient_imaging_summary.patient_coverage": true,
+      "dws_patient_imaging_summary.exam_balance": true,
+      "ads_patient_imaging_profile.patient_coverage": true,
+      "ads_patient_imaging_profile.exam_balance": true,
+      "daily_bridge_balance": true,
+      "dim_patient.accepted_lineage": true,
+      "dwd_encounter.accepted_lineage": true,
+      "dwd_imaging_instance.accepted_lineage": true
+    }
+  },
+  "file_publication_unchanged": true
+}

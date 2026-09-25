@@ -1,0 +1,107 @@
+{
+  "status": "SUCCESS",
+  "session": "full-consumers-p1000-r2",
+  "source_run_id": "p1000-stream-local-r1",
+  "source_manifest_sha256": "20f048ccc48e9359ae21600d0c69a34bdacb6a8ae1d0281e80eb5de5b908e5b7",
+  "source_read_only": true,
+  "runtime": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "population": 1000,
+  "shared_output": "/mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p1000-r2",
+  "database_worker": "Windows project venv via WSL interop; PostgreSQL remains localhost-only",
+  "archive_sha256": "6775a19d38b29f363b025bf7676c2d21268b831c4afa44e92f00a17b2259ad2d",
+  "file_publication_before": {
+    "run_id": "stage-c-verified"
+  },
+  "database_before": {
+    "status": "SUCCESS",
+    "formal_database_run_id": "stage-c-verified"
+  },
+  "airflow_version": "2.11.2",
+  "dagbag": "PASSED",
+  "dag_test": {
+    "state": "success",
+    "run_id": "manual__2026-09-22T10:18:01.728761+00:00"
+  },
+  "scheduler_run": {
+    "run_id": "manual__full-consumers-p1000-r2",
+    "state": "success",
+    "tasks": [
+      {
+        "task_id": "verify_inputs",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "full_spark_etl",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "export_fhir",
+        "state": "success",
+        "try_number": 2
+      },
+      {
+        "task_id": "load_database",
+        "state": "success",
+        "try_number": 2
+      }
+    ]
+  },
+  "consumer_retries": {
+    "fhir": {
+      "reused": true,
+      "manifest": "/mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p1000-r2/results/0665f29b1df26e508b98b9a58a7d1cf669f22e1a08b39974652ebe68b7e6b95e/fhir/attempt-0001/manifest.json",
+      "manifest_sha256": "f805441d0e762de7e917e55f98c229040250da8fe427ad18e27e8e7be08ad01e"
+    },
+    "database": {
+      "reused": true,
+      "manifest": "/mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p1000-r2/results/0665f29b1df26e508b98b9a58a7d1cf669f22e1a08b39974652ebe68b7e6b95e/database/attempt-0001/manifest.json",
+      "manifest_sha256": "76b41cfbf21ab8695b569824bbdba814caa233f1d69970c05ac9f3c16ededed5"
+    }
+  },
+  "database_after": {
+    "status": "SUCCESS",
+    "formal_database_run_id": "stage-c-verified",
+    "api_checks": {
+      "api_status": true,
+      "patient_profiles": true,
+      "patient_studies": true,
+      "lineage": true,
+      "unknown_patient_404": true
+    },
+    "api_requests": 132,
+    "source_manifest_sha256": "d9a66048d3bb332e193572edb7a2b8e92caf4bf70e0a0ae78f3a8d0ef80f307c",
+    "schema": "synthea_airflow_0665f29b1df26e508b98b9a58a7d1cf6"
+  },
+  "formal_database_unchanged": true,
+  "fhir_comparisons": {
+    "Patient": {
+      "rows": 1159,
+      "missing": 0,
+      "extra": 0
+    },
+    "Encounter": {
+      "rows": 70229,
+      "missing": 0,
+      "extra": 0
+    },
+    "ImagingStudy": {
+      "rows": 2239,
+      "missing": 0,
+      "extra": 0
+    }
+  },
+  "schemas": [
+    "synthea_airflow_98c0bae56930d09f7515687fb3c6edcc",
+    "synthea_airflow_0665f29b1df26e508b98b9a58a7d1cf6"
+  ],
+  "code_sha256": {
+    "src/consumer_workflow.py": "7ddf8c55cd05f080e793fc1984547225d922e5bc2f0c0db97f224eb0b619fb4d",
+    "src/airflow_tasks.py": "f571c7c83f2b965142ca8de0a9342b3a7b5ba6a3e2977aff0989f53a70385b25",
+    "dags/synthea_full_spark.py": "5153edbd745baae8d39dc0d0283d3f7d0bbc6376860039ef686ff2bfd80f15ff",
+    "scripts/airflow/full_consumers_retry_dag.py": "fb1ebee820c0b4106225913fea3eae88de38b48e0254d773651a7545d533974e",
+    "scripts/airflow/full_consumers_acceptance.py": "735de50d4c997e809ec1f9cd4f24ef7f20d932b4f4098819deb85cec8d67b6f6"
+  },
+  "file_publication_unchanged": true
+}

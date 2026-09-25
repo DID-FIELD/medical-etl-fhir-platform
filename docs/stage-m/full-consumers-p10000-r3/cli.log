@@ -1,0 +1,77 @@
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+DB: sqlite:////opt/medical-etl-airflow/runs/full-consumers-p10000-r3/airflow/metadata.db
+Performing upgrade to the metadata database sqlite:////opt/medical-etl-airflow/runs/full-consumers-p10000-r3/airflow/metadata.db
+[2026-09-23T12:20:20.555+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.schemas
+[2026-09-23T12:20:20.557+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.tables
+[2026-09-23T12:20:20.557+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.types
+[2026-09-23T12:20:20.557+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.constraints
+[2026-09-23T12:20:20.558+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.defaults
+[2026-09-23T12:20:20.558+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.comments
+[2026-09-23T12:20:20.698+0800] {migration.py:210} INFO - Context impl SQLiteImpl.
+[2026-09-23T12:20:20.699+0800] {migration.py:213} INFO - Will assume non-transactional DDL.
+[2026-09-23T12:20:20.700+0800] {migration.py:210} INFO - Context impl SQLiteImpl.
+[2026-09-23T12:20:20.700+0800] {migration.py:213} INFO - Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running stamp_revision  -> 5f2621c13b39
+Database migrating done!
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/cli/commands/dag_command.py:48 UserWarning: Could not import graphviz. Rendering graph to the graphical format will not be possible.
+[2026-09-23T12:56:28.721+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.schemas
+[2026-09-23T12:56:28.741+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.tables
+[2026-09-23T12:56:28.741+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.types
+[2026-09-23T12:56:28.741+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.constraints
+[2026-09-23T12:56:28.741+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.defaults
+[2026-09-23T12:56:28.741+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.comments
+[2026-09-23T12:56:29.211+0800] {dagbag.py:588} INFO - Filling up the DagBag from /opt/medical-etl-airflow/runs/full-consumers-p10000-r3/airflow/dags
+[2026-09-23T12:56:29.999+0800] {override.py:1932} INFO - Created Permission View: can edit on DAG:synthea_full_consumers_retry_acceptance
+[2026-09-23T12:56:30.209+0800] {override.py:1932} INFO - Created Permission View: can read on DAG:synthea_full_consumers_retry_acceptance
+[2026-09-23T12:56:30.386+0800] {override.py:1932} INFO - Created Permission View: can delete on DAG:synthea_full_consumers_retry_acceptance
+[2026-09-23T12:56:30.564+0800] {override.py:1932} INFO - Created Permission View: can read on DAG Run:synthea_full_consumers_retry_acceptance
+[2026-09-23T12:56:30.741+0800] {override.py:1932} INFO - Created Permission View: can create on DAG Run:synthea_full_consumers_retry_acceptance
+[2026-09-23T12:56:30.941+0800] {override.py:1932} INFO - Created Permission View: menu access on DAG Run:synthea_full_consumers_retry_acceptance
+[2026-09-23T12:56:31.040+0800] {override.py:1932} INFO - Created Permission View: can delete on DAG Run:synthea_full_consumers_retry_acceptance
+[2026-09-23T12:56:31.250+0800] {override.py:1932} INFO - Created Permission View: can edit on DAG:synthea_full_spark
+[2026-09-23T12:56:31.339+0800] {override.py:1932} INFO - Created Permission View: can read on DAG:synthea_full_spark
+[2026-09-23T12:56:31.428+0800] {override.py:1932} INFO - Created Permission View: can delete on DAG:synthea_full_spark
+[2026-09-23T12:56:31.605+0800] {override.py:1932} INFO - Created Permission View: can read on DAG Run:synthea_full_spark
+[2026-09-23T12:56:31.704+0800] {override.py:1932} INFO - Created Permission View: can create on DAG Run:synthea_full_spark
+[2026-09-23T12:56:31.803+0800] {override.py:1932} INFO - Created Permission View: menu access on DAG Run:synthea_full_spark
+[2026-09-23T12:56:31.892+0800] {override.py:1932} INFO - Created Permission View: can delete on DAG Run:synthea_full_spark
+[2026-09-23T12:56:31.892+0800] {dag.py:3239} INFO - Sync 2 DAGs
+[2026-09-23T12:56:31.897+0800] {dag.py:3262} INFO - Creating ORM DAG for synthea_full_spark
+[2026-09-23T12:56:31.897+0800] {dag.py:3262} INFO - Creating ORM DAG for synthea_full_consumers_retry_acceptance
+[2026-09-23T12:56:31.897+0800] {dag.py:4180} INFO - Setting next_dagrun for synthea_full_consumers_retry_acceptance to None, run_after=None
+[2026-09-23T12:56:31.897+0800] {dag.py:4180} INFO - Setting next_dagrun for synthea_full_spark to None, run_after=None
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/cli/commands/dag_command.py:48 UserWarning: Could not import graphviz. Rendering graph to the graphical format will not be possible.
+[2026-09-23T12:56:33.085+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.schemas
+[2026-09-23T12:56:33.085+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.tables
+[2026-09-23T12:56:33.085+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.types
+[2026-09-23T12:56:33.086+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.constraints
+[2026-09-23T12:56:33.086+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.defaults
+[2026-09-23T12:56:33.086+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.comments
+dag_id                                  | is_paused
+========================================+==========
+synthea_full_consumers_retry_acceptance | False    
+                                                   
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/cli/commands/dag_command.py:48 UserWarning: Could not import graphviz. Rendering graph to the graphical format will not be possible.
+[2026-09-23T12:56:34.406+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.schemas
+[2026-09-23T12:56:34.407+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.tables
+[2026-09-23T12:56:34.407+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.types
+[2026-09-23T12:56:34.407+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.constraints
+[2026-09-23T12:56:34.407+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.defaults
+[2026-09-23T12:56:34.407+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.comments
+[2026-09-23T12:56:34.576+0800] {__init__.py:43} INFO - Loaded API auth backend: airflow.api.auth.backend.session
+     |                     |                     |                     |                     |          |                  | last_scheduling_deci |                     |          |            |       
+conf | dag_id              | dag_run_id          | data_interval_start | data_interval_end   | end_date | external_trigger | sion                 | logical_date        | run_type | start_date | state 
+=====+=====================+=====================+=====================+=====================+==========+==================+======================+=====================+==========+============+=======
+{}   | synthea_full_consum | manual__full-consum | 2026-09-23          | 2026-09-23          | None     | True             | None                 | 2026-09-23          | manual   | None       | queued
+     | ers_retry_acceptanc | ers-p10000-r3       | 04:56:34+00:00      | 04:56:34+00:00      |          |                  |                      | 04:56:34+00:00      |          |            |       
+     | e                   |                     |                     |                     |          |                  |                      |                     |          |            |       
+                                                                                                                                                                                                        

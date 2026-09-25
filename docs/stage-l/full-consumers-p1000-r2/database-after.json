@@ -1,0 +1,14 @@
+{
+  "status": "SUCCESS",
+  "formal_database_run_id": "stage-c-verified",
+  "api_checks": {
+    "api_status": true,
+    "patient_profiles": true,
+    "patient_studies": true,
+    "lineage": true,
+    "unknown_patient_404": true
+  },
+  "api_requests": 132,
+  "source_manifest_sha256": "d9a66048d3bb332e193572edb7a2b8e92caf4bf70e0a0ae78f3a8d0ef80f307c",
+  "schema": "synthea_airflow_0665f29b1df26e508b98b9a58a7d1cf6"
+}

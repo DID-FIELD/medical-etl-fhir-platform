@@ -1,0 +1,4 @@
+2026-09-20
+RUN_DATABASE_TESTS=1 .venv/Scripts/python.exe -m pytest -q --tb=short
+56 passed, 2 warnings in 11.23s
+Warnings: Starlette/httpx and anyio BlockingPortal deprecations.

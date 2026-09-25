@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "Patient": true,
+    "Encounter": true,
+    "ImagingStudy": true
+  },
+  "counts": {
+    "Patient": 1159,
+    "Encounter": 70184,
+    "ImagingStudy": 2239
+  }
+}

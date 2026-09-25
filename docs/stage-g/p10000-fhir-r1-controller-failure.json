@@ -1,0 +1,17 @@
+{
+  "export_status": "SUCCESS",
+  "source_run_id": "p10000-stream-local-r1",
+  "controller_status": "FAILED_AFTER_EXPORT",
+  "error_type": "ValueError",
+  "reason": "Relative log path passed to measured(); relative_to(ROOT) failed after child completion. Timing and peak measurements unavailable.",
+  "counts": {
+    "Patient": 11476,
+    "Encounter": 677836,
+    "ImagingStudy": 19435
+  },
+  "artifacts": {
+    "Patient.ndjson": "5b79bd3071b78c9353c720d1b372e6e549d2c91a6df6226ce327132f52d580c0",
+    "Encounter.ndjson": "40fb3163d1f48530c7fc71d1f2aed151488694657c49929bc87e324a209f3b7a",
+    "ImagingStudy.ndjson": "906d7c9c40721c1eb2957908e297563224b7f7a68d06899b82087450439ec424"
+  }
+}

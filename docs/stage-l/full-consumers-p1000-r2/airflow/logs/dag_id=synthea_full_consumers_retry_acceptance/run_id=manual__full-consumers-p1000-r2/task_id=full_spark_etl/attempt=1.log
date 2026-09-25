@@ -1,0 +1,17 @@
+[2026-09-22T18:23:24.663+0800] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-09-22T18:23:24.675+0800] {taskinstance.py:2632} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p1000-r2 [queued]>
+[2026-09-22T18:23:24.678+0800] {taskinstance.py:2632} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p1000-r2 [queued]>
+[2026-09-22T18:23:24.678+0800] {taskinstance.py:2885} INFO - Starting attempt 1 of 2
+[2026-09-22T18:23:24.789+0800] {taskinstance.py:2908} INFO - Executing <Task(PythonOperator): full_spark_etl> on 2026-09-22 10:23:15+00:00
+[2026-09-22T18:23:24.792+0800] {standard_task_runner.py:72} INFO - Started process 2320 to run task
+[2026-09-22T18:23:24.795+0800] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'synthea_full_consumers_retry_acceptance', 'full_spark_etl', 'manual__full-consumers-p1000-r2', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/full_consumers_retry_dag.py', '--cfg-path', '/tmp/tmp2h1civaf']
+[2026-09-22T18:23:24.796+0800] {standard_task_runner.py:105} INFO - Job 3: Subtask full_spark_etl
+[2026-09-22T18:23:24.968+0800] {task_command.py:467} INFO - Running <TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p1000-r2 [running]> on host LAPTOP-LO2NU7PH.localdomain
+[2026-09-22T18:23:25.365+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_consumers_retry_acceptance' AIRFLOW_CTX_TASK_ID='full_spark_etl' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T10:23:15+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__full-consumers-p1000-r2'
+[2026-09-22T18:23:25.366+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-22T18:25:34.987+0800] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p1000-r2/results/0665f29b1df26e508b98b9a58a7d1cf669f22e1a08b39974652ebe68b7e6b95e/spark-full/attempt-0001/manifest.json
+[2026-09-22T18:25:35.144+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-22T18:25:35.144+0800] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=synthea_full_consumers_retry_acceptance, task_id=full_spark_etl, run_id=manual__full-consumers-p1000-r2, execution_date=20260922T102315, start_date=20260922T102324, end_date=20260922T102535
+[2026-09-22T18:25:35.412+0800] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-09-22T18:25:35.419+0800] {taskinstance.py:3925} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2026-09-22T18:25:35.517+0800] {local_task_job_runner.py:245} INFO - ::endgroup::

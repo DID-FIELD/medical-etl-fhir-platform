@@ -1,0 +1,22 @@
+{
+  "status": "FAILED",
+  "session": "full-consumers-p1000-r1",
+  "source_run_id": "p1000-stream-local-r1",
+  "source_manifest_sha256": "20f048ccc48e9359ae21600d0c69a34bdacb6a8ae1d0281e80eb5de5b908e5b7",
+  "source_read_only": true,
+  "runtime": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "population": 1000,
+  "shared_output": "/mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p1000-r1",
+  "database_worker": "Windows project venv via WSL interop; PostgreSQL remains localhost-only",
+  "archive_sha256": "6775a19d38b29f363b025bf7676c2d21268b831c4afa44e92f00a17b2259ad2d",
+  "file_publication_before": {
+    "run_id": "stage-c-verified"
+  },
+  "database_before": {
+    "status": "SUCCESS",
+    "formal_database_run_id": "stage-c-verified"
+  },
+  "airflow_version": "2.11.2",
+  "dagbag": "PASSED",
+  "error_type": "RuntimeError"
+}

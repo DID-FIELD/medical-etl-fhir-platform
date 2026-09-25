@@ -25,7 +25,13 @@ Thumbs.db
 
 # Logs
 *.log
+# Small archived acceptance logs linked by the teaching documentation.
+!docs/stage-*/**/*.log
 
 # Office documents and temporary lock files
 *.docx
 ~$*
+
+.venv/
+data/external/
+data/generated/

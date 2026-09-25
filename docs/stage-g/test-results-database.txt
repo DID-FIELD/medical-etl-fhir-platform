@@ -1,0 +1,1260 @@
+[Publication note: local database password redacted; original retained in ignored local output.]
+...........................FEFEFEFEFE.................................F. [ 84%]
+..........FEFE                                                           [100%]
+=================================== ERRORS ====================================
+______ ERROR at teardown of test_streamed_load_batch_rollback_and_replay ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D20866AD70>
+
+    @pytest.fixture
+    def isolated(monkeypatch):
+        if os.getenv('RUN_DATABASE_TESTS') != '1':
+            pytest.skip('Requires project PostgreSQL')
+        schema = 'synthea_test_stream_' + uuid4().hex[:12]
+        monkeypatch.setattr(store,'SCHEMA',schema)
+        yield schema
+>       conn=store.get_connection()
+             ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_streaming_database.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+____ ERROR at teardown of test_rehashed_invalid_snapshot_rolls_back[count] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D248A0C180>
+
+    @pytest.fixture
+    def isolated(monkeypatch):
+        if os.getenv('RUN_DATABASE_TESTS') != '1':
+            pytest.skip('Requires project PostgreSQL')
+        schema = 'synthea_test_stream_' + uuid4().hex[:12]
+        monkeypatch.setattr(store,'SCHEMA',schema)
+        yield schema
+>       conn=store.get_connection()
+             ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_streaming_database.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+_ ERROR at teardown of test_rehashed_invalid_snapshot_rolls_back[source_row] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D266175EB0>
+
+    @pytest.fixture
+    def isolated(monkeypatch):
+        if os.getenv('RUN_DATABASE_TESTS') != '1':
+            pytest.skip('Requires project PostgreSQL')
+        schema = 'synthea_test_stream_' + uuid4().hex[:12]
+        monkeypatch.setattr(store,'SCHEMA',schema)
+        yield schema
+>       conn=store.get_connection()
+             ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_streaming_database.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+__ ERROR at teardown of test_rehashed_invalid_snapshot_rolls_back[aggregate] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D248A6C6B0>
+
+    @pytest.fixture
+    def isolated(monkeypatch):
+        if os.getenv('RUN_DATABASE_TESTS') != '1':
+            pytest.skip('Requires project PostgreSQL')
+        schema = 'synthea_test_stream_' + uuid4().hex[:12]
+        monkeypatch.setattr(store,'SCHEMA',schema)
+        yield schema
+>       conn=store.get_connection()
+             ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_streaming_database.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+__ ERROR at teardown of test_rehashed_invalid_snapshot_rolls_back[bad_json] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D248A6CAF0>
+
+    @pytest.fixture
+    def isolated(monkeypatch):
+        if os.getenv('RUN_DATABASE_TESTS') != '1':
+            pytest.skip('Requires project PostgreSQL')
+        schema = 'synthea_test_stream_' + uuid4().hex[:12]
+        monkeypatch.setattr(store,'SCHEMA',schema)
+        yield schema
+>       conn=store.get_connection()
+             ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_streaming_database.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+_ ERROR at teardown of test_database_failure_reader_visibility_retry_and_old_replay _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D248A7A690>
+
+    @pytest.fixture
+    def isolated_database(monkeypatch):
+        if os.getenv('RUN_DATABASE_TESTS') != '1': pytest.skip('Requires project PostgreSQL')
+        schema = 'synthea_test_d_' + uuid4().hex[:12]
+        monkeypatch.setattr(store, 'SCHEMA', schema)
+        try: yield schema
+        finally:
+>           conn = store.get_connection()
+                   ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_synthea_reliability.py:104: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+_ ERROR at teardown of test_file_success_database_unavailable_then_load_existing_snapshot _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D248A26690>
+
+    @pytest.fixture
+    def isolated_database(monkeypatch):
+        if os.getenv('RUN_DATABASE_TESTS') != '1': pytest.skip('Requires project PostgreSQL')
+        schema = 'synthea_test_d_' + uuid4().hex[:12]
+        monkeypatch.setattr(store, 'SCHEMA', schema)
+        try: yield schema
+        finally:
+>           conn = store.get_connection()
+                   ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_synthea_reliability.py:104: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+================================== FAILURES ===================================
+________________ test_streamed_load_batch_rollback_and_replay _________________
+
+tmp_path = WindowsPath('C:/Users/DID/AppData/Local/Temp/pytest-of-DID/pytest-29/test_streamed_load_batch_rollb0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D20866AD70>
+isolated = 'synthea_test_stream_884046c23a17'
+
+    def test_streamed_load_batch_rollback_and_replay(tmp_path, monkeypatch, isolated):
+        from api.main import app
+        source=archive(tmp_path,fixture_sources()); root=tmp_path/'files'
+        for name in ['old','new']:
+            run(source,root,name)
+>       assert store.load_run(root/'runs/old',batch_rows=2)['status']=='PUBLISHED'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_streaming_database.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:65: in load_run
+    return streaming_load(run_dir, store=sys.modules[__name__],
+src\database\streaming_load.py:72: in load_run
+    run_id = manifest['run_id']; conn = (connection_factory or store.get_connection)()
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+______________ test_rehashed_invalid_snapshot_rolls_back[count] _______________
+
+tmp_path = WindowsPath('C:/Users/DID/AppData/Local/Temp/pytest-of-DID/pytest-29/test_rehashed_invalid_snapshot0')
+isolated = 'synthea_test_stream_b15b3bd0d1c4', problem = 'count'
+
+    @pytest.mark.parametrize('problem',['count','source_row','aggregate','bad_json'])
+    def test_rehashed_invalid_snapshot_rolls_back(tmp_path, isolated, problem):
+        source=archive(tmp_path,fixture_sources()); root=tmp_path/'files'
+        for name in ['good','bad']:
+            run(source,root,name)
+>       store.load_run(root/'runs/good',batch_rows=2)
+
+tests\test_streaming_database.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:65: in load_run
+    return streaming_load(run_dir, store=sys.modules[__name__],
+src\database\streaming_load.py:72: in load_run
+    run_id = manifest['run_id']; conn = (connection_factory or store.get_connection)()
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+____________ test_rehashed_invalid_snapshot_rolls_back[source_row] ____________
+
+tmp_path = WindowsPath('C:/Users/DID/AppData/Local/Temp/pytest-of-DID/pytest-29/test_rehashed_invalid_snapshot1')
+isolated = 'synthea_test_stream_fe28dbfb539b', problem = 'source_row'
+
+    @pytest.mark.parametrize('problem',['count','source_row','aggregate','bad_json'])
+    def test_rehashed_invalid_snapshot_rolls_back(tmp_path, isolated, problem):
+        source=archive(tmp_path,fixture_sources()); root=tmp_path/'files'
+        for name in ['good','bad']:
+            run(source,root,name)
+>       store.load_run(root/'runs/good',batch_rows=2)
+
+tests\test_streaming_database.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:65: in load_run
+    return streaming_load(run_dir, store=sys.modules[__name__],
+src\database\streaming_load.py:72: in load_run
+    run_id = manifest['run_id']; conn = (connection_factory or store.get_connection)()
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+____________ test_rehashed_invalid_snapshot_rolls_back[aggregate] _____________
+
+tmp_path = WindowsPath('C:/Users/DID/AppData/Local/Temp/pytest-of-DID/pytest-29/test_rehashed_invalid_snapshot2')
+isolated = 'synthea_test_stream_6bf20fe37ec1', problem = 'aggregate'
+
+    @pytest.mark.parametrize('problem',['count','source_row','aggregate','bad_json'])
+    def test_rehashed_invalid_snapshot_rolls_back(tmp_path, isolated, problem):
+        source=archive(tmp_path,fixture_sources()); root=tmp_path/'files'
+        for name in ['good','bad']:
+            run(source,root,name)
+>       store.load_run(root/'runs/good',batch_rows=2)
+
+tests\test_streaming_database.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:65: in load_run
+    return streaming_load(run_dir, store=sys.modules[__name__],
+src\database\streaming_load.py:72: in load_run
+    run_id = manifest['run_id']; conn = (connection_factory or store.get_connection)()
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+_____________ test_rehashed_invalid_snapshot_rolls_back[bad_json] _____________
+
+tmp_path = WindowsPath('C:/Users/DID/AppData/Local/Temp/pytest-of-DID/pytest-29/test_rehashed_invalid_snapshot3')
+isolated = 'synthea_test_stream_bc8a614ce5ab', problem = 'bad_json'
+
+    @pytest.mark.parametrize('problem',['count','source_row','aggregate','bad_json'])
+    def test_rehashed_invalid_snapshot_rolls_back(tmp_path, isolated, problem):
+        source=archive(tmp_path,fixture_sources()); root=tmp_path/'files'
+        for name in ['good','bad']:
+            run(source,root,name)
+>       store.load_run(root/'runs/good',batch_rows=2)
+
+tests\test_streaming_database.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:65: in load_run
+    return streaming_load(run_dir, store=sys.modules[__name__],
+src\database\streaming_load.py:72: in load_run
+    run_id = manifest['run_id']; conn = (connection_factory or store.get_connection)()
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+_______________ test_postgres_api_rollback_and_idempotent_load ________________
+
+tmp_path = WindowsPath('C:/Users/DID/AppData/Local/Temp/pytest-of-DID/pytest-29/test_postgres_api_rollback_and0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D208667B60>
+
+    @pytest.mark.skipif(os.getenv('RUN_DATABASE_TESTS')!='1',reason='Requires project PostgreSQL; opt in with RUN_DATABASE_TESTS=1')
+    def test_postgres_api_rollback_and_idempotent_load(tmp_path,monkeypatch):
+        from api.main import app
+        schema='synthea_test_'+uuid4().hex[:12]
+        monkeypatch.setattr(store,'SCHEMA',schema)
+        source=archive(tmp_path,fixture_sources());root=tmp_path/'warehouse'
+        run(source,root,'good');run(source,root,'retry')
+        try:
+>           assert store.load_run(root/'runs/good')['status']=='PUBLISHED'
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_synthea_pipeline.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:65: in load_run
+    return streaming_load(run_dir, store=sys.modules[__name__],
+src\database\streaming_load.py:72: in load_run
+    run_id = manifest['run_id']; conn = (connection_factory or store.get_connection)()
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = WindowsPath('C:/Users/DID/AppData/Local/Temp/pytest-of-DID/pytest-29/test_postgres_api_rollback_and0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D208667B60>
+
+    @pytest.mark.skipif(os.getenv('RUN_DATABASE_TESTS')!='1',reason='Requires project PostgreSQL; opt in with RUN_DATABASE_TESTS=1')
+    def test_postgres_api_rollback_and_idempotent_load(tmp_path,monkeypatch):
+        from api.main import app
+        schema='synthea_test_'+uuid4().hex[:12]
+        monkeypatch.setattr(store,'SCHEMA',schema)
+        source=archive(tmp_path,fixture_sources());root=tmp_path/'warehouse'
+        run(source,root,'good');run(source,root,'retry')
+        try:
+            assert store.load_run(root/'runs/good')['status']=='PUBLISHED'
+            assert store.load_run(root/'runs/good')['status']=='ALREADY_LOADED'
+            with TestClient(app) as client:
+                assert client.get('/api/synthea/status').json()['run_id']=='good'
+                response=client.get('/api/synthea/patients/'+key('patient','p2'))
+                assert response.status_code==200 and response.json()['exam_count']==0
+                assert client.get('/api/synthea/patients/missing').status_code==404
+                assert client.get('/api/synthea/patients/'+key('patient','p1')+'/studies').json()['total']==1
+                assert len(client.get('/api/synthea/studies/'+key('study','s1')+'/lineage').json()['instances'])==3
+            original=store.execute_values
+            def failing(cur,statement,*args,**kwargs):
+                if 'dwd_imaging_instance' in statement.as_string(cur):raise RuntimeError('injected_write_failure')
+                return original(cur,statement,*args,**kwargs)
+            monkeypatch.setattr(store,'execute_values',failing)
+            with pytest.raises(RuntimeError,match='injected_write_failure'):store.load_run(root/'runs/retry')
+            with store.get_connection() as conn:
+                with conn.cursor() as cur:
+                    cur.execute(sql.SQL('SELECT run_id FROM {}.current_snapshot').format(sql.Identifier(schema)))
+                    assert cur.fetchone()[0]=='good'
+                    cur.execute(sql.SQL('SELECT count(*) FROM {}.pipeline_runs').format(sql.Identifier(schema)))
+                    assert cur.fetchone()[0]==1
+            monkeypatch.setattr(store,'execute_values',original)
+            assert store.load_run(root/'runs/retry')['status']=='PUBLISHED'
+            assert TestClient(app).get('/api/synthea/status').json()['run_id']=='retry'
+        finally:
+>           conn=store.get_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_synthea_pipeline.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+________ test_database_failure_reader_visibility_retry_and_old_replay _________
+
+tmp_path = WindowsPath('C:/Users/DID/AppData/Local/Temp/pytest-of-DID/pytest-29/test_database_failure_reader_v0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D248A7A690>
+isolated_database = 'synthea_test_d_84800323efcb'
+
+    def test_database_failure_reader_visibility_retry_and_old_replay(tmp_path, monkeypatch, isolated_database):
+        from api.main import app
+        source = archive(tmp_path, fixture_sources())
+        root = tmp_path / 'warehouse'
+        for name in ['old', 'new']: pipeline.run(source, root, name)
+>       store.load_run(root / 'runs/old')
+
+tests\test_synthea_reliability.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:65: in load_run
+    return streaming_load(run_dir, store=sys.modules[__name__],
+src\database\streaming_load.py:72: in load_run
+    run_id = manifest['run_id']; conn = (connection_factory or store.get_connection)()
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+_____ test_file_success_database_unavailable_then_load_existing_snapshot ______
+
+tmp_path = WindowsPath('C:/Users/DID/AppData/Local/Temp/pytest-of-DID/pytest-29/test_file_success_database_una0')
+isolated_database = 'synthea_test_d_adebec9f0fe8'
+
+    def test_file_success_database_unavailable_then_load_existing_snapshot(tmp_path, isolated_database):
+        import psycopg2
+        from api.main import app
+        root = tmp_path / 'warehouse'
+        source = archive(tmp_path, fixture_sources())
+        pipeline.run(source, root, 'old')
+>       store.load_run(root / 'runs/old')
+
+tests\test_synthea_reliability.py:156: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\database\synthea_store.py:65: in load_run
+    return streaming_load(run_dir, store=sys.modules[__name__],
+src\database\streaming_load.py:72: in load_run
+    run_id = manifest['run_id']; conn = (connection_factory or store.get_connection)()
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\database\synthea_store.py:21: in get_connection
+    return psycopg2.connect(**json.loads(config_path.read_text(encoding='utf-8')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dsn = 'host=127.0.0.1 port=55432 user=medical_local password=[REDACTED_LOCAL_DATABASE_PASSWORD] dbname=medical_etl connect_timeout=5'
+connection_factory = None, cursor_factory = None
+kwargs = {'host': '127.0.0.1', 'port': 55432, 'user': 'medical_local', 'password': '[REDACTED_LOCAL_DATABASE_PASSWORD]', ...}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "127.0.0.1", port 55432 failed: Connection refused (0x0000274D/10061)
+E       	Is the server running on that host and accepting TCP/IP connections?
+
+.venv\Lib\site-packages\psycopg2\__init__.py:135: OperationalError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  F:\project\medical-etl-fhir-platform\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+.venv\Lib\site-packages\starlette\testclient.py:53
+  F:\project\medical-etl-fhir-platform\.venv\Lib\site-packages\starlette\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_streaming_database.py::test_streamed_load_batch_rollback_and_replay
+FAILED tests/test_streaming_database.py::test_rehashed_invalid_snapshot_rolls_back[count]
+FAILED tests/test_streaming_database.py::test_rehashed_invalid_snapshot_rolls_back[source_row]
+FAILED tests/test_streaming_database.py::test_rehashed_invalid_snapshot_rolls_back[aggregate]
+FAILED tests/test_streaming_database.py::test_rehashed_invalid_snapshot_rolls_back[bad_json]
+FAILED tests/test_synthea_pipeline.py::test_postgres_api_rollback_and_idempotent_load
+FAILED tests/test_synthea_reliability.py::test_database_failure_reader_visibility_retry_and_old_replay
+FAILED tests/test_synthea_reliability.py::test_file_success_database_unavailable_then_load_existing_snapshot
+ERROR tests/test_streaming_database.py::test_streamed_load_batch_rollback_and_replay
+ERROR tests/test_streaming_database.py::test_rehashed_invalid_snapshot_rolls_back[count]
+ERROR tests/test_streaming_database.py::test_rehashed_invalid_snapshot_rolls_back[source_row]
+ERROR tests/test_streaming_database.py::test_rehashed_invalid_snapshot_rolls_back[aggregate]
+ERROR tests/test_streaming_database.py::test_rehashed_invalid_snapshot_rolls_back[bad_json]
+ERROR tests/test_synthea_reliability.py::test_database_failure_reader_visibility_retry_and_old_replay
+ERROR tests/test_synthea_reliability.py::test_file_success_database_unavailable_then_load_existing_snapshot
+8 failed, 71 passed, 2 warnings, 7 errors in 44.08s

@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-24",
+  "chapters": 15,
+  "local_links_checked": 388,
+  "broken_links": [],
+  "rebuild_byte_identical": true,
+  "browser": "Edge headless",
+  "widths": [
+    1366,
+    390
+  ],
+  "views": 30,
+  "layout_failures": [],
+  "visual_review": [
+    "390px chapter 14 bottom, including Spark heap case"
+  ],
+  "evidence_directory": "output/html-stage-m-r4-qa-20260924",
+  "stage_m_acceptance": "PENDING; r5 running"
+}

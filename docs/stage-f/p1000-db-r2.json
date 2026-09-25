@@ -1,0 +1,102 @@
+{
+  "status": "SUCCESS",
+  "schema": "synthea_scale_db_20260920",
+  "run_dir": "output\\scale-stream-final\\runs\\p1000-stream-local-r1",
+  "official_before": "stage-c-verified",
+  "isolated_before": "p1000-stream-local-r1",
+  "client_rss_limit_bytes": 524288000,
+  "measurement": {
+    "command": [
+      "F:\\project\\medical-etl-fhir-platform\\.venv\\Scripts\\python.exe",
+      "-m",
+      "scripts.verify_database_scale",
+      "--run-dir",
+      "F:\\project\\medical-etl-fhir-platform\\output\\scale-stream-final\\runs\\p1000-stream-local-r1",
+      "--schema",
+      "synthea_scale_db_20260920",
+      "--result",
+      "F:\\project\\medical-etl-fhir-platform\\output\\database-scale\\p1000-db-r2\\result.json"
+    ],
+    "exit_code": 0,
+    "seconds": 9.561,
+    "sampled_peak_tree_rss_bytes": 126328832,
+    "memory_method": "sum of launcher and descendant RSS sampled every 250ms; shared pages may be counted twice",
+    "minimum_available_memory_bytes": 5656981504,
+    "stop_reason": null,
+    "log": "output\\database-scale\\p1000-db-r2\\worker.log"
+  },
+  "worker": {
+    "status": "SUCCESS",
+    "schema": "synthea_scale_db_20260920",
+    "run_id": "p1000-stream-local-r1",
+    "code_sha256": {
+      "src/database/streaming_load.py": "0227dcff958be2944032fc54054bbef219df7c624f149c5d01679646b5d29623",
+      "src/database/synthea_store.py": "92ecad0086732e113f9c391f9185a818697cf655f90a3a365a472a2553adf48f",
+      "src/json_stream.py": "744f82983ed7106d5842e021c0a0d03cce89b03f46ed755b2b56300edd87dd38",
+      "api/synthea.py": "917193e61e8584326de43e37a4c7e7c1313798a12f351ec719a99fdc5f6af123",
+      "scripts/verify_database_scale.py": "99e378ba1f3c52a68e6041adcb6c822bc6e6e4e06af7c19a54851287462c4e1b"
+    },
+    "load": {
+      "run_id": "p1000-stream-local-r1",
+      "status": "ALREADY_LOADED"
+    },
+    "load_wall_seconds": 0.186,
+    "api_checks": {
+      "api_status": true,
+      "patient_profiles": true,
+      "patient_studies": true,
+      "lineage": true,
+      "unknown_patient_404": true
+    },
+    "api_latency": {
+      "status": {
+        "requests": 1,
+        "min_ms": 49.696,
+        "median_ms": 49.696,
+        "p95_ms": 49.696,
+        "max_ms": 49.696
+      },
+      "patient": {
+        "requests": 60,
+        "min_ms": 43.473,
+        "median_ms": 46.178,
+        "p95_ms": 146.088,
+        "max_ms": 150.196
+      },
+      "studies": {
+        "requests": 60,
+        "min_ms": 44.064,
+        "median_ms": 46.73,
+        "p95_ms": 144.704,
+        "max_ms": 153.304
+      },
+      "lineage": {
+        "requests": 10,
+        "min_ms": 46.207,
+        "median_ms": 48.234,
+        "p95_ms": 154.837,
+        "max_ms": 154.837
+      },
+      "missing": {
+        "requests": 1,
+        "min_ms": 62.245,
+        "median_ms": 62.245,
+        "p95_ms": 62.245,
+        "max_ms": 62.245
+      }
+    },
+    "sampled_patients": 60,
+    "sampled_zero_exam_patients": 10,
+    "sampled_studies": 10,
+    "api_method": "Serial ASGI TestClient with real PostgreSQL; not HTTP concurrency or throughput"
+  },
+  "postgres_server": {
+    "sampled_peak_tree_rss_bytes": 407404544,
+    "sample_count": 36,
+    "errors": 0
+  },
+  "isolated_after": "p1000-stream-local-r1",
+  "official_after": "stage-c-verified",
+  "memory_scope": "500 MiB guards the loader/API client tree only. Independent PostgreSQL server sampled separately; shared mappings counted per process, not exclusive RAM.",
+  "database_publication_observed": true
+}

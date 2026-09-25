@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": "attempt-0001",
+      "consumer_status": "RUNNING",
+      "files": [
+        {
+          "name": "Encounter.ndjson",
+          "bytes": 277283445,
+          "complete_lines": 636710,
+          "ends_with_newline": true
+        },
+        {
+          "name": "Patient.ndjson",
+          "bytes": 1228010,
+          "complete_lines": 11476,
+          "ends_with_newline": true
+        }
+      ],
+      "indexes": [
+        {
+          "bytes": 418967552,
+          "path": "output\\full-consumers-p10000-r2\\results\\f6014750f4b58739ab104662f39d554277bde2583e167ac58ea2963286b9f66b\\fhir\\attempt-0001\\fhir\\.fhir-4ljvud_a\\index.sqlite"
+        }
+      ]
+    },
+    {
+      "attempt": "attempt-0002",
+      "consumer_status": "RUNNING",
+      "files": [
+        {
+          "name": "Encounter.ndjson",
+          "bytes": 176402260,
+          "complete_lines": 405061,
+          "ends_with_newline": true
+        },
+        {
+          "name": "Patient.ndjson",
+          "bytes": 1228010,
+          "complete_lines": 11476,
+          "ends_with_newline": true
+        }
+      ],
+      "indexes": [
+        {
+          "bytes": 268644352,
+          "path": "output\\full-consumers-p10000-r2\\results\\f6014750f4b58739ab104662f39d554277bde2583e167ac58ea2963286b9f66b\\fhir\\attempt-0002\\fhir\\.fhir-fk4gyu36\\index.sqlite"
+        }
+      ]
+    }
+  ]
+}

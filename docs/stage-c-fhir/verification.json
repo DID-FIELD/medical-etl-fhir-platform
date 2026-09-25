@@ -1,0 +1,37 @@
+{
+  "status": "SUCCESS",
+  "fhir_version": "4.3.0",
+  "mapping_version": "synthea-summary-v1",
+  "source_run_id": "stage-c-verified",
+  "source_manifest_sha256": "4da1ad058f4020b43f8cfa484a9da36e88befc43dc87dd99677f005895715510",
+  "exporter_sha256": "723640df6c7b47a55ad9543fe96005cedb49a9fc15e8cde743f3d5b6acc07a2b",
+  "fhir_resources_version": "8.2.0",
+  "created_at": "2026-09-20T11:54:11.397217+00:00",
+  "counts": {
+    "Patient": 108,
+    "Encounter": 5571,
+    "ImagingStudy": 413
+  },
+  "checks": {
+    "Patient.ids_and_counts": true,
+    "Encounter.ids_and_counts": true,
+    "ImagingStudy.ids_and_counts": true,
+    "encounter_patient_references": true,
+    "study_references_and_patient_match": true,
+    "warehouse_mapping_matches": true,
+    "no_invented_dicom_uid_or_endpoint": true,
+    "patient_minimum_fields": true,
+    "ndjson_readback": true
+  },
+  "artifacts": {
+    "Patient.ndjson": "77dde05f35ef26e655e0910ce57b4126da2aad03144c5a5992b14a9ef8c9a2b1",
+    "Encounter.ndjson": "3585929fb9b6fbb3a9a3d3d172f0bdf8d05702723266d0deafb2be86cd53c51b",
+    "ImagingStudy.ndjson": "3ed7f8daba6eb2bd4d105e7a159a0bd42949f737fd3bed6607d400302997aeba"
+  },
+  "summary_only_studies": 413,
+  "limitations": [
+    "No source DICOM StudyInstanceUID: no series or DICOM identifiers exported.",
+    "R4B Python models and project invariants only; no HL7 validator or terminology service.",
+    "NDJSON file export only, not a FHIR server or Bulk Data protocol."
+  ]
+}

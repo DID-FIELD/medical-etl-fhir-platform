@@ -1,0 +1,469 @@
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+[2026-09-23T12:56:36.102+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.schemas
+[2026-09-23T12:56:36.103+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.tables
+[2026-09-23T12:56:36.103+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.types
+[2026-09-23T12:56:36.103+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.constraints
+[2026-09-23T12:56:36.103+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.defaults
+[2026-09-23T12:56:36.103+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.comments
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[2026-09-23T12:56:36.242+0800] {executor_loader.py:258} INFO - Loaded executor: SequentialExecutor
+[2026-09-23 12:56:36 +0800] [3773] [INFO] Starting gunicorn 25.1.0
+[2026-09-23 12:56:36 +0800] [3773] [INFO] Listening at: http://[::]:8793 (3773)
+[2026-09-23 12:56:36 +0800] [3773] [INFO] Using worker: sync
+[2026-09-23 12:56:36 +0800] [3773] [INFO] Control socket listening at /opt/medical-etl-airflow/runs/full-consumers-p10000-r3/gunicorn.ctl
+[2026-09-23 12:56:36 +0800] [3775] [INFO] Booting worker with pid: 3775
+[2026-09-23 12:56:36 +0800] [3776] [INFO] Booting worker with pid: 3776
+[2026-09-23T12:56:36.576+0800] {scheduler_job_runner.py:959} INFO - Starting the scheduler
+[2026-09-23T12:56:36.577+0800] {scheduler_job_runner.py:966} INFO - Processing each file at most -1 times
+[2026-09-23T12:56:36.606+0800] {manager.py:174} INFO - Launched DagFileProcessorManager with pid: 3777
+[2026-09-23T12:56:36.607+0800] {scheduler_job_runner.py:1993} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2026-09-23T12:56:36.620+0800] {settings.py:63} INFO - Configured default timezone UTC
+[2026-09-23T12:56:36.633+0800] {manager.py:406} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+[2026-09-23T12:56:37.222+0800] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: synthea_full_consumers_retry_acceptance.verify_inputs manual__full-consumers-p10000-r3 [scheduled]>
+[2026-09-23T12:56:37.223+0800] {scheduler_job_runner.py:507} INFO - DAG synthea_full_consumers_retry_acceptance has 0/16 running and queued tasks
+[2026-09-23T12:56:37.223+0800] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: synthea_full_consumers_retry_acceptance.verify_inputs manual__full-consumers-p10000-r3 [scheduled]>
+[2026-09-23T12:56:37.223+0800] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: synthea_full_consumers_retry_acceptance.verify_inputs manual__full-consumers-p10000-r3 [scheduled]>] for executor: SequentialExecutor(parallelism=1)
+[2026-09-23T12:56:37.224+0800] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='synthea_full_consumers_retry_acceptance', task_id='verify_inputs', run_id='manual__full-consumers-p10000-r3', try_number=1, map_index=-1) to SequentialExecutor with priority 4 and queue default
+[2026-09-23T12:56:37.224+0800] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'synthea_full_consumers_retry_acceptance', 'verify_inputs', 'manual__full-consumers-p10000-r3', '--local', '--subdir', 'DAGS_FOLDER/full_consumers_retry_dag.py']
+[2026-09-23T12:56:37.381+0800] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'synthea_full_consumers_retry_acceptance', 'verify_inputs', 'manual__full-consumers-p10000-r3', '--local', '--subdir', 'DAGS_FOLDER/full_consumers_retry_dag.py']
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+[2026-09-23T12:56:38.143+0800] {dagbag.py:588} INFO - Filling up the DagBag from /opt/medical-etl-airflow/runs/full-consumers-p10000-r3/airflow/dags/full_consumers_retry_dag.py
+[2026-09-23T12:56:38.277+0800] {task_command.py:467} INFO - Running <TaskInstance: synthea_full_consumers_retry_acceptance.verify_inputs manual__full-consumers-p10000-r3 [queued]> on host LAPTOP-LO2NU7PH.localdomain
+[2026-09-23T12:56:46.189+0800] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='synthea_full_consumers_retry_acceptance', task_id='verify_inputs', run_id='manual__full-consumers-p10000-r3', try_number=1, map_index=-1)
+[2026-09-23T12:56:46.193+0800] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=synthea_full_consumers_retry_acceptance, task_id=verify_inputs, run_id=manual__full-consumers-p10000-r3, map_index=-1, run_start_date=2026-09-23 04:56:38.400310+00:00, run_end_date=2026-09-23 04:56:45.597689+00:00, run_duration=7.197379, state=success, executor=SequentialExecutor(parallelism=1), executor_state=success, try_number=1, max_tries=1, job_id=2, pool=default_pool, queue=default, priority_weight=4, operator=PythonOperator, queued_dttm=2026-09-23 04:56:37.223415+00:00, queued_by_job_id=1, pid=3781
+[2026-09-23T12:56:46.666+0800] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p10000-r3 [scheduled]>
+[2026-09-23T12:56:46.666+0800] {scheduler_job_runner.py:507} INFO - DAG synthea_full_consumers_retry_acceptance has 0/16 running and queued tasks
+[2026-09-23T12:56:46.666+0800] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p10000-r3 [scheduled]>
+[2026-09-23T12:56:46.667+0800] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p10000-r3 [scheduled]>] for executor: SequentialExecutor(parallelism=1)
+[2026-09-23T12:56:46.667+0800] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='synthea_full_consumers_retry_acceptance', task_id='full_spark_etl', run_id='manual__full-consumers-p10000-r3', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2026-09-23T12:56:46.667+0800] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'synthea_full_consumers_retry_acceptance', 'full_spark_etl', 'manual__full-consumers-p10000-r3', '--local', '--subdir', 'DAGS_FOLDER/full_consumers_retry_dag.py']
+[2026-09-23T12:56:46.768+0800] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'synthea_full_consumers_retry_acceptance', 'full_spark_etl', 'manual__full-consumers-p10000-r3', '--local', '--subdir', 'DAGS_FOLDER/full_consumers_retry_dag.py']
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+[2026-09-23T12:56:47.507+0800] {dagbag.py:588} INFO - Filling up the DagBag from /opt/medical-etl-airflow/runs/full-consumers-p10000-r3/airflow/dags/full_consumers_retry_dag.py
+[2026-09-23T12:56:47.619+0800] {task_command.py:467} INFO - Running <TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p10000-r3 [queued]> on host LAPTOP-LO2NU7PH.localdomain
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/23 12:58:03 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 3:>                                                          (0 + 1) / 1]                                                                                [Stage 11:>                                                         (0 + 2) / 4][Stage 11:=============================>                            (2 + 2) / 4]                                                                                [Stage 17:>                                                         (0 + 2) / 2][Stage 17:>                 (0 + 2) / 2][Stage 19:>                 (0 + 0) / 4]                                                                                [Stage 20:>                 (0 + 2) / 2][Stage 22:>                 (0 + 0) / 2][Stage 20:=========>        (1 + 1) / 2][Stage 22:>                 (0 + 1) / 2][Stage 22:>                                                         (0 + 2) / 2][Stage 26:>                                                         (0 + 2) / 4][Stage 26:==============>                                           (1 + 2) / 4][Stage 26:=============================>                            (2 + 2) / 4][Stage 26:===========================================>              (3 + 1) / 4]                                                                                [Stage 36:>   (0 + 2) / 2][Stage 38:>   (0 + 0) / 4][Stage 42:>   (0 + 0) / 4]                                                                                [Stage 43:>                 (0 + 2) / 2][Stage 45:>                 (0 + 0) / 3][Stage 43:=========>        (1 + 1) / 2][Stage 45:>                 (0 + 1) / 3][Stage 45:>                                                         (0 + 2) / 3][Stage 45:======================================>                   (2 + 1) / 3][Stage 51:>                                                         (0 + 2) / 4][Stage 51:=============================>                            (2 + 2) / 4][Stage 60:>                                                         (0 + 2) / 4][Stage 60:==============>                                           (1 + 2) / 4][Stage 60:=============================>                            (2 + 2) / 4][Stage 60:===========================================>              (3 + 1) / 4]                                                                                [Stage 88:>   (0 + 2) / 4][Stage 89:>   (0 + 0) / 4][Stage 90:>   (0 + 0) / 4][Stage 88:==> (2 + 2) / 4][Stage 89:>   (0 + 0) / 4][Stage 90:>   (0 + 0) / 4][Stage 89:>   (0 + 2) / 4][Stage 90:>   (0 + 0) / 4][Stage 91:>   (0 + 0) / 4][Stage 89:=>  (1 + 2) / 4][Stage 90:>   (0 + 0) / 4][Stage 91:>   (0 + 0) / 4][Stage 89:===>(3 + 1) / 4][Stage 90:>   (0 + 1) / 4][Stage 91:>   (0 + 0) / 4]26/09/23 12:58:56 ERROR Executor: Exception in task 1.0 in stage 90.0 (TID 72)
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.lang.reflect.Array.newInstance(Array.java:78)
+	at java.base/java.io.ObjectInputStream.readArray(ObjectInputStream.java:2150)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1750)
+	at java.base/java.io.ObjectInputStream.readArray(ObjectInputStream.java:2186)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1750)
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2618)
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2469)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2284)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1762)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:540)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:498)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+	at org.apache.spark.serializer.DeserializationStream$$anon$1.getNext(Serializer.scala:168)
+	at org.apache.spark.util.NextIterator.hasNext(NextIterator.scala:73)
+	at org.apache.spark.storage.memory.MemoryStore.putIterator(MemoryStore.scala:232)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:319)
+	at org.apache.spark.storage.BlockManager.maybeCacheDiskValuesInMemory(BlockManager.scala:1772)
+	at org.apache.spark.storage.BlockManager.getLocalValues(BlockManager.scala:991)
+	at org.apache.spark.storage.BlockManager.get(BlockManager.scala:1310)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:1412)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdateRDDBlock(BlockManager.scala:1378)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:386)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:336)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:374)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:338)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:374)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:338)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:374)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:338)
+26/09/23 12:58:56 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[#80,Executor task launch worker for task 1.0 in stage 90.0 (TID 72),5,main]
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.lang.reflect.Array.newInstance(Array.java:78)
+	at java.base/java.io.ObjectInputStream.readArray(ObjectInputStream.java:2150)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1750)
+	at java.base/java.io.ObjectInputStream.readArray(ObjectInputStream.java:2186)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1750)
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2618)
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2469)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2284)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1762)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:540)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:498)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+	at org.apache.spark.serializer.DeserializationStream$$anon$1.getNext(Serializer.scala:168)
+	at org.apache.spark.util.NextIterator.hasNext(NextIterator.scala:73)
+	at org.apache.spark.storage.memory.MemoryStore.putIterator(MemoryStore.scala:232)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:319)
+	at org.apache.spark.storage.BlockManager.maybeCacheDiskValuesInMemory(BlockManager.scala:1772)
+	at org.apache.spark.storage.BlockManager.getLocalValues(BlockManager.scala:991)
+	at org.apache.spark.storage.BlockManager.get(BlockManager.scala:1310)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:1412)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdateRDDBlock(BlockManager.scala:1378)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:386)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:336)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:374)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:338)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:374)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:338)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:374)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:338)
+26/09/23 12:58:56 ERROR Inbox: Ignoring error
+java.util.concurrent.RejectedExecutionException: Task org.apache.spark.executor.Executor$TaskRunner@7778ac1d rejected from java.util.concurrent.ThreadPoolExecutor@19e3f6f9[Shutting down, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 71]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2081)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1376)
+	at org.apache.spark.executor.Executor.launchTask(Executor.scala:383)
+	at org.apache.spark.scheduler.local.LocalEndpoint.$anonfun$reviveOffers$1(LocalSchedulerBackend.scala:97)
+	at org.apache.spark.scheduler.local.LocalEndpoint.$anonfun$reviveOffers$1$adapted(LocalSchedulerBackend.scala:95)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:2125)
+	at org.apache.spark.scheduler.local.LocalEndpoint.reviveOffers(LocalSchedulerBackend.scala:95)
+	at org.apache.spark.scheduler.local.LocalEndpoint$$anonfun$receive$1.applyOrElse(LocalSchedulerBackend.scala:76)
+	at org.apache.spark.rpc.netty.Inbox.$anonfun$process$1(Inbox.scala:116)
+	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:216)
+	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:101)
+	at org.apache.spark.rpc.netty.MessageLoop.org$apache$spark$rpc$netty$MessageLoop$$receiveLoop(MessageLoop.scala:76)
+	at org.apache.spark.rpc.netty.MessageLoop$$anon$1.run(MessageLoop.scala:42)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+26/09/23 12:58:56 ERROR TaskSetManager: Task 1 in stage 90.0 failed 1 times; aborting job
+26/09/23 12:58:56 ERROR Executor: Exception in task 0.0 in stage 90.0 (TID 71): /tmp/blockmgr-5cba6835-3bf5-4928-81e6-ea2ef20f448f/19/shuffle_16_71_0.data.770ce5a5-88a0-4699-b01b-d04791c55523 (No such file or directory)
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 38226)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/accumulators.py", line 299, in handle
+    poll(accum_updates)
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/accumulators.py", line 271, in poll
+    if self.rfile in r and func():
+                           ^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/accumulators.py", line 275, in accum_updates
+    num_updates = read_int(self.rfile)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/serializers.py", line 597, in read_int
+    raise EOFError
+EOFError
+----------------------------------------
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/project/src/spark/synthea_full.py", line 128, in run
+    tables, ledger, warnings, persisted = transform_frames(spark, output / 'staged', inventory, birth_date_offset)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/spark/synthea_etl.py", line 75, in transform_frames
+    images = hold(images.join(bad_studies, '_study', 'left')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/spark/synthea_etl.py", line 29, in hold
+    frame.count()
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/sql/classic/dataframe.py", line 439, in count
+    return int(self._jdf.count())
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/errors/exceptions/captured.py", line 282, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/protocol.py", line 327, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: <exception str() failed>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/clientserver.py", line 540, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/medical-etl-airflow/project/src/spark_full_workflow.py", line 102, in <module>
+    result = run_attempt(args.archive, args.baseline, args.output_root, args.run_id,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/spark_full_workflow.py", line 89, in run_attempt
+    run(archive, target, run_id, offset, baseline)
+  File "/opt/medical-etl-airflow/project/src/spark/synthea_full.py", line 163, in run
+    spark.stop()
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/sql/session.py", line 2026, in stop
+    jSparkSessionClass = SparkSession._get_j_spark_session_class(self._jvm)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/sql/session.py", line 668, in _get_j_spark_session_class
+    return getattr(jvm, "org.apache.spark.sql.classic.SparkSession")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1752, in __getattr__
+    answer = self._gateway_client.send_command(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1057, in send_command
+    response = self.send_command(command, retry, binary=binary)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+[2026-09-23T12:58:57.633+0800] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='synthea_full_consumers_retry_acceptance', task_id='full_spark_etl', run_id='manual__full-consumers-p10000-r3', try_number=1, map_index=-1)
+[2026-09-23T12:58:57.635+0800] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=synthea_full_consumers_retry_acceptance, task_id=full_spark_etl, run_id=manual__full-consumers-p10000-r3, map_index=-1, run_start_date=2026-09-23 04:56:47.736308+00:00, run_end_date=2026-09-23 04:58:57.098521+00:00, run_duration=129.362213, state=up_for_retry, executor=SequentialExecutor(parallelism=1), executor_state=success, try_number=1, max_tries=1, job_id=3, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2026-09-23 04:56:46.667102+00:00, queued_by_job_id=1, pid=3786
+[2026-09-23T12:58:57.646+0800] {manager.py:293} ERROR - DagFileProcessorManager (PID=3777) last sent a heartbeat 121.27 seconds ago! Restarting it
+[2026-09-23T12:58:57.647+0800] {process_utils.py:132} INFO - Sending 15 to group 3777. PIDs of all processes in the group: [3777]
+[2026-09-23T12:58:57.647+0800] {process_utils.py:87} INFO - Sending the signal 15 to group 3777
+[2026-09-23T12:58:57.780+0800] {process_utils.py:80} INFO - Process psutil.Process(pid=3777, status='terminated', exitcode=0) (3777) terminated with exit code 0
+[2026-09-23T12:58:57.783+0800] {manager.py:174} INFO - Launched DagFileProcessorManager with pid: 4334
+[2026-09-23T12:58:57.786+0800] {settings.py:63} INFO - Configured default timezone UTC
+[2026-09-23T12:58:57.799+0800] {manager.py:406} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+[2026-09-23T12:58:57.926+0800] {job.py:229} INFO - Heartbeat recovered after 131.72 seconds
+[2026-09-23T12:59:02.222+0800] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p10000-r3 [scheduled]>
+[2026-09-23T12:59:02.222+0800] {scheduler_job_runner.py:507} INFO - DAG synthea_full_consumers_retry_acceptance has 0/16 running and queued tasks
+[2026-09-23T12:59:02.222+0800] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p10000-r3 [scheduled]>
+[2026-09-23T12:59:02.223+0800] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p10000-r3 [scheduled]>] for executor: SequentialExecutor(parallelism=1)
+[2026-09-23T12:59:02.223+0800] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='synthea_full_consumers_retry_acceptance', task_id='full_spark_etl', run_id='manual__full-consumers-p10000-r3', try_number=2, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2026-09-23T12:59:02.223+0800] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'synthea_full_consumers_retry_acceptance', 'full_spark_etl', 'manual__full-consumers-p10000-r3', '--local', '--subdir', 'DAGS_FOLDER/full_consumers_retry_dag.py']
+[2026-09-23T12:59:02.323+0800] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'synthea_full_consumers_retry_acceptance', 'full_spark_etl', 'manual__full-consumers-p10000-r3', '--local', '--subdir', 'DAGS_FOLDER/full_consumers_retry_dag.py']
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+[2026-09-23T12:59:03.096+0800] {dagbag.py:588} INFO - Filling up the DagBag from /opt/medical-etl-airflow/runs/full-consumers-p10000-r3/airflow/dags/full_consumers_retry_dag.py
+[2026-09-23T12:59:03.224+0800] {task_command.py:467} INFO - Running <TaskInstance: synthea_full_consumers_retry_acceptance.full_spark_etl manual__full-consumers-p10000-r3 [queued]> on host LAPTOP-LO2NU7PH.localdomain
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/23 13:00:10 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 11:>                                                         (0 + 2) / 4][Stage 11:=============================>                            (2 + 2) / 4]                                                                                [Stage 17:>                 (0 + 2) / 2][Stage 19:>                 (0 + 0) / 4]                                                                                [Stage 22:>                                                         (0 + 2) / 2][Stage 26:>                                                         (0 + 2) / 4][Stage 26:==============>                                           (1 + 2) / 4][Stage 26:=============================>                            (2 + 2) / 4][Stage 26:===========================================>              (3 + 1) / 4]26/09/23 13:00:28 ERROR Executor: Exception in task 1.0 in stage 30.0 (TID 31)
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.lang.reflect.Array.newArray(Native Method)
+	at java.base/java.lang.reflect.Array.newInstance(Array.java:78)
+	at java.base/java.io.ObjectInputStream.readArray(ObjectInputStream.java:2150)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1750)
+	at java.base/java.io.ObjectInputStream.readArray(ObjectInputStream.java:2186)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1750)
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2618)
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2469)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2284)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1762)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:540)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:498)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+	at org.apache.spark.serializer.DeserializationStream$$anon$1.getNext(Serializer.scala:168)
+	at org.apache.spark.util.NextIterator.hasNext(NextIterator.scala:73)
+	at org.apache.spark.storage.memory.PartiallyUnrolledIterator.hasNext(MemoryStore.scala:796)
+	at org.apache.spark.util.CompletionIterator.hasNext(CompletionIterator.scala:31)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$6.hasNext(Iterator.scala:477)
+	at scala.collection.Iterator$$anon$9.hasNext(Iterator.scala:583)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificColumnarIterator.hasNext(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.hashAgg_doAggregateWithoutKey_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:50)
+	at scala.collection.Iterator$$anon$9.hasNext(Iterator.scala:583)
+	at org.apache.spark.shuffle.sort.BypassMergeSortShuffleWriter.write(BypassMergeSortShuffleWriter.java:143)
+	at org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:57)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:111)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:54)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:171)
+	at org.apache.spark.scheduler.Task.run(Task.scala:147)
+26/09/23 13:00:28 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[#144,Executor task launch worker for task 1.0 in stage 30.0 (TID 31),5,main]
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.lang.reflect.Array.newArray(Native Method)
+	at java.base/java.lang.reflect.Array.newInstance(Array.java:78)
+	at java.base/java.io.ObjectInputStream.readArray(ObjectInputStream.java:2150)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1750)
+	at java.base/java.io.ObjectInputStream.readArray(ObjectInputStream.java:2186)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1750)
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2618)
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2469)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2284)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1762)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:540)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:498)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:88)
+	at org.apache.spark.serializer.DeserializationStream$$anon$1.getNext(Serializer.scala:168)
+	at org.apache.spark.util.NextIterator.hasNext(NextIterator.scala:73)
+	at org.apache.spark.storage.memory.PartiallyUnrolledIterator.hasNext(MemoryStore.scala:796)
+	at org.apache.spark.util.CompletionIterator.hasNext(CompletionIterator.scala:31)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$6.hasNext(Iterator.scala:477)
+	at scala.collection.Iterator$$anon$9.hasNext(Iterator.scala:583)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificColumnarIterator.hasNext(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.hashAgg_doAggregateWithoutKey_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:50)
+	at scala.collection.Iterator$$anon$9.hasNext(Iterator.scala:583)
+	at org.apache.spark.shuffle.sort.BypassMergeSortShuffleWriter.write(BypassMergeSortShuffleWriter.java:143)
+	at org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:57)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:111)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:54)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:171)
+	at org.apache.spark.scheduler.Task.run(Task.scala:147)
+26/09/23 13:00:28 ERROR TaskSetManager: Task 1 in stage 30.0 failed 1 times; aborting job
+26/09/23 13:00:28 ERROR TaskSchedulerImpl: Exception in statusUpdate
+java.util.concurrent.RejectedExecutionException: Task org.apache.spark.scheduler.TaskResultGetter$$anon$3@67cc36a9 rejected from java.util.concurrent.ThreadPoolExecutor@49915667[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 32]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2081)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1376)
+	at org.apache.spark.scheduler.TaskResultGetter.enqueueSuccessfulTask(TaskResultGetter.scala:62)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.liftedTree2$1(TaskSchedulerImpl.scala:811)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.statusUpdate(TaskSchedulerImpl.scala:786)
+	at org.apache.spark.scheduler.local.LocalEndpoint$$anonfun$receive$1.applyOrElse(LocalSchedulerBackend.scala:73)
+	at org.apache.spark.rpc.netty.Inbox.$anonfun$process$1(Inbox.scala:116)
+	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:216)
+	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:101)
+	at org.apache.spark.rpc.netty.MessageLoop.org$apache$spark$rpc$netty$MessageLoop$$receiveLoop(MessageLoop.scala:76)
+	at org.apache.spark.rpc.netty.MessageLoop$$anon$1.run(MessageLoop.scala:42)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 56524)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/accumulators.py", line 299, in handle
+    poll(accum_updates)
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/accumulators.py", line 271, in poll
+    if self.rfile in r and func():
+                           ^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/accumulators.py", line 275, in accum_updates
+    num_updates = read_int(self.rfile)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/serializers.py", line 597, in read_int
+    raise EOFError
+EOFError
+----------------------------------------
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/project/src/spark/synthea_full.py", line 128, in run
+    tables, ledger, warnings, persisted = transform_frames(spark, output / 'staged', inventory, birth_date_offset)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/spark/synthea_etl.py", line 54, in transform_frames
+    encounters = resolve(raw['encounters'].withColumn('_patient', F.col('raw')['PATIENT'])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/spark/synthea_etl.py", line 48, in resolve
+    return hold(frame.withColumn('reasons', F.when(F.col('disposition') == 'duplicate',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/spark/synthea_etl.py", line 29, in hold
+    frame.count()
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/sql/classic/dataframe.py", line 439, in count
+    return int(self._jdf.count())
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/errors/exceptions/captured.py", line 282, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/protocol.py", line 327, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: <exception str() failed>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/clientserver.py", line 540, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/medical-etl-airflow/project/src/spark_full_workflow.py", line 102, in <module>
+    result = run_attempt(args.archive, args.baseline, args.output_root, args.run_id,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/spark_full_workflow.py", line 89, in run_attempt
+    run(archive, target, run_id, offset, baseline)
+  File "/opt/medical-etl-airflow/project/src/spark/synthea_full.py", line 163, in run
+    spark.stop()
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/sql/session.py", line 2026, in stop
+    jSparkSessionClass = SparkSession._get_j_spark_session_class(self._jvm)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/pyspark/sql/session.py", line 668, in _get_j_spark_session_class
+    return getattr(jvm, "org.apache.spark.sql.classic.SparkSession")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1752, in __getattr__
+    answer = self._gateway_client.send_command(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1057, in send_command
+    response = self.send_command(command, retry, binary=binary)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/medical-etl-airflow/runtime/worker-venv/lib/python3.12/site-packages/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+[2026-09-23T13:00:29.755+0800] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='synthea_full_consumers_retry_acceptance', task_id='full_spark_etl', run_id='manual__full-consumers-p10000-r3', try_number=2, map_index=-1)
+[2026-09-23T13:00:29.759+0800] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=synthea_full_consumers_retry_acceptance, task_id=full_spark_etl, run_id=manual__full-consumers-p10000-r3, map_index=-1, run_start_date=2026-09-23 04:59:03.348372+00:00, run_end_date=2026-09-23 05:00:29.177495+00:00, run_duration=85.829123, state=failed, executor=SequentialExecutor(parallelism=1), executor_state=success, try_number=2, max_tries=1, job_id=4, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2026-09-23 04:59:02.223065+00:00, queued_by_job_id=1, pid=4339
+[2026-09-23T13:00:29.770+0800] {manager.py:293} ERROR - DagFileProcessorManager (PID=4334) last sent a heartbeat 80.87 seconds ago! Restarting it
+[2026-09-23T13:00:29.771+0800] {process_utils.py:132} INFO - Sending 15 to group 4334. PIDs of all processes in the group: [4334]
+[2026-09-23T13:00:29.772+0800] {process_utils.py:87} INFO - Sending the signal 15 to group 4334
+[2026-09-23T13:00:29.833+0800] {process_utils.py:80} INFO - Process psutil.Process(pid=4334, status='terminated', exitcode=0) (4334) terminated with exit code 0
+[2026-09-23T13:00:29.836+0800] {manager.py:174} INFO - Launched DagFileProcessorManager with pid: 4694
+[2026-09-23T13:00:29.839+0800] {settings.py:63} INFO - Configured default timezone UTC
+[2026-09-23T13:00:29.854+0800] {manager.py:406} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+[2026-09-23T13:00:30.038+0800] {job.py:229} INFO - Heartbeat recovered after 90.21 seconds
+[2026-09-23T13:00:30.314+0800] {dagrun.py:823} ERROR - Marking run <DagRun synthea_full_consumers_retry_acceptance @ 2026-09-23 04:56:34+00:00: manual__full-consumers-p10000-r3, state:running, queued_at: 2026-09-23 04:56:34.836454+00:00. externally triggered: True> failed
+[2026-09-23T13:00:30.314+0800] {dagrun.py:905} INFO - DagRun Finished: dag_id=synthea_full_consumers_retry_acceptance, execution_date=2026-09-23 04:56:34+00:00, run_id=manual__full-consumers-p10000-r3, run_start_date=2026-09-23 04:56:36.992539+00:00, run_end_date=2026-09-23 05:00:30.314909+00:00, run_duration=233.32237, state=failed, external_trigger=True, run_type=manual, data_interval_start=2026-09-23 04:56:34+00:00, data_interval_end=2026-09-23 04:56:34+00:00, dag_hash=13966cb4053a6a01f28aefad81ba1a95
+[2026-09-23 13:00:31 +0800] [3776] [INFO] Worker exiting (pid: 3776)
+[2026-09-23 13:00:31 +0800] [3775] [INFO] Worker exiting (pid: 3775)
+[2026-09-23 13:00:31 +0800] [3773] [INFO] Handling signal: term
+[2026-09-23T13:00:31.611+0800] {scheduler_job_runner.py:272} INFO - Exiting gracefully upon receiving signal 15
+[2026-09-23 13:00:31 +0800] [3773] [INFO] Shutting down: Master
+[2026-09-23T13:00:32.613+0800] {process_utils.py:132} INFO - Sending 15 to group 4694. PIDs of all processes in the group: [4694]
+[2026-09-23T13:00:32.613+0800] {process_utils.py:87} INFO - Sending the signal 15 to group 4694
+[2026-09-23T13:00:32.669+0800] {process_utils.py:80} INFO - Process psutil.Process(pid=4694, status='terminated', exitcode=0) (4694) terminated with exit code 0
+[2026-09-23T13:00:32.670+0800] {process_utils.py:132} INFO - Sending 15 to group 4694. PIDs of all processes in the group: []
+[2026-09-23T13:00:32.670+0800] {process_utils.py:87} INFO - Sending the signal 15 to group 4694
+[2026-09-23T13:00:32.670+0800] {process_utils.py:101} INFO - Sending the signal 15 to process 4694 as process group is missing.
+[2026-09-23T13:00:32.670+0800] {scheduler_job_runner.py:1038} INFO - Exited execute loop

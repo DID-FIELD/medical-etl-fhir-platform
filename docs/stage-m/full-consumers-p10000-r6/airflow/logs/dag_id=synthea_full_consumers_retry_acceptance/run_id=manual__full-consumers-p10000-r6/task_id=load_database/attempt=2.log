@@ -1,0 +1,21 @@
+[2026-09-24T19:05:34.514+0800] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-09-24T19:05:34.521+0800] {taskinstance.py:2632} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: synthea_full_consumers_retry_acceptance.load_database manual__full-consumers-p10000-r6 [queued]>
+[2026-09-24T19:05:34.524+0800] {taskinstance.py:2632} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: synthea_full_consumers_retry_acceptance.load_database manual__full-consumers-p10000-r6 [queued]>
+[2026-09-24T19:05:34.524+0800] {taskinstance.py:2885} INFO - Starting attempt 2 of 2
+[2026-09-24T19:05:34.629+0800] {taskinstance.py:2908} INFO - Executing <Task(PythonOperator): load_database> on 2026-09-24 10:35:35+00:00
+[2026-09-24T19:05:34.632+0800] {standard_task_runner.py:72} INFO - Started process 5275 to run task
+[2026-09-24T19:05:34.633+0800] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'synthea_full_consumers_retry_acceptance', 'load_database', 'manual__full-consumers-p10000-r6', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/full_consumers_retry_dag.py', '--cfg-path', '/tmp/tmpu45rx3p6']
+[2026-09-24T19:05:34.634+0800] {standard_task_runner.py:105} INFO - Job 7: Subtask load_database
+[2026-09-24T19:05:35.144+0800] {task_command.py:467} INFO - Running <TaskInstance: synthea_full_consumers_retry_acceptance.load_database manual__full-consumers-p10000-r6 [running]> on host LAPTOP-LO2NU7PH.localdomain
+[2026-09-24T19:05:35.283+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_consumers_retry_acceptance' AIRFLOW_CTX_TASK_ID='load_database' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T10:35:35+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__full-consumers-p10000-r6'
+[2026-09-24T19:05:35.283+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-24T19:08:33.022+0800] {job.py:229} INFO - Heartbeat recovered after 11.88 seconds
+[2026-09-24T19:10:09.928+0800] {job.py:229} INFO - Heartbeat recovered after 10.58 seconds
+[2026-09-24T19:10:44.998+0800] {job.py:229} INFO - Heartbeat recovered after 10.98 seconds
+[2026-09-24T19:21:19.904+0800] {job.py:229} INFO - Heartbeat recovered after 10.55 seconds
+[2026-09-24T19:23:40.460+0800] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p10000-r6/results/b442df85e6a7703b2564079629808f2328172956621323080a32d7dd38a0378e/database/attempt-0001/manifest.json
+[2026-09-24T19:23:40.796+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-24T19:23:40.797+0800] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=synthea_full_consumers_retry_acceptance, task_id=load_database, run_id=manual__full-consumers-p10000-r6, execution_date=20260924T103535, start_date=20260924T110534, end_date=20260924T112340
+[2026-09-24T19:23:41.097+0800] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-09-24T19:23:41.151+0800] {taskinstance.py:3925} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-09-24T19:23:41.152+0800] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,3 @@
+Command: .venv/Scripts/python.exe -m pytest -p no:cacheprovider tests/test_spark_full_workflow.py tests/test_snapshot_workflow.py --basetemp=output/spark-full-workflow-tests-r1 -q
+Result: 21 passed, 2 dependency deprecation warnings in 75.92s
+Includes 14 full Spark workflow tests and 7 existing snapshot workflow tests. Spark reuse tests use recorded manifest metadata and small synthetic artifact bytes; real Spark/Airflow evidence is recorded separately.

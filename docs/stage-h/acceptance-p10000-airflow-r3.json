@@ -1,0 +1,41 @@
+{
+  "status": "SUCCESS",
+  "session": "p10000-airflow-r3",
+  "source_run_id": "p10000-stream-local-r1",
+  "source_manifest_sha256": "69a9f6652041c7475bca33fa81ece23d5430f8a912721b5d08853ce266b0a11c",
+  "source_read_only": true,
+  "runtime": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "file_publication_before": {
+    "run_id": "stage-c-verified"
+  },
+  "airflow_version": "2.11.2",
+  "dagbag": "PASSED",
+  "dag_test": {
+    "state": "success",
+    "run_id": "manual__2026-09-21T03:15:02.505384+00:00"
+  },
+  "scheduler_run": {
+    "run_id": "manual__p10000-airflow-r3",
+    "state": "success",
+    "tasks": [
+      {
+        "task_id": "verify_snapshot",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "export_fhir",
+        "state": "success",
+        "try_number": 2
+      },
+      {
+        "task_id": "compare_spark",
+        "state": "success",
+        "try_number": 1
+      }
+    ]
+  },
+  "retry_reused_success": true,
+  "fhir_matches_verified_windows": true,
+  "file_publication_unchanged": true
+}

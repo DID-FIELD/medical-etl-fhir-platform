@@ -1,0 +1,7 @@
+{
+  "fhir_repeat_hashes_equal": true,
+  "file_publication": "stage-c-verified",
+  "database_publication": "stage-c-verified",
+  "fhir_retry": "output\\fhir\\p10000-stream-r2\\manifest.json",
+  "spark_retry": "output\\spark\\p10000-r1\\manifest.json"
+}

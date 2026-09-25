@@ -9,9 +9,10 @@ def standardize_fields(df: pd.DataFrame, data_type: str) -> pd.DataFrame:
         df = df.rename(columns={"PatientID": "patient_id"})
 
     if "study_date" in df.columns:
-        df["study_date"] = pd.to_datetime(
-            df["study_date"].astype(str), format="%Y%m%d", errors="coerce"
-        ).dt.strftime("%Y-%m-%d")
+        value = df["study_date"].astype("string").str.strip()
+        compact = pd.to_datetime(value, format="%Y%m%d", errors="coerce")
+        iso = pd.to_datetime(value, format="%Y-%m-%d", errors="coerce")
+        df["study_date"] = compact.fillna(iso).dt.strftime("%Y-%m-%d")
 
     if "birth_date" in df.columns:
         df["birth_date"] = pd.to_datetime(
@@ -19,7 +20,7 @@ def standardize_fields(df: pd.DataFrame, data_type: str) -> pd.DataFrame:
         ).dt.strftime("%Y-%m-%d")
 
     if "patient_id" in df.columns:
-        df["patient_id"] = df["patient_id"].fillna("UNKNOWN").astype(str).str.strip()
+        df["patient_id"] = df["patient_id"].astype("string").str.strip().replace("", pd.NA)
 
     if data_type == "dicom":
         for column in ["body_part", "modality", "institution"]:
@@ -27,6 +28,8 @@ def standardize_fields(df: pd.DataFrame, data_type: str) -> pd.DataFrame:
                 df[column] = df[column].fillna("UNKNOWN")
 
     if data_type == "emr":
+        if "gender" in df.columns:
+            df["gender"] = df["gender"].astype("string").str.strip().str.upper()
         for column in ["gender", "exam_type"]:
             if column in df.columns:
                 df[column] = df[column].fillna("UNKNOWN")

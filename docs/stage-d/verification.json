@@ -1,0 +1,194 @@
+{
+  "stage": "D",
+  "date": "2026-09-20",
+  "new_test_cases": 13,
+  "full_tests_passed": 45,
+  "dependency_warnings": 2,
+  "sample_run": {
+    "run_id": "stage-d-verified",
+    "status": "SUCCESS",
+    "model_version": "synthea-v1",
+    "backend": "parquet",
+    "python": "3.13.9",
+    "pandas": "3.0.6",
+    "code_sha256": "c6d9bb2ec26e4be0be56a1fdec3593d1062c89fa414deb5a4c1fca2ebdcf7692",
+    "started_at": "2026-09-20T12:19:19.237955+00:00",
+    "source": {
+      "patients": {
+        "file": "patients.csv",
+        "rows": 108,
+        "bytes": 32471,
+        "sha256": "0e8a61760644976571e7ede02e8be5bfece5111bc179d2139af87f84b630c859"
+      },
+      "encounters": {
+        "file": "encounters.csv",
+        "rows": 5571,
+        "bytes": 1857081,
+        "sha256": "16d209cb1429605c90c80cd859ac16569108dc46890f50eb6a125a0602235b3a"
+      },
+      "imaging_studies": {
+        "file": "imaging_studies.csv",
+        "rows": 478,
+        "bytes": 187543,
+        "sha256": "bebfa122958cde7522706dddc1187663f11d34136dbf63a5a2aa16128638aa3f"
+      }
+    },
+    "archive_sha256": "d61417b551e5b0997c33851b339c157421751f0ea68c18ea686ceb1850907c35",
+    "counts": {
+      "dim_patient": 108,
+      "dwd_encounter": 5571,
+      "dwd_imaging_study": 413,
+      "dwd_imaging_series": 413,
+      "dwd_imaging_instance": 478,
+      "bridge_study_modality": 413,
+      "dws_patient_imaging_summary": 108,
+      "dws_imaging_daily_modality": 401,
+      "ads_patient_imaging_profile": 108
+    },
+    "quality": {
+      "patients": {
+        "accepted": 108,
+        "quarantined": 0,
+        "duplicate": 0
+      },
+      "encounters": {
+        "accepted": 5571,
+        "quarantined": 0,
+        "duplicate": 0
+      },
+      "imaging_studies": {
+        "accepted": 478,
+        "quarantined": 0,
+        "duplicate": 0
+      }
+    },
+    "checks": {
+      "dim_patient.unique_key": true,
+      "dwd_encounter.unique_key": true,
+      "dwd_imaging_study.unique_key": true,
+      "dwd_imaging_series.unique_key": true,
+      "dwd_imaging_instance.unique_key": true,
+      "bridge_study_modality.unique_key": true,
+      "dws_patient_imaging_summary.unique_key": true,
+      "dws_imaging_daily_modality.unique_key": true,
+      "ads_patient_imaging_profile.unique_key": true,
+      "patients.input_balance": true,
+      "encounters.input_balance": true,
+      "imaging_studies.input_balance": true,
+      "encounter_patient_fk": true,
+      "study_parent_consistency": true,
+      "series_study_fk": true,
+      "instance_series_fk": true,
+      "bridge_study_fk": true,
+      "dws_patient_imaging_summary.patient_coverage": true,
+      "dws_patient_imaging_summary.exam_balance": true,
+      "ads_patient_imaging_profile.patient_coverage": true,
+      "ads_patient_imaging_profile.exam_balance": true,
+      "daily_bridge_balance": true,
+      "dim_patient.accepted_lineage": true,
+      "dwd_encounter.accepted_lineage": true,
+      "dwd_imaging_instance.accepted_lineage": true,
+      "dim_patient.readback": true,
+      "dwd_encounter.readback": true,
+      "dwd_imaging_study.readback": true,
+      "dwd_imaging_series.readback": true,
+      "dwd_imaging_instance.readback": true,
+      "bridge_study_modality.readback": true,
+      "dws_patient_imaging_summary.readback": true,
+      "dws_imaging_daily_modality.readback": true,
+      "ads_patient_imaging_profile.readback": true
+    },
+    "warnings": [],
+    "zero_exam_patients": 12,
+    "elapsed_seconds": 0.9505,
+    "artifacts": {
+      "ads_patient_imaging_profile.json": "483376f4017c9b9b41b57078593bcd19dce88db4f3fb922dfe406ad31f0410f2",
+      "ads_patient_imaging_profile.parquet": "3b581af8ef87cc38dfa4bc2c363bdbdbfe9f9e3eb004d7779a3420793f25f84a",
+      "bridge_study_modality.json": "d005276710bba8dd39718a9867f4a98cdf397de7edf6532d53bccaf096dceacd",
+      "bridge_study_modality.parquet": "1fd1c447c2ed4c481f038460b3d0882855889bc0bf4a351256b02878149e8317",
+      "dim_patient.json": "3ca83aa69e8e4f5d55e3234be164bc4a8bba4b616d60f388495602057e8fcd7c",
+      "dim_patient.parquet": "2ab93bc5843c2ae54ee7496fd03f38fed028f07fee8983140eae44a264ecfdca",
+      "dispositions.json": "d6ec19fc1eb71ad4467d14f23322e3c0a605437d3e28fef9c0c066f4e0dd30eb",
+      "dwd_encounter.json": "f4b770b4da09ab6efd62a8a6bdfc3c061907610cc0679bfa44b1140d7c68d4d4",
+      "dwd_encounter.parquet": "3e924b15ef0ba8d3ffe5d28e4e0705721e8bd1bc31a5f0cf8eef1259d3e4322d",
+      "dwd_imaging_instance.json": "9be92a9beb317aafc2ad25f45559258dec120130c150d8000b111c3b2eb56f4e",
+      "dwd_imaging_instance.parquet": "379ff570e41b27f312cf40fb2ddb8c7289452898b871b5abac5f30adc87918a7",
+      "dwd_imaging_series.json": "6d5c51374745ffd7db5171ceb705afff2eadd68fc9d539266ef8b19a57d52f2c",
+      "dwd_imaging_series.parquet": "ae2d6ccc7c73d228b4d9ad4212a4b624b4d89d344fd777f2b7eea0c9c3ffa8f0",
+      "dwd_imaging_study.json": "c140a5c2458dc8c4dfd5bb92a112816210914b7d3cb8541ac5b9176a59cdbf8b",
+      "dwd_imaging_study.parquet": "9dcd56eed3fef7c9e2393f7b113e99adb1453db92dff1b952dd63c66bc1bb6e6",
+      "dws_imaging_daily_modality.json": "acc75b80f903d6c53cd242491753e473fbbcdbaea5955d7e1265cea28d4ef578",
+      "dws_imaging_daily_modality.parquet": "0cf60e16bc5e79aac430851890c12b6483298409d4a93318057c2a95ac7135a7",
+      "dws_patient_imaging_summary.json": "1e340a4ebf82b3b62c5f6234868d0815418adcb07fa887125e7d74778023df9b",
+      "dws_patient_imaging_summary.parquet": "9cab66a93c6792ac7e83d024e5e454c1b47161ea0ad3035c57153f9d20574444",
+      "ods_encounters.json": "1451f20b0c4ecf5c7d88b851e6782b9e5b40b30ba8aa0b57d74ebb6571852379",
+      "ods_imaging_studies.json": "c08e8c48261111d5e2cd608d0feb27aff5d4788aa4d6b6c4f98849f9b36c5d1e",
+      "ods_patients.json": "eacb8e2bfad033199dc0e0ce4fdc1eac936648f7b33f2df0c1a08059b96eb83c"
+    }
+  },
+  "database_api_verification": {
+    "stage": "C",
+    "database": "project local PostgreSQL 18.4",
+    "run_id": "stage-c-verified",
+    "counts": {
+      "dim_patient": 108,
+      "dwd_encounter": 5571,
+      "dwd_imaging_study": 413,
+      "dwd_imaging_series": 413,
+      "dwd_imaging_instance": 478,
+      "bridge_study_modality": 413,
+      "dws_patient_imaging_summary": 108,
+      "dws_imaging_daily_modality": 401,
+      "ads_patient_imaging_profile": 108
+    },
+    "checks": {
+      "dim_patient.count": true,
+      "dwd_encounter.count": true,
+      "dwd_imaging_study.count": true,
+      "dwd_imaging_series.count": true,
+      "dwd_imaging_instance.count": true,
+      "bridge_study_modality.count": true,
+      "dws_patient_imaging_summary.count": true,
+      "dws_imaging_daily_modality.count": true,
+      "ads_patient_imaging_profile.count": true,
+      "zero_exam_patients": true,
+      "sum_exam_count": true,
+      "ods_count": true,
+      "api_status": true,
+      "api_all_patient_profiles": true,
+      "api_all_patient_studies": true,
+      "api_sample_lineage": true,
+      "api_unknown_patient_404": true
+    },
+    "api_validation": "ASGI TestClient with real PostgreSQL; not load testing",
+    "sample_lineage": {
+      "run_id": "stage-c-verified",
+      "study_key": "01750c40-84ed-50d4-b193-876bd3f84fda",
+      "source_table": "imaging_studies",
+      "record_position": "one-based, excluding header",
+      "instances": [
+        {
+          "instance_uid": "1.2.840.99999999.1.1.66885425.1750774589227",
+          "series_uid": "1.2.840.99999999.1.77622059.1750774589227",
+          "source_sha256": "bebfa122958cde7522706dddc1187663f11d34136dbf63a5a2aa16128638aa3f",
+          "source_row": 35
+        },
+        {
+          "instance_uid": "1.2.840.99999999.1.2.55050185.1750774589227",
+          "series_uid": "1.2.840.99999999.1.77622059.1750774589227",
+          "source_sha256": "bebfa122958cde7522706dddc1187663f11d34136dbf63a5a2aa16128638aa3f",
+          "source_row": 36
+        }
+      ]
+    },
+    "passed": true,
+    "remaining": [
+      "Synthea FHIR resource mapping/version validation",
+      "Spark equivalence",
+      "Airflow orchestration",
+      "larger Synthea data generation/load tests"
+    ]
+  },
+  "published_database_run_id": "stage-c-verified",
+  "injection_scope": "Controlled Python exceptions and real PostgreSQL transactions in isolated schemas; no power-loss or multi-publisher stress test."
+}

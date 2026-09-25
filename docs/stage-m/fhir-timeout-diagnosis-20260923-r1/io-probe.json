@@ -1,0 +1,21 @@
+{
+  "purpose": "Same SQLite inserts/cache on DrvFS versus native Linux temporary storage",
+  "cases": [
+    {
+      "storage": "drvfs",
+      "rows": 100000,
+      "seconds": 21.054705594,
+      "rows_per_second": 4749.532096449602,
+      "sqlite_version": "3.45.1",
+      "filesystem_device": 75
+    },
+    {
+      "storage": "linux",
+      "rows": 100000,
+      "seconds": 2.4338112590000023,
+      "rows_per_second": 41087.82044220131,
+      "sqlite_version": "3.45.1",
+      "filesystem_device": 2096
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "status": "SUCCESS",
+  "reference_manifest_sha256": "992fec5a7e0514878ed85aa999bd476a0a70912d505993e3a1c5429597460822",
+  "source_manifest_sha256": "20f048ccc48e9359ae21600d0c69a34bdacb6a8ae1d0281e80eb5de5b908e5b7",
+  "artifact_hashes_verified": true,
+  "counts": {
+    "Patient": 1159,
+    "Encounter": 70229,
+    "ImagingStudy": 2239
+  }
+}

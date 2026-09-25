@@ -1,0 +1,223 @@
+{
+  "status": "SUCCESS",
+  "population_requested": 1000,
+  "seed": 20260920,
+  "clinician_seed": 20260920,
+  "reference_date": "20260920",
+  "end_date": "20260920",
+  "state": "Massachusetts",
+  "version": {
+    "tag": "v4.0.0",
+    "asset_url": "https://github.com/synthetichealth/synthea/releases/download/v4.0.0/synthea-with-dependencies.jar",
+    "size": 201164144,
+    "sha256": "ed43c20ad40ba5c3bc724503a5af032715fe3c491620b766148e7c2361e6ecc1",
+    "upstream_digest": "sha256:ed43c20ad40ba5c3bc724503a5af032715fe3c491620b766148e7c2361e6ecc1"
+  },
+  "history_years": 10,
+  "csv_scope": [
+    "patients",
+    "encounters",
+    "imaging_studies"
+  ],
+  "java_heap_limit": "2g",
+  "threads": 2,
+  "config": "exporter.baseDirectory=F:/project/medical-etl-fhir-platform/data/generated/scale-v4-p1000\nexporter.fhir.export=false\nexporter.csv.export=true\nexporter.csv.included_files=patients.csv,encounters.csv,imaging_studies.csv\nexporter.csv.excluded_files=\nexporter.csv.append_mode=false\nexporter.years_of_history=10\ngenerate.thread_pool_size=2\ngenerate.log_patients.detail=none\n",
+  "measurements": {
+    "generation": {
+      "command": [
+        "java",
+        "-Xmx2g",
+        "-jar",
+        "F:\\project\\medical-etl-fhir-platform\\data\\external\\synthea-generator\\synthea-v4.0.0.jar",
+        "-p",
+        "1000",
+        "-s",
+        "20260920",
+        "-cs",
+        "20260920",
+        "-r",
+        "20260920",
+        "-e",
+        "20260920",
+        "-c",
+        "F:\\project\\medical-etl-fhir-platform\\data\\generated\\scale-v4-p1000\\run.properties",
+        "Massachusetts"
+      ],
+      "exit_code": 0,
+      "seconds": 56.865,
+      "minimum_available_memory_bytes": 3977297920,
+      "stop_reason": null,
+      "log": "data\\generated\\scale-v4-p1000\\generation.log",
+      "launcher_peak_working_set_bytes_not_workload": 10833920,
+      "memory_note": "Initial monitor measured launcher only; excluded from workload memory conclusions. See subsequent ETL repeats for process-tree measurement."
+    },
+    "file_etl": {
+      "command": [
+        "F:\\project\\medical-etl-fhir-platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "src.synthea_pipeline",
+        "--archive",
+        "F:\\project\\medical-etl-fhir-platform\\data\\generated\\scale-v4-p1000\\source.zip",
+        "--output-root",
+        "F:\\project\\medical-etl-fhir-platform\\output\\scale-v4",
+        "--run-id",
+        "p1000-r1"
+      ],
+      "exit_code": 0,
+      "seconds": 10.79,
+      "minimum_available_memory_bytes": 4818239488,
+      "stop_reason": null,
+      "log": "data\\generated\\scale-v4-p1000\\etl.log",
+      "launcher_peak_working_set_bytes_not_workload": 4771840,
+      "memory_note": "Initial monitor measured launcher only; excluded from workload memory conclusions. See subsequent ETL repeats for process-tree measurement."
+    }
+  },
+  "source": {
+    "encounters": {
+      "rows": 70229,
+      "columns": 15,
+      "bytes": 23377572,
+      "sha256": "4d8f917c4dd4c66b1d6da50225f56c96ac7e439d4c6965b5281314138eb0bebe"
+    },
+    "imaging_studies": {
+      "rows": 89354,
+      "columns": 13,
+      "bytes": 31166693,
+      "sha256": "3fbcdbd45d13e3fca5253b428c069e4090096906ce4409fa20ea75feda20e27c"
+    },
+    "patients": {
+      "rows": 1159,
+      "columns": 28,
+      "bytes": 349190,
+      "sha256": "7a589f7d35022929794679fdfef37154aa1795c6ef1a0b5834a7cec2108aa03a"
+    }
+  },
+  "archive": {
+    "bytes": 3830548,
+    "sha256": "6775a19d38b29f363b025bf7676c2d21268b831c4afa44e92f00a17b2259ad2d",
+    "pack_seconds": 0.644
+  },
+  "etl_manifest": {
+    "run_id": "p1000-r1",
+    "status": "SUCCESS",
+    "model_version": "synthea-v1",
+    "backend": "parquet",
+    "python": "3.13.9",
+    "pandas": "3.0.6",
+    "code_sha256": "c6d9bb2ec26e4be0be56a1fdec3593d1062c89fa414deb5a4c1fca2ebdcf7692",
+    "started_at": "2026-09-20T12:37:08.157678+00:00",
+    "source": {
+      "patients": {
+        "file": "patients.csv",
+        "rows": 1159,
+        "bytes": 349190,
+        "sha256": "7a589f7d35022929794679fdfef37154aa1795c6ef1a0b5834a7cec2108aa03a"
+      },
+      "encounters": {
+        "file": "encounters.csv",
+        "rows": 70229,
+        "bytes": 23377572,
+        "sha256": "4d8f917c4dd4c66b1d6da50225f56c96ac7e439d4c6965b5281314138eb0bebe"
+      },
+      "imaging_studies": {
+        "file": "imaging_studies.csv",
+        "rows": 89354,
+        "bytes": 31166693,
+        "sha256": "3fbcdbd45d13e3fca5253b428c069e4090096906ce4409fa20ea75feda20e27c"
+      }
+    },
+    "archive_sha256": "6775a19d38b29f363b025bf7676c2d21268b831c4afa44e92f00a17b2259ad2d",
+    "counts": {
+      "dim_patient": 1159,
+      "dwd_encounter": 70184,
+      "dwd_imaging_study": 2239,
+      "dwd_imaging_series": 2239,
+      "dwd_imaging_instance": 89354,
+      "bridge_study_modality": 2239,
+      "dws_patient_imaging_summary": 1159,
+      "dws_imaging_daily_modality": 2155,
+      "ads_patient_imaging_profile": 1159
+    },
+    "quality": {
+      "patients": {
+        "accepted": 1159,
+        "quarantined": 0,
+        "duplicate": 0
+      },
+      "encounters": {
+        "accepted": 70184,
+        "quarantined": 45,
+        "duplicate": 0
+      },
+      "imaging_studies": {
+        "accepted": 89354,
+        "quarantined": 0,
+        "duplicate": 0
+      }
+    },
+    "checks": {
+      "dim_patient.unique_key": true,
+      "dwd_encounter.unique_key": true,
+      "dwd_imaging_study.unique_key": true,
+      "dwd_imaging_series.unique_key": true,
+      "dwd_imaging_instance.unique_key": true,
+      "bridge_study_modality.unique_key": true,
+      "dws_patient_imaging_summary.unique_key": true,
+      "dws_imaging_daily_modality.unique_key": true,
+      "ads_patient_imaging_profile.unique_key": true,
+      "patients.input_balance": true,
+      "encounters.input_balance": true,
+      "imaging_studies.input_balance": true,
+      "encounter_patient_fk": true,
+      "study_parent_consistency": true,
+      "series_study_fk": true,
+      "instance_series_fk": true,
+      "bridge_study_fk": true,
+      "dws_patient_imaging_summary.patient_coverage": true,
+      "dws_patient_imaging_summary.exam_balance": true,
+      "ads_patient_imaging_profile.patient_coverage": true,
+      "ads_patient_imaging_profile.exam_balance": true,
+      "daily_bridge_balance": true,
+      "dim_patient.accepted_lineage": true,
+      "dwd_encounter.accepted_lineage": true,
+      "dwd_imaging_instance.accepted_lineage": true,
+      "dim_patient.readback": true,
+      "dwd_encounter.readback": true,
+      "dwd_imaging_study.readback": true,
+      "dwd_imaging_series.readback": true,
+      "dwd_imaging_instance.readback": true,
+      "bridge_study_modality.readback": true,
+      "dws_patient_imaging_summary.readback": true,
+      "dws_imaging_daily_modality.readback": true,
+      "ads_patient_imaging_profile.readback": true
+    },
+    "warnings": [],
+    "zero_exam_patients": 844,
+    "elapsed_seconds": 9.2087,
+    "artifacts": {
+      "ads_patient_imaging_profile.json": "c6cefb96dce134c303e286e7ce481db8cf52c0f6d433dad8283cd5f24cc455c5",
+      "ads_patient_imaging_profile.parquet": "ce01bd5da6040125d75bc67a3411a35d5c3b92fb2c599093a84a1b45a1e3f299",
+      "bridge_study_modality.json": "bf448bffe7c55903f473cd0787d11f75b5d8febc71c90aad6df38deef436db20",
+      "bridge_study_modality.parquet": "032e7c22ed256fbd3b2074c9866d4b1b5ca6012ffb92044ba91612104f8177f2",
+      "dim_patient.json": "4615ef492a86e1613f3278a79d2a9296ce81d23bc0e6d3044a94ce5c12d10266",
+      "dim_patient.parquet": "0ea0b292f9c4921ebd505a74982c5412a9c89253af1e686281f046cb63dd4416",
+      "dispositions.json": "340bbd19bb5660022b2f8069703f9cb0cf7ce6cbda84dc337d15c63f16028e7c",
+      "dwd_encounter.json": "baf060b45b7e30bd2941e08ac116c7a88bef4c3e53b0dd435b0ee6235f677ff0",
+      "dwd_encounter.parquet": "5b1e066019a40bd3c9d31d0902a798e7d2020e3d72b24c4bfae5c010f3602493",
+      "dwd_imaging_instance.json": "6b7d6f5a4b55fc297a1e4cb587a715287406560ad70713619108a16934599699",
+      "dwd_imaging_instance.parquet": "a354bf737c34f34adae10e9a9744b8fb15ae8470ff455d9a0e17fe1c18f2597f",
+      "dwd_imaging_series.json": "be786f0a9114704a8db1dc7f43afd9496fb3a0788dab5eecb4deb61e78a0f8bf",
+      "dwd_imaging_series.parquet": "52377c81f486ab9f39044391ee8d493d83e6f711d030409a9c6fc31bc2f65bdb",
+      "dwd_imaging_study.json": "b0e2601efa7591964397ef2d6e4630542174dcf78f4e165e5fc7fc0147063628",
+      "dwd_imaging_study.parquet": "7b091582c30f7cf1469c06c062c61b783ef38c1c2bbc551a5c4c6f1fae4f6b7d",
+      "dws_imaging_daily_modality.json": "bea19806c3e2b12a9981a4ca7dc9c4a2d5f4479cfbae8febb6ee5551186a8afd",
+      "dws_imaging_daily_modality.parquet": "be10a310d52af760c0bc021bcd3b6c4ac28d36886cbe6de35eed5647e3a6de7e",
+      "dws_patient_imaging_summary.json": "fe301397681edf0563c734dcd275c8c691dc956921b2b22008b627147100666e",
+      "dws_patient_imaging_summary.parquet": "f96d8d41e7b3fbb5d8ca35b6106c8740370a6d47266f1e6b6213f25c811d88d2",
+      "ods_encounters.json": "7a260090cb26850471f06390f3c29d06cb48f065883351595a62663a47b44228",
+      "ods_imaging_studies.json": "4aeeec76b3a492354ce62ba89394a5f2d7b5073ccfb483c09cd7262d682c6cf0",
+      "ods_patients.json": "fb91f6f9c08b95535d124fdb8ce4947751253385adfc0887db2b0e28e91fe026"
+    }
+  },
+  "output_bytes": 217015766
+}

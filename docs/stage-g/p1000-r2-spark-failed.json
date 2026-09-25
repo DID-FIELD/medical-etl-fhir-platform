@@ -1,0 +1,8 @@
+{
+  "status": "FAILED",
+  "source_run_id": "p1000-stream-utc-r2",
+  "source_manifest_sha256": "c279ec97cbc96edf3e0d55906730efd1024e5e46e2fc0832023660ed0f44f458",
+  "code_sha256": "84bd873be306bdbbca9707959ecfe7b9d6f37207bdbdeb4b5a6b407434062b51",
+  "scope": "DIM/DWD to three DWS/ADS tables",
+  "error_type": "AnalysisException"
+}

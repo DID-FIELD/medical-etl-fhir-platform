@@ -1,0 +1,347 @@
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/dagrun.py:60 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+[2026-09-24T12:46:28.902+0800] {dagbag.py:588} INFO - Filling up the DagBag from /opt/medical-etl-airflow/runs/full-consumers-p10000-r5/airflow/dags
+[2026-09-24T12:46:29.154+0800] {dag.py:4435} INFO - dagrun id: synthea_full_spark
+[2026-09-24T12:46:29.159+0800] {dag.py:4451} INFO - created dagrun <DagRun synthea_full_spark @ 2026-09-24 04:46:29.095889+00:00: manual__2026-09-24T04:46:29.095889+00:00, state:running, queued_at: None. externally triggered: False>
+[2026-09-24T12:46:29.362+0800] {dag.py:4396} INFO - [DAG TEST] starting task_id=verify_inputs map_index=-1
+[2026-09-24T12:46:29.362+0800] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: synthea_full_spark.verify_inputs manual__2026-09-24T04:46:29.095889+00:00 [scheduled]>
+[2026-09-24 12:46:29,666] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='verify_inputs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T04:46:29.095889+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-24T04:46:29.095889+00:00'
+[2026-09-24T12:46:29.666+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='verify_inputs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T04:46:29.095889+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-24T04:46:29.095889+00:00'
+[2026-09-24T12:46:29.670+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-24 12:46:38,458] {python.py:240} INFO - Done. Returned value was: {'archive_sha256': 'cde7f394763863dae3123799a54fd21dbc90683c650ceb17fe7db85f79a28559', 'baseline_manifest_sha256': '69a9f6652041c7475bca33fa81ece23d5430f8a912721b5d08853ce266b0a11c'}
+[2026-09-24T12:46:38.458+0800] {python.py:240} INFO - Done. Returned value was: {'archive_sha256': 'cde7f394763863dae3123799a54fd21dbc90683c650ceb17fe7db85f79a28559', 'baseline_manifest_sha256': '69a9f6652041c7475bca33fa81ece23d5430f8a912721b5d08853ce266b0a11c'}
+[2026-09-24T12:46:38.596+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-24T12:46:38.596+0800] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=synthea_full_spark, task_id=verify_inputs, run_id=manual__2026-09-24T04:46:29.095889+00:00, execution_date=20260924T044629, start_date=, end_date=20260924T044638
+[2026-09-24T12:46:38.812+0800] {dag.py:4410} INFO - [DAG TEST] end task task_id=verify_inputs map_index=-1
+[2026-09-24T12:46:39.057+0800] {dag.py:4396} INFO - [DAG TEST] starting task_id=full_spark_etl map_index=-1
+[2026-09-24T12:46:39.058+0800] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: synthea_full_spark.full_spark_etl manual__2026-09-24T04:46:29.095889+00:00 [scheduled]>
+[2026-09-24 12:46:39,275] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='full_spark_etl' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T04:46:29.095889+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-24T04:46:29.095889+00:00'
+[2026-09-24T12:46:39.275+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='full_spark_etl' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T04:46:29.095889+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-24T04:46:29.095889+00:00'
+[2026-09-24T12:46:39.275+0800] {taskinstance.py:740} INFO - ::endgroup::
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/24 12:48:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 3:>                                                          (0 + 1) / 1]                                                                                [Stage 11:>                                                         (0 + 2) / 4][Stage 11:=============================>                            (2 + 2) / 4]                                                                                [Stage 17:>                 (0 + 2) / 2][Stage 19:>                 (0 + 0) / 4][Stage 17:=========>        (1 + 1) / 2][Stage 19:=========>        (2 + 1) / 4]                                                                                [Stage 21:>                 (0 + 2) / 2][Stage 22:>                 (0 + 0) / 2][Stage 22:>                                                         (0 + 2) / 2][Stage 22:=============================>                            (1 + 1) / 2][Stage 26:>                                                         (0 + 2) / 4][Stage 26:=============================>                            (2 + 2) / 4]                                                                                [Stage 36:>   (0 + 2) / 2][Stage 38:>   (0 + 0) / 4][Stage 42:>   (0 + 0) / 4]                                                                                [Stage 43:>                                                         (0 + 2) / 2][Stage 43:>                 (0 + 2) / 2][Stage 45:>                 (0 + 0) / 3][Stage 43:=========>        (1 + 1) / 2][Stage 45:>                 (0 + 1) / 3][Stage 45:>                                                         (0 + 2) / 3][Stage 45:======================================>                   (2 + 1) / 3][Stage 45:============>     (2 + 1) / 3][Stage 51:>                 (0 + 1) / 4][Stage 51:>                                                         (0 + 2) / 4][Stage 51:==============>                                           (1 + 2) / 4][Stage 51:=============================>                            (2 + 2) / 4][Stage 51:===========================================>              (3 + 1) / 4][Stage 60:>                                                         (0 + 2) / 4][Stage 60:==============>                                           (1 + 2) / 4][Stage 60:=============================>                            (2 + 2) / 4][Stage 60:===========================================>              (3 + 1) / 4]                                                                                [Stage 89:>   (0 + 2) / 4][Stage 90:>   (0 + 0) / 4][Stage 91:>   (0 + 0) / 4][Stage 89:==> (2 + 2) / 4][Stage 90:>   (0 + 0) / 4][Stage 91:>   (0 + 0) / 4][Stage 90:>                 (0 + 3) / 4][Stage 91:>                 (0 + 0) / 4][Stage 91:>                                                         (0 + 2) / 4][Stage 91:=============================>                            (2 + 2) / 4]                                                                                [Stage 135:>                                                        (0 + 2) / 4][Stage 135:==============>                                          (1 + 2) / 4][Stage 135:============================>                            (2 + 2) / 4][Stage 135:==========================================>              (3 + 1) / 4]                                                                                [Stage 166:>                                                        (0 + 2) / 4][Stage 166:==============>                                          (1 + 2) / 4][Stage 166:============================>                            (2 + 2) / 4][Stage 166:==========================================>              (3 + 1) / 4]                                                                                [Stage 210:>                                                        (0 + 2) / 4][Stage 210:============================>                            (2 + 2) / 4][Stage 210:==========================================>              (3 + 1) / 4]                                                                                [Stage 249:==============>                                          (1 + 2) / 4][Stage 249:============================>                            (2 + 2) / 4]                                                                                [Stage 253:>                                                        (0 + 2) / 4][Stage 253:==============>                                          (1 + 2) / 4][Stage 253:============================>                            (2 + 2) / 4][Stage 253:==========================================>              (3 + 1) / 4]                                                                                [Stage 274:>                                                        (0 + 2) / 4][Stage 274:==============>                                          (1 + 2) / 4][Stage 274:============================>                            (2 + 2) / 4]                                                                                [Stage 295:>                                                        (0 + 2) / 4][Stage 295:==============>                                          (1 + 2) / 4][Stage 295:============================>                            (2 + 2) / 4][Stage 295:==========================================>              (3 + 1) / 4]                                                                                [Stage 372:>                                                        (0 + 1) / 1]                                                                                [Stage 488:==================>                                     (4 + 2) / 12][Stage 488:============================>                           (6 + 2) / 12][Stage 488:=====================================>                  (8 + 2) / 12][Stage 488:=============================================>         (10 + 2) / 12]                                                                                [Stage 497:============================>                            (2 + 2) / 4]                                                                                [Stage 498:>                                                        (0 + 1) / 1]                                                                                [Stage 499:>                                                        (0 + 2) / 2][Stage 499:============================>                            (1 + 1) / 2]                                                                                [Stage 500:>                                                        (0 + 2) / 2][Stage 500:============================>                            (1 + 1) / 2]                                                                                [Stage 544:>                                                        (0 + 2) / 2][Stage 544:============================>                            (1 + 1) / 2]                                                                                [Stage 562:>                                                        (0 + 2) / 2]                                                                                [Stage 592:>                                                        (0 + 2) / 2]                                                                                [Stage 598:============================>                            (1 + 1) / 2]                                                                                [Stage 604:============================>                            (1 + 1) / 2]                                                                                [Stage 623:>                                                        (0 + 2) / 2][Stage 626:>                                                        (0 + 2) / 3][Stage 626:===================>                                     (1 + 2) / 3]                                                                                [Stage 682:============================>                            (2 + 2) / 4]                                                                                [Stage 688:============================>                            (2 + 2) / 4]                                                                                [Stage 694:>                                                        (0 + 2) / 4][Stage 694:============================>                            (2 + 2) / 4]                                                                                [Stage 700:============================>                            (2 + 2) / 4]                                                                                [Stage 706:==============>                                          (1 + 2) / 4][Stage 706:============================>                            (2 + 2) / 4][Stage 706:==========================================>              (3 + 1) / 4]                                                                                [Stage 712:============================>                            (2 + 2) / 4][Stage 712:==========================================>              (3 + 1) / 4]                                                                                [Stage 718:============================>                            (1 + 1) / 2]                                                                                [Stage 744:>                                                        (0 + 2) / 4][Stage 744:==============>                                          (1 + 2) / 4][Stage 744:============================>                            (2 + 2) / 4]                                                                                [Stage 750:>                                                        (0 + 2) / 4][Stage 750:============================>                            (2 + 2) / 4][Stage 750:==========================================>              (3 + 1) / 4]                                                                                [Stage 786:>                                                        (0 + 2) / 4][Stage 786:==============>                                          (1 + 2) / 4][Stage 786:============================>                            (2 + 2) / 4]                                                                                [Stage 792:>                                                        (0 + 2) / 4][Stage 792:============================>                            (2 + 2) / 4][Stage 792:==========================================>              (3 + 1) / 4]                                                                                [Stage 856:>                                                        (0 + 2) / 4][Stage 856:==============>                                          (1 + 2) / 4][Stage 856:============================>                            (2 + 2) / 4][Stage 856:==========================================>              (3 + 1) / 4][Stage 858:>                                                        (0 + 2) / 2]                                                                                [Stage 862:>                                                        (0 + 2) / 4][Stage 862:==============>                                          (1 + 2) / 4][Stage 862:============================>                            (2 + 2) / 4][Stage 862:==========================================>              (3 + 1) / 4][Stage 864:>                                                        (0 + 2) / 2]                                                                                [Stage 892:>                                                        (0 + 2) / 4][Stage 892:==============>                                          (1 + 2) / 4][Stage 892:============================>                            (2 + 2) / 4][Stage 892:==========================================>              (3 + 1) / 4]                                                                                [Stage 898:>                                                        (0 + 2) / 4][Stage 898:==============>                                          (1 + 2) / 4][Stage 898:============================>                            (2 + 2) / 4][Stage 898:==========================================>              (3 + 1) / 4]                                                                                [Stage 906:>                                                        (0 + 2) / 4][Stage 906:==============>                                          (1 + 2) / 4][Stage 906:============================>                            (2 + 2) / 4][Stage 906:==========================================>              (3 + 1) / 4][Stage 908:>                                                        (0 + 2) / 2]                                                                                [Stage 912:>                                                        (0 + 2) / 4][Stage 912:==============>                                          (1 + 2) / 4][Stage 912:============================>                            (2 + 2) / 4][Stage 912:==========================================>              (3 + 1) / 4][Stage 914:>                                                        (0 + 2) / 2]                                                                                [2026-09-24 12:53:51,435] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p10000-r5/results/34d8ec67b47a2229060c573f7173b97f697cc00afee5014266beb2182dce9051/spark-full/attempt-0001/manifest.json
+[2026-09-24T12:53:51.435+0800] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p10000-r5/results/34d8ec67b47a2229060c573f7173b97f697cc00afee5014266beb2182dce9051/spark-full/attempt-0001/manifest.json
+[2026-09-24T12:53:51.619+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-24T12:53:51.619+0800] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=synthea_full_spark, task_id=full_spark_etl, run_id=manual__2026-09-24T04:46:29.095889+00:00, execution_date=20260924T044629, start_date=, end_date=20260924T045351
+[2026-09-24T12:53:51.828+0800] {dag.py:4410} INFO - [DAG TEST] end task task_id=full_spark_etl map_index=-1
+[2026-09-24T12:53:51.938+0800] {dag.py:4396} INFO - [DAG TEST] starting task_id=export_fhir map_index=-1
+[2026-09-24T12:53:51.938+0800] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: synthea_full_spark.export_fhir manual__2026-09-24T04:46:29.095889+00:00 [scheduled]>
+[2026-09-24 12:53:52,150] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='export_fhir' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T04:46:29.095889+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-24T04:46:29.095889+00:00'
+[2026-09-24T12:53:52.150+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='export_fhir' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T04:46:29.095889+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-24T04:46:29.095889+00:00'
+[2026-09-24T12:53:52.150+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-24 13:02:58,932] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p10000-r5/results/34d8ec67b47a2229060c573f7173b97f697cc00afee5014266beb2182dce9051/fhir/attempt-0001/manifest.json
+[2026-09-24T13:02:58.932+0800] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p10000-r5/results/34d8ec67b47a2229060c573f7173b97f697cc00afee5014266beb2182dce9051/fhir/attempt-0001/manifest.json
+[2026-09-24T13:02:59.056+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-24T13:02:59.056+0800] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=synthea_full_spark, task_id=export_fhir, run_id=manual__2026-09-24T04:46:29.095889+00:00, execution_date=20260924T044629, start_date=, end_date=20260924T050259
+[2026-09-24T13:02:59.292+0800] {dag.py:4410} INFO - [DAG TEST] end task task_id=export_fhir map_index=-1
+[2026-09-24T13:02:59.292+0800] {dag.py:4396} INFO - [DAG TEST] starting task_id=load_database map_index=-1
+[2026-09-24T13:02:59.292+0800] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [scheduled]>
+[2026-09-24 13:02:59,505] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='load_database' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T04:46:29.095889+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-24T04:46:29.095889+00:00'
+[2026-09-24T13:02:59.505+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='load_database' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T04:46:29.095889+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-24T04:46:29.095889+00:00'
+[2026-09-24T13:02:59.506+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-24 13:34:20,633] {taskinstance.py:3337} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 776, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 742, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 425, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runs/full-consumers-p10000-r5/airflow/dags/synthea_full_spark.py", line 25, in consume
+    return execute_consumer(component, manifest, context['run_id'], context['ti'].try_number)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/airflow_tasks.py", line 84, in execute_consumer
+    result = subprocess.run(command,check=True,text=True,encoding='utf-8',stdout=subprocess.PIPE,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2116, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.12/subprocess.py", line 1253, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['/mnt/f/project/medical-etl-fhir-platform/.venv/Scripts/python.exe', '-m', 'src.consumer_workflow', '--manifest', 'F:\\project\\medical-etl-fhir-platform\\output\\full-consumers-p10000-r5\\results\\34d8ec67b47a2229060c573f7173b97f697cc00afee5014266beb2182dce9051\\spark-full\\attempt-0001\\manifest.json', '--output-root', 'F:\\project\\medical-etl-fhir-platform\\output\\full-consumers-p10000-r5\\results', '--run-id', 'manual__2026-09-24T04:46:29.095889+00:00', '--component', 'database', '--try-number', '1']' timed out after 1800 seconds
+[2026-09-24T13:34:20.633+0800] {taskinstance.py:3337} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 776, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 742, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 425, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runs/full-consumers-p10000-r5/airflow/dags/synthea_full_spark.py", line 25, in consume
+    return execute_consumer(component, manifest, context['run_id'], context['ti'].try_number)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/airflow_tasks.py", line 84, in execute_consumer
+    result = subprocess.run(command,check=True,text=True,encoding='utf-8',stdout=subprocess.PIPE,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2116, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.12/subprocess.py", line 1253, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['/mnt/f/project/medical-etl-fhir-platform/.venv/Scripts/python.exe', '-m', 'src.consumer_workflow', '--manifest', 'F:\\project\\medical-etl-fhir-platform\\output\\full-consumers-p10000-r5\\results\\34d8ec67b47a2229060c573f7173b97f697cc00afee5014266beb2182dce9051\\spark-full\\attempt-0001\\manifest.json', '--output-root', 'F:\\project\\medical-etl-fhir-platform\\output\\full-consumers-p10000-r5\\results', '--run-id', 'manual__2026-09-24T04:46:29.095889+00:00', '--component', 'database', '--try-number', '1']' timed out after 1800 seconds
+[2026-09-24T13:34:20.964+0800] {taskinstance.py:1242} INFO - Marking task as UP_FOR_RETRY. dag_id=synthea_full_spark, task_id=load_database, run_id=manual__2026-09-24T04:46:29.095889+00:00, execution_date=20260924T044629, start_date=, end_date=20260924T053420
+[2026-09-24T13:34:21.536+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-24T13:34:21.536+0800] {dag.py:3090} ERROR - Task failed; ti=<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/dag.py", line 3083, in test
+    _run_task(
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/dag.py", line 4400, in _run_task
+    ti._run_raw_task(session=session, raise_on_defer=inline_trigger, mark_success=mark_success)
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3030, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 282, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3209, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 776, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 742, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 425, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runs/full-consumers-p10000-r5/airflow/dags/synthea_full_spark.py", line 25, in consume
+    return execute_consumer(component, manifest, context['run_id'], context['ti'].try_number)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/airflow_tasks.py", line 84, in execute_consumer
+    result = subprocess.run(command,check=True,text=True,encoding='utf-8',stdout=subprocess.PIPE,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2116, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.12/subprocess.py", line 1253, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['/mnt/f/project/medical-etl-fhir-platform/.venv/Scripts/python.exe', '-m', 'src.consumer_workflow', '--manifest', 'F:\\project\\medical-etl-fhir-platform\\output\\full-consumers-p10000-r5\\results\\34d8ec67b47a2229060c573f7173b97f697cc00afee5014266beb2182dce9051\\spark-full\\attempt-0001\\manifest.json', '--output-root', 'F:\\project\\medical-etl-fhir-platform\\output\\full-consumers-p10000-r5\\results', '--run-id', 'manual__2026-09-24T04:46:29.095889+00:00', '--component', 'database', '--try-number', '1']' timed out after 1800 seconds
+[2026-09-24T13:34:21.709+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:22.854+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:24.012+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:26.145+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:27.305+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:28.438+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:29.758+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:30.908+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:32.108+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:33.226+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:34.344+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:35.484+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:36.602+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:37.723+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:38.852+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:39.963+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:41.080+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:42.178+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:43.399+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:44.531+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:45.665+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:46.820+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:47.940+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:49.087+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:50.210+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:51.387+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:52.532+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:53.703+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:54.848+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:55.983+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:57.095+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:34:59.234+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:00.345+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:01.455+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:02.597+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:03.730+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:04.877+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:06.078+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:07.194+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:08.405+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:09.513+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:10.660+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:11.797+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:12.998+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:14.140+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:15.280+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:16.451+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:17.569+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:18.724+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:19.874+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:21.021+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:22.220+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:23.409+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:24.513+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:25.648+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:26.782+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:27.919+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:29.043+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:30.181+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:32.360+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:33.548+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:34.673+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:35.849+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:36.972+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:38.120+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:39.268+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:40.371+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:41.505+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:42.639+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:43.784+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:44.928+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:46.053+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:47.293+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:48.428+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:49.542+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:50.648+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:51.820+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:52.944+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:54.088+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:55.244+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:56.394+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:57.647+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:58.771+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:35:59.886+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:00.988+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:02.194+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:03.348+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:05.490+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:06.596+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:07.739+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:08.864+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:09.976+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:11.115+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:12.265+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:13.452+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:14.586+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:15.806+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:17.015+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:18.151+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:19.282+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:20.417+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [up_for_retry]>}
+[2026-09-24T13:36:21.605+0800] {dag.py:4396} INFO - [DAG TEST] starting task_id=load_database map_index=-1
+[2026-09-24T13:36:21.606+0800] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: synthea_full_spark.load_database manual__2026-09-24T04:46:29.095889+00:00 [scheduled]>
+[2026-09-24 13:36:21,763] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='load_database' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T04:46:29.095889+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-24T04:46:29.095889+00:00'
+[2026-09-24T13:36:21.763+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='load_database' AIRFLOW_CTX_EXECUTION_DATE='2026-09-24T04:46:29.095889+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-24T04:46:29.095889+00:00'
+[2026-09-24T13:36:21.763+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-24 13:42:59,449] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p10000-r5/results/34d8ec67b47a2229060c573f7173b97f697cc00afee5014266beb2182dce9051/database/attempt-0002/manifest.json
+[2026-09-24T13:42:59.449+0800] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p10000-r5/results/34d8ec67b47a2229060c573f7173b97f697cc00afee5014266beb2182dce9051/database/attempt-0002/manifest.json
+[2026-09-24T13:42:59.652+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-24T13:42:59.652+0800] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=synthea_full_spark, task_id=load_database, run_id=manual__2026-09-24T04:46:29.095889+00:00, execution_date=20260924T044629, start_date=, end_date=20260924T054259
+[2026-09-24T13:42:59.906+0800] {dag.py:4410} INFO - [DAG TEST] end task task_id=load_database map_index=-1
+[2026-09-24T13:42:59.908+0800] {dagrun.py:854} INFO - Marking run <DagRun synthea_full_spark @ 2026-09-24 04:46:29.095889+00:00: manual__2026-09-24T04:46:29.095889+00:00, state:running, queued_at: None. externally triggered: False> successful
+[2026-09-24T13:42:59.909+0800] {dagrun.py:905} INFO - DagRun Finished: dag_id=synthea_full_spark, execution_date=2026-09-24 04:46:29.095889+00:00, run_id=manual__2026-09-24T04:46:29.095889+00:00, run_start_date=2026-09-24 04:46:29.095889+00:00, run_end_date=2026-09-24 05:42:59.908922+00:00, run_duration=3390.813033, state=success, external_trigger=False, run_type=manual, data_interval_start=2026-09-24 04:46:29.095889+00:00, data_interval_end=2026-09-24 04:46:29.095889+00:00, dag_hash=None
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/project/scripts/airflow/full_consumers_acceptance.py", line 267, in <module>
+    main()
+  File "/opt/medical-etl-airflow/project/scripts/airflow/full_consumers_acceptance.py", line 176, in main
+    run = db.query(DagRun).filter_by(dag_id='synthea_full_consumers_retry_acceptance', run_id=retry_id).one()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2870, in one
+    return self._iter().one()
+           ^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2916, in _iter
+    result = self.session.execute(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1717, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
+[SQL: SELECT dag_run.state AS dag_run_state, dag_run.id AS dag_run_id, dag_run.dag_id AS dag_run_dag_id, dag_run.queued_at AS dag_run_queued_at, dag_run.execution_date AS dag_run_execution_date, dag_run.start_date AS dag_run_start_date, dag_run.end_date AS dag_run_end_date, dag_run.run_id AS dag_run_run_id, dag_run.creating_job_id AS dag_run_creating_job_id, dag_run.external_trigger AS dag_run_external_trigger, dag_run.run_type AS dag_run_run_type, dag_run.conf AS dag_run_conf, dag_run.data_interval_start AS dag_run_data_interval_start, dag_run.data_interval_end AS dag_run_data_interval_end, dag_run.last_scheduling_decision AS dag_run_last_scheduling_decision, dag_run.dag_hash AS dag_run_dag_hash, dag_run.log_template_id AS dag_run_log_template_id, dag_run.updated_at AS dag_run_updated_at, dag_run.clear_number AS dag_run_clear_number 
+FROM dag_run 
+WHERE dag_run.dag_id = ? AND dag_run.run_id = ?]
+[parameters: ('synthea_full_consumers_retry_acceptance', 'manual__full-consumers-p10000-r5')]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)

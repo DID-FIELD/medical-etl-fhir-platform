@@ -1,0 +1,300 @@
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/dagrun.py:60 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+[2026-09-22T13:33:30.272+0800] {dagbag.py:588} INFO - Filling up the DagBag from /opt/medical-etl-airflow/runs/full-consumers-p1000-r1/airflow/dags
+[2026-09-22T13:33:30.548+0800] {dag.py:4435} INFO - dagrun id: synthea_full_spark
+[2026-09-22T13:33:30.557+0800] {dag.py:4451} INFO - created dagrun <DagRun synthea_full_spark @ 2026-09-22 05:33:30.473305+00:00: manual__2026-09-22T05:33:30.473305+00:00, state:running, queued_at: None. externally triggered: False>
+[2026-09-22T13:33:30.691+0800] {dag.py:4396} INFO - [DAG TEST] starting task_id=verify_inputs map_index=-1
+[2026-09-22T13:33:30.692+0800] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: synthea_full_spark.verify_inputs manual__2026-09-22T05:33:30.473305+00:00 [scheduled]>
+[2026-09-22 13:33:30,993] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='verify_inputs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T05:33:30.473305+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T05:33:30.473305+00:00'
+[2026-09-22T13:33:30.993+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='verify_inputs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T05:33:30.473305+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T05:33:30.473305+00:00'
+[2026-09-22T13:33:30.996+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-22 13:33:32,363] {python.py:240} INFO - Done. Returned value was: {'archive_sha256': '6775a19d38b29f363b025bf7676c2d21268b831c4afa44e92f00a17b2259ad2d', 'baseline_manifest_sha256': '20f048ccc48e9359ae21600d0c69a34bdacb6a8ae1d0281e80eb5de5b908e5b7'}
+[2026-09-22T13:33:32.363+0800] {python.py:240} INFO - Done. Returned value was: {'archive_sha256': '6775a19d38b29f363b025bf7676c2d21268b831c4afa44e92f00a17b2259ad2d', 'baseline_manifest_sha256': '20f048ccc48e9359ae21600d0c69a34bdacb6a8ae1d0281e80eb5de5b908e5b7'}
+[2026-09-22T13:33:32.518+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-22T13:33:32.518+0800] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=synthea_full_spark, task_id=verify_inputs, run_id=manual__2026-09-22T05:33:30.473305+00:00, execution_date=20260922T053330, start_date=, end_date=20260922T053332
+[2026-09-22T13:33:32.736+0800] {dag.py:4410} INFO - [DAG TEST] end task task_id=verify_inputs map_index=-1
+[2026-09-22T13:33:32.848+0800] {dag.py:4396} INFO - [DAG TEST] starting task_id=full_spark_etl map_index=-1
+[2026-09-22T13:33:32.848+0800] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: synthea_full_spark.full_spark_etl manual__2026-09-22T05:33:30.473305+00:00 [scheduled]>
+[2026-09-22 13:33:33,067] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='full_spark_etl' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T05:33:30.473305+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T05:33:30.473305+00:00'
+[2026-09-22T13:33:33.067+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='full_spark_etl' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T05:33:30.473305+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T05:33:30.473305+00:00'
+[2026-09-22T13:33:33.068+0800] {taskinstance.py:740} INFO - ::endgroup::
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/22 13:33:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 3:>                                                          (0 + 1) / 1]                                                                                [Stage 11:>                                                         (0 + 2) / 4]                                                                                [Stage 27:=============================>                            (2 + 2) / 4]                                                                                [Stage 38:=============================>                            (1 + 1) / 2]                                                                                [Stage 47:======================================>                   (2 + 1) / 3][Stage 52:=============================>                            (2 + 2) / 4]                                                                                [Stage 170:>                                                        (0 + 2) / 4][Stage 170:============================>                            (2 + 2) / 4][Stage 170:==========================================>              (3 + 1) / 4]                                                                                [Stage 190:>                                                        (0 + 1) / 1]                                                                                [Stage 196:==============>                                          (1 + 2) / 4][Stage 196:============================>                            (2 + 2) / 4][Stage 196:==========================================>              (3 + 1) / 4]                                                                                [Stage 249:>                                                        (0 + 1) / 1]                                                                                [Stage 280:>                                                        (0 + 1) / 1]                                                                                [Stage 335:=======================>                                (5 + 2) / 12][Stage 335:============================>                           (6 + 2) / 12][Stage 335:=====================================>                  (8 + 2) / 12][Stage 335:=============================================>         (10 + 2) / 12]                                                                                [Stage 340:==========================================>              (3 + 1) / 4]                                                                                [Stage 341:>                                                        (0 + 1) / 1]                                                                                [Stage 342:>                                                        (0 + 2) / 2][Stage 342:============================>                            (1 + 1) / 2]                                                                                [Stage 343:>                                                        (0 + 2) / 2][Stage 343:============================>                            (1 + 1) / 2]                                                                                [Stage 435:>                                                        (0 + 2) / 2]                                                                                [Stage 522:============================>                            (2 + 2) / 4]                                                                                [Stage 534:============================>                            (2 + 2) / 4]                                                                                [Stage 540:============================>                            (2 + 2) / 4]                                                                                [Stage 546:============================>                            (2 + 2) / 4]                                                                                [Stage 552:============================>                            (2 + 2) / 4]                                                                                [Stage 584:============================>                            (2 + 2) / 4][Stage 584:==========================================>              (3 + 1) / 4]                                                                                [Stage 626:==========================================>              (3 + 1) / 4]                                                                                [Stage 696:===================>                                     (1 + 2) / 3][Stage 696:======================================>                  (2 + 1) / 3]                                                                                [Stage 702:>                                                        (0 + 2) / 3][Stage 702:===================>                                     (1 + 2) / 3][Stage 702:======================================>                  (2 + 1) / 3]                                                                                [Stage 732:============================>                            (2 + 2) / 4][Stage 732:==========================================>              (3 + 1) / 4]                                                                                [Stage 738:>                                                        (0 + 2) / 4][Stage 738:==============>                                          (1 + 2) / 4][Stage 738:============================>                            (2 + 2) / 4]                                                                                [Stage 746:============================>                            (2 + 2) / 4][Stage 746:==========================================>              (3 + 1) / 4]                                                                                [Stage 752:==============>                                          (1 + 2) / 4][Stage 752:==========================================>              (3 + 1) / 4]                                                                                [2026-09-22 13:36:17,328] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p1000-r1/results/9d6c5073a44b209252f946cba7d728f6c5d4f49b2019476a730c1ad7e5d72361/spark-full/attempt-0001/manifest.json
+[2026-09-22T13:36:17.328+0800] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p1000-r1/results/9d6c5073a44b209252f946cba7d728f6c5d4f49b2019476a730c1ad7e5d72361/spark-full/attempt-0001/manifest.json
+[2026-09-22T13:36:17.467+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-22T13:36:17.468+0800] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=synthea_full_spark, task_id=full_spark_etl, run_id=manual__2026-09-22T05:33:30.473305+00:00, execution_date=20260922T053330, start_date=, end_date=20260922T053617
+[2026-09-22T13:36:17.707+0800] {dag.py:4410} INFO - [DAG TEST] end task task_id=full_spark_etl map_index=-1
+[2026-09-22T13:36:17.819+0800] {dag.py:4396} INFO - [DAG TEST] starting task_id=load_database map_index=-1
+[2026-09-22T13:36:17.819+0800] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [scheduled]>
+[2026-09-22 13:36:18,037] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='load_database' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T05:33:30.473305+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T05:33:30.473305+00:00'
+[2026-09-22T13:36:18.037+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='load_database' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T05:33:30.473305+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T05:33:30.473305+00:00'
+[2026-09-22T13:36:18.037+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-22 13:37:25,131] {taskinstance.py:3337} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 776, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 742, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 425, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runs/full-consumers-p1000-r1/airflow/dags/synthea_full_spark.py", line 25, in consume
+    return execute_consumer(component, manifest, context['run_id'], context['ti'].try_number)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/airflow_tasks.py", line 93, in execute_consumer
+    raise ValueError('Invalid consumer result path')
+ValueError: Invalid consumer result path
+[2026-09-22T13:37:25.131+0800] {taskinstance.py:3337} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 776, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 742, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 425, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runs/full-consumers-p1000-r1/airflow/dags/synthea_full_spark.py", line 25, in consume
+    return execute_consumer(component, manifest, context['run_id'], context['ti'].try_number)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/airflow_tasks.py", line 93, in execute_consumer
+    raise ValueError('Invalid consumer result path')
+ValueError: Invalid consumer result path
+[2026-09-22T13:37:25.194+0800] {taskinstance.py:1242} INFO - Marking task as UP_FOR_RETRY. dag_id=synthea_full_spark, task_id=load_database, run_id=manual__2026-09-22T05:33:30.473305+00:00, execution_date=20260922T053330, start_date=, end_date=20260922T053725
+[2026-09-22T13:37:25.530+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-22T13:37:25.531+0800] {dag.py:3090} ERROR - Task failed; ti=<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/dag.py", line 3083, in test
+    _run_task(
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/dag.py", line 4400, in _run_task
+    ti._run_raw_task(session=session, raise_on_defer=inline_trigger, mark_success=mark_success)
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3030, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 282, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3209, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 776, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 742, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 425, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runs/full-consumers-p1000-r1/airflow/dags/synthea_full_spark.py", line 25, in consume
+    return execute_consumer(component, manifest, context['run_id'], context['ti'].try_number)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/airflow_tasks.py", line 93, in execute_consumer
+    raise ValueError('Invalid consumer result path')
+ValueError: Invalid consumer result path
+[2026-09-22T13:37:25.550+0800] {dag.py:4396} INFO - [DAG TEST] starting task_id=export_fhir map_index=-1
+[2026-09-22T13:37:25.550+0800] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: synthea_full_spark.export_fhir manual__2026-09-22T05:33:30.473305+00:00 [scheduled]>
+[2026-09-22 13:37:25,783] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='export_fhir' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T05:33:30.473305+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T05:33:30.473305+00:00'
+[2026-09-22T13:37:25.783+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='export_fhir' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T05:33:30.473305+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T05:33:30.473305+00:00'
+[2026-09-22T13:37:25.783+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-22 13:38:50,061] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p1000-r1/results/9d6c5073a44b209252f946cba7d728f6c5d4f49b2019476a730c1ad7e5d72361/fhir/attempt-0001/manifest.json
+[2026-09-22T13:38:50.061+0800] {python.py:240} INFO - Done. Returned value was: /mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p1000-r1/results/9d6c5073a44b209252f946cba7d728f6c5d4f49b2019476a730c1ad7e5d72361/fhir/attempt-0001/manifest.json
+[2026-09-22T13:38:50.925+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-22T13:38:50.925+0800] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=synthea_full_spark, task_id=export_fhir, run_id=manual__2026-09-22T05:33:30.473305+00:00, execution_date=20260922T053330, start_date=, end_date=20260922T053850
+[2026-09-22T13:38:51.405+0800] {dag.py:4410} INFO - [DAG TEST] end task task_id=export_fhir map_index=-1
+[2026-09-22T13:38:51.641+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:38:53.147+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:38:54.298+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:38:55.501+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:38:56.716+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:38:57.920+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:38:59.291+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:00.497+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:01.691+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:02.903+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:04.111+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:05.241+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:06.472+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:07.684+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:08.923+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:10.094+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:11.301+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:12.483+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:13.726+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:14.867+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:16.074+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:17.257+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:18.508+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:19.795+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:20.922+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:22.024+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:23.129+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:24.248+0800] {dag.py:3061} WARNING - No tasks to run. unrunnable tasks: {<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [up_for_retry]>}
+[2026-09-22T13:39:25.374+0800] {dag.py:4396} INFO - [DAG TEST] starting task_id=load_database map_index=-1
+[2026-09-22T13:39:25.374+0800] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [scheduled]>
+[2026-09-22 13:39:25,488] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='load_database' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T05:33:30.473305+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T05:33:30.473305+00:00'
+[2026-09-22T13:39:25.488+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_spark' AIRFLOW_CTX_TASK_ID='load_database' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T05:33:30.473305+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T05:33:30.473305+00:00'
+[2026-09-22T13:39:25.488+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-22 13:39:52,011] {taskinstance.py:3337} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 776, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 742, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 425, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runs/full-consumers-p1000-r1/airflow/dags/synthea_full_spark.py", line 25, in consume
+    return execute_consumer(component, manifest, context['run_id'], context['ti'].try_number)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/airflow_tasks.py", line 93, in execute_consumer
+    raise ValueError('Invalid consumer result path')
+ValueError: Invalid consumer result path
+[2026-09-22T13:39:52.011+0800] {taskinstance.py:3337} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 776, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 742, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 425, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runs/full-consumers-p1000-r1/airflow/dags/synthea_full_spark.py", line 25, in consume
+    return execute_consumer(component, manifest, context['run_id'], context['ti'].try_number)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/airflow_tasks.py", line 93, in execute_consumer
+    raise ValueError('Invalid consumer result path')
+ValueError: Invalid consumer result path
+[2026-09-22T13:39:52.015+0800] {taskinstance.py:1242} INFO - Marking task as FAILED. dag_id=synthea_full_spark, task_id=load_database, run_id=manual__2026-09-22T05:33:30.473305+00:00, execution_date=20260922T053330, start_date=, end_date=20260922T053952
+[2026-09-22T13:39:52.223+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-22T13:39:52.223+0800] {dag.py:3090} ERROR - Task failed; ti=<TaskInstance: synthea_full_spark.load_database manual__2026-09-22T05:33:30.473305+00:00 [failed]>
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/dag.py", line 3083, in test
+    _run_task(
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/dag.py", line 4400, in _run_task
+    ti._run_raw_task(session=session, raise_on_defer=inline_trigger, mark_success=mark_success)
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3030, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 282, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3209, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 776, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 742, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 425, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/runs/full-consumers-p1000-r1/airflow/dags/synthea_full_spark.py", line 25, in consume
+    return execute_consumer(component, manifest, context['run_id'], context['ti'].try_number)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/medical-etl-airflow/project/src/airflow_tasks.py", line 93, in execute_consumer
+    raise ValueError('Invalid consumer result path')
+ValueError: Invalid consumer result path
+[2026-09-22T13:39:52.227+0800] {dagrun.py:823} ERROR - Marking run <DagRun synthea_full_spark @ 2026-09-22 05:33:30.473305+00:00: manual__2026-09-22T05:33:30.473305+00:00, state:running, queued_at: None. externally triggered: False> failed
+[2026-09-22T13:39:52.227+0800] {dagrun.py:905} INFO - DagRun Finished: dag_id=synthea_full_spark, execution_date=2026-09-22 05:33:30.473305+00:00, run_id=manual__2026-09-22T05:33:30.473305+00:00, run_start_date=2026-09-22 05:33:30.473305+00:00, run_end_date=2026-09-22 05:39:52.227749+00:00, run_duration=381.754444, state=failed, external_trigger=False, run_type=manual, data_interval_start=2026-09-22 05:33:30.473305+00:00, data_interval_end=2026-09-22 05:33:30.473305+00:00, dag_hash=None
+Traceback (most recent call last):
+  File "/opt/medical-etl-airflow/project/scripts/airflow/full_consumers_acceptance.py", line 219, in <module>
+    main()
+  File "/opt/medical-etl-airflow/project/scripts/airflow/full_consumers_acceptance.py", line 118, in main
+    raise RuntimeError('dag.test failed')
+RuntimeError: dag.test failed

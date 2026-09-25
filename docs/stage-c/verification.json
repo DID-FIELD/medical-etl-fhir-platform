@@ -1,0 +1,63 @@
+{
+  "stage": "C",
+  "database": "project local PostgreSQL 18.4",
+  "run_id": "stage-c-verified",
+  "counts": {
+    "dim_patient": 108,
+    "dwd_encounter": 5571,
+    "dwd_imaging_study": 413,
+    "dwd_imaging_series": 413,
+    "dwd_imaging_instance": 478,
+    "bridge_study_modality": 413,
+    "dws_patient_imaging_summary": 108,
+    "dws_imaging_daily_modality": 401,
+    "ads_patient_imaging_profile": 108
+  },
+  "checks": {
+    "dim_patient.count": true,
+    "dwd_encounter.count": true,
+    "dwd_imaging_study.count": true,
+    "dwd_imaging_series.count": true,
+    "dwd_imaging_instance.count": true,
+    "bridge_study_modality.count": true,
+    "dws_patient_imaging_summary.count": true,
+    "dws_imaging_daily_modality.count": true,
+    "ads_patient_imaging_profile.count": true,
+    "zero_exam_patients": true,
+    "sum_exam_count": true,
+    "ods_count": true,
+    "api_status": true,
+    "api_all_patient_profiles": true,
+    "api_all_patient_studies": true,
+    "api_sample_lineage": true,
+    "api_unknown_patient_404": true
+  },
+  "api_validation": "ASGI TestClient with real PostgreSQL; not load testing",
+  "sample_lineage": {
+    "run_id": "stage-c-verified",
+    "study_key": "01750c40-84ed-50d4-b193-876bd3f84fda",
+    "source_table": "imaging_studies",
+    "record_position": "one-based, excluding header",
+    "instances": [
+      {
+        "instance_uid": "1.2.840.99999999.1.1.66885425.1750774589227",
+        "series_uid": "1.2.840.99999999.1.77622059.1750774589227",
+        "source_sha256": "bebfa122958cde7522706dddc1187663f11d34136dbf63a5a2aa16128638aa3f",
+        "source_row": 35
+      },
+      {
+        "instance_uid": "1.2.840.99999999.1.2.55050185.1750774589227",
+        "series_uid": "1.2.840.99999999.1.77622059.1750774589227",
+        "source_sha256": "bebfa122958cde7522706dddc1187663f11d34136dbf63a5a2aa16128638aa3f",
+        "source_row": 36
+      }
+    ]
+  },
+  "passed": true,
+  "remaining": [
+    "Synthea FHIR resource mapping/version validation",
+    "Spark equivalence",
+    "Airflow orchestration",
+    "larger Synthea data generation/load tests"
+  ]
+}

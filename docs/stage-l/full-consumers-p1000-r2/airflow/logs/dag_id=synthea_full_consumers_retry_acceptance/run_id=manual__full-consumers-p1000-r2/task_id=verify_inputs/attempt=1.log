@@ -1,0 +1,17 @@
+[2026-09-22T18:23:19.592+0800] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-09-22T18:23:19.599+0800] {taskinstance.py:2632} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: synthea_full_consumers_retry_acceptance.verify_inputs manual__full-consumers-p1000-r2 [queued]>
+[2026-09-22T18:23:19.601+0800] {taskinstance.py:2632} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: synthea_full_consumers_retry_acceptance.verify_inputs manual__full-consumers-p1000-r2 [queued]>
+[2026-09-22T18:23:19.601+0800] {taskinstance.py:2885} INFO - Starting attempt 1 of 2
+[2026-09-22T18:23:19.719+0800] {taskinstance.py:2908} INFO - Executing <Task(PythonOperator): verify_inputs> on 2026-09-22 10:23:15+00:00
+[2026-09-22T18:23:19.722+0800] {standard_task_runner.py:72} INFO - Started process 2315 to run task
+[2026-09-22T18:23:19.724+0800] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'synthea_full_consumers_retry_acceptance', 'verify_inputs', 'manual__full-consumers-p1000-r2', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/full_consumers_retry_dag.py', '--cfg-path', '/tmp/tmpm1l6ykzo']
+[2026-09-22T18:23:19.725+0800] {standard_task_runner.py:105} INFO - Job 2: Subtask verify_inputs
+[2026-09-22T18:23:19.839+0800] {task_command.py:467} INFO - Running <TaskInstance: synthea_full_consumers_retry_acceptance.verify_inputs manual__full-consumers-p1000-r2 [running]> on host LAPTOP-LO2NU7PH.localdomain
+[2026-09-22T18:23:20.723+0800] {taskinstance.py:3158} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synthea_full_consumers_retry_acceptance' AIRFLOW_CTX_TASK_ID='verify_inputs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-22T10:23:15+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__full-consumers-p1000-r2'
+[2026-09-22T18:23:20.724+0800] {taskinstance.py:740} INFO - ::endgroup::
+[2026-09-22T18:23:22.106+0800] {python.py:240} INFO - Done. Returned value was: ('6775a19d38b29f363b025bf7676c2d21268b831c4afa44e92f00a17b2259ad2d', '20f048ccc48e9359ae21600d0c69a34bdacb6a8ae1d0281e80eb5de5b908e5b7')
+[2026-09-22T18:23:22.216+0800] {taskinstance.py:349} INFO - ::group::Post task execution logs
+[2026-09-22T18:23:22.216+0800] {taskinstance.py:361} INFO - Marking task as SUCCESS. dag_id=synthea_full_consumers_retry_acceptance, task_id=verify_inputs, run_id=manual__full-consumers-p1000-r2, execution_date=20260922T102315, start_date=20260922T102319, end_date=20260922T102322
+[2026-09-22T18:23:22.446+0800] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-09-22T18:23:22.457+0800] {taskinstance.py:3925} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-09-22T18:23:22.579+0800] {local_task_job_runner.py:245} INFO - ::endgroup::

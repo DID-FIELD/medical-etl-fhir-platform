@@ -1,0 +1,54 @@
+{
+  "status": "SUCCESS",
+  "run_id": "manual__2026-09-24T10:01:12.285511+00:00",
+  "component": "fhir",
+  "source_manifest_sha256": "92c66af97b365a0844a4b891e3ce2c98bb74621cfaf89c943e4624d15b5b3dd8",
+  "code_sha256": {
+    "consumer_workflow.py": "7ddf8c55cd05f080e793fc1984547225d922e5bc2f0c0db97f224eb0b619fb4d",
+    "snapshot_reader.py": "7c91d63987a88557175f4fc15ed5884a24ba9dae6cc5af15f62824f3454c4afe",
+    "database/streaming_load.py": "14acfd836904c944123a2eb7efce8e4b5afe0146b9ceec36c26649a74e548a18",
+    "database/synthea_store.py": "92ecad0086732e113f9c391f9185a818697cf655f90a3a365a472a2553adf48f",
+    "fhir/streaming_export.py": "a1a37ff63eecee234cba779cc47f10e281cb7d9010585a31936337323464d3d7",
+    "fhir/synthea_export.py": "d15fcc69380d146508080c3218bee79f5305ebb3f1e7d3bee594d4e6a864402c"
+  },
+  "export": {
+    "status": "SUCCESS",
+    "fhir_version": "4.3.0",
+    "mapping_version": "synthea-summary-v1",
+    "source_run_id": "manual__2026-09-24T10:01:12.285511+00:00",
+    "source_manifest_sha256": "92c66af97b365a0844a4b891e3ce2c98bb74621cfaf89c943e4624d15b5b3dd8",
+    "exporter_sha256": "a1a37ff63eecee234cba779cc47f10e281cb7d9010585a31936337323464d3d7",
+    "mapping_sha256": "d15fcc69380d146508080c3218bee79f5305ebb3f1e7d3bee594d4e6a864402c",
+    "fhir_resources_version": "8.2.0",
+    "created_at": "2026-09-24T10:09:19.472377+00:00",
+    "counts": {
+      "Patient": 11476,
+      "Encounter": 677836,
+      "ImagingStudy": 19435
+    },
+    "artifacts": {
+      "Patient.ndjson": "effa0c271a27b4de9df196d00d748f293f5b9c730e0f5f0ebbbcf34e0f94ecfe",
+      "Encounter.ndjson": "42f13e90c5aa3d7ad4bd0735509e53f57a67fb7e21c0cb1b5eba62a406d02048",
+      "ImagingStudy.ndjson": "ca1067b0e0ef6b28ef82d840ddb62cfbdb72daf732621e5cd183674b948d5a75"
+    },
+    "checks": {
+      "model_validation": true,
+      "unique_ids": true,
+      "references_and_patient_match": true,
+      "ndjson_readback": true,
+      "source_hashes": true
+    },
+    "summary_only_studies": 19435,
+    "limitations": [
+      "No source StudyInstanceUID; summary only, no invented series or identifiers.",
+      "Python R4B models and local checks; no HL7 validator or terminology service.",
+      "NDJSON files, not a FHIR server or Bulk Data protocol."
+    ]
+  },
+  "artifacts": {
+    "fhir/Encounter.ndjson": "42f13e90c5aa3d7ad4bd0735509e53f57a67fb7e21c0cb1b5eba62a406d02048",
+    "fhir/ImagingStudy.ndjson": "ca1067b0e0ef6b28ef82d840ddb62cfbdb72daf732621e5cd183674b948d5a75",
+    "fhir/manifest.json": "453b72e5920cb328d15a17b067328219ed3c86655f866cf15d5f0bb777908e0d",
+    "fhir/Patient.ndjson": "effa0c271a27b4de9df196d00d748f293f5b9c730e0f5f0ebbbcf34e0f94ecfe"
+  }
+}

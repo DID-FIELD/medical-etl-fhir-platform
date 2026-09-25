@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-22",
+  "chapters": 15,
+  "local_links_checked": 380,
+  "broken_links": 0,
+  "rebuild_byte_identical": true,
+  "browser": "Edge headless",
+  "viewports": [
+    1366,
+    390
+  ],
+  "views": 30,
+  "page_overflows": 0,
+  "screenshots_spot_checked": [
+    "overview desktop",
+    "consumer mobile"
+  ]
+}

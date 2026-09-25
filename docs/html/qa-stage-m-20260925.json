@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-25",
+  "chapters": 15,
+  "local_links_checked": 396,
+  "broken_links": [],
+  "rebuild_byte_identical": true,
+  "browser": "Edge headless",
+  "widths": [1366, 390],
+  "views": 30,
+  "layout_failures": [],
+  "visual_review": [
+    "390px chapter 14 SQLite status-lock diagnosis section",
+    "390px chapter 14 Stage M success section",
+    "1366px chapter 14 Stage M success section"
+  ],
+  "evidence_directory": "output/html-stage-m-r6-qa-20260925",
+  "stage_m_acceptance": "SUCCESS; full-consumers-p10000-r6",
+  "business_evidence": "../stage-m/full-consumers-p10000-r6/independent-verification.json"
+}

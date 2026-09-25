@@ -1,0 +1,7 @@
+{
+  "src/spark_full_workflow.py": "84e1079af82657aacdce36e7b98831f4e8576d9cdae5e9883bb6a771464aadfb",
+  "src/airflow_tasks.py": "7f16b3405844c5de8405e6c3cefdc822508cf15699b2ddd10d98f51bf3f66b49",
+  "dags/synthea_full_spark.py": "e36675d660b99f34f34d5d63c7fbc8e4eeb7318e3cf75e3a3093f226c58686e3",
+  "scripts/airflow/full_spark_acceptance.py": "dceb43b1085d066e53be42ff99b86190ea531695cf6fd0583a202fc7b602a5b3",
+  "scripts/airflow/full_spark_retry_dag.py": "4bf0c711b9fba86125f3b62421681956ab9a80da8b30132b313c2e7677c50346"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "RUNNING",
+  "run_id": "manual__2026-09-23T15:51:40.490949+00:00",
+  "component": "fhir",
+  "source_manifest_sha256": "6d732dcb046cc129147cde46ac2ce2b60de25407b11a4e1e6314e285d26566ed",
+  "code_sha256": {
+    "consumer_workflow.py": "7ddf8c55cd05f080e793fc1984547225d922e5bc2f0c0db97f224eb0b619fb4d",
+    "snapshot_reader.py": "7c91d63987a88557175f4fc15ed5884a24ba9dae6cc5af15f62824f3454c4afe",
+    "database/streaming_load.py": "14acfd836904c944123a2eb7efce8e4b5afe0146b9ceec36c26649a74e548a18",
+    "database/synthea_store.py": "92ecad0086732e113f9c391f9185a818697cf655f90a3a365a472a2553adf48f",
+    "fhir/streaming_export.py": "a1a37ff63eecee234cba779cc47f10e281cb7d9010585a31936337323464d3d7",
+    "fhir/synthea_export.py": "d15fcc69380d146508080c3218bee79f5305ebb3f1e7d3bee594d4e6a864402c"
+  }
+}

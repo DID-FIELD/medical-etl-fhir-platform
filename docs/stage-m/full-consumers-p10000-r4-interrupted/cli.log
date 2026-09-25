@@ -1,0 +1,18 @@
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+DB: sqlite:////opt/medical-etl-airflow/runs/full-consumers-p10000-r4/airflow/metadata.db
+Performing upgrade to the metadata database sqlite:////opt/medical-etl-airflow/runs/full-consumers-p10000-r4/airflow/metadata.db
+[2026-09-23T23:51:26.863+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.schemas
+[2026-09-23T23:51:26.865+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.tables
+[2026-09-23T23:51:26.865+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.types
+[2026-09-23T23:51:26.865+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.constraints
+[2026-09-23T23:51:26.865+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.defaults
+[2026-09-23T23:51:26.865+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.comments
+[2026-09-23T23:51:26.952+0800] {migration.py:210} INFO - Context impl SQLiteImpl.
+[2026-09-23T23:51:26.952+0800] {migration.py:213} INFO - Will assume non-transactional DDL.
+[2026-09-23T23:51:26.953+0800] {migration.py:210} INFO - Context impl SQLiteImpl.
+[2026-09-23T23:51:26.953+0800] {migration.py:213} INFO - Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running stamp_revision  -> 5f2621c13b39
+Database migrating done!

@@ -1,0 +1,11 @@
+{
+  "status": "RUNNING",
+  "fhir_version": "4.3.0",
+  "mapping_version": "synthea-summary-v1",
+  "source_run_id": "manual__2026-09-23T15:51:40.490949+00:00",
+  "source_manifest_sha256": "6d732dcb046cc129147cde46ac2ce2b60de25407b11a4e1e6314e285d26566ed",
+  "exporter_sha256": "a1a37ff63eecee234cba779cc47f10e281cb7d9010585a31936337323464d3d7",
+  "mapping_sha256": "d15fcc69380d146508080c3218bee79f5305ebb3f1e7d3bee594d4e6a864402c",
+  "fhir_resources_version": "8.2.0",
+  "created_at": "2026-09-23T16:36:44.066283+00:00"
+}

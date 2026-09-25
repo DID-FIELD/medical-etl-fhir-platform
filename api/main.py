@@ -110,3 +110,8 @@ def get_fhir_patient(patient_id: str):
     from src.fhir.converter import convert_to_fhir_patient
 
     return convert_to_fhir_patient({"patient_id": result[0], "gender": result[1]})
+
+
+from api.synthea import router as synthea_router
+
+app.include_router(synthea_router)

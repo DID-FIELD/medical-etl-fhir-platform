@@ -1,0 +1,13 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+  "logical_cores": 16,
+  "ram_bytes": 16845402112,
+  "disk_free_bytes_now": 237098078208,
+  "python": "3.13.9",
+  "psutil": "7.2.2",
+  "java_version": "java version \"25.0.1\" 2025-10-21 LTS\nJava(TM) SE Runtime Environment (build 25.0.1+8-LTS-27)\nJava HotSpot(TM) 64-Bit Server VM (build 25.0.1+8-LTS-27, mixed mode, sharing)\n",
+  "host_timezone": "Windows China Standard Time (UTC+08:00)",
+  "generation_timezone_option": "not overridden in this baseline; known date-only vs UTC boundary issue",
+  "memory_method": "process tree RSS sampled every 250ms; first p100/p1000 generation runs had launcher-only counters excluded"
+}

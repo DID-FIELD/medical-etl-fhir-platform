@@ -1,0 +1,5 @@
+{
+  "try_number": 1,
+  "manifest": "/opt/medical-etl-airflow/runs/full-spark-airflow-p1000-r1/results/7da312b1c314c5dea271fcc3afdc792292088302f9c396f5ddd0c2134af62cef/spark-full/attempt-0001/manifest.json",
+  "manifest_sha256": "bc781598540a3bdb387ccb42455afcb9cc1bce6a3135b564011e38ab92ab8abb"
+}

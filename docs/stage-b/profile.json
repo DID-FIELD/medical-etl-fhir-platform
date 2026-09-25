@@ -1,0 +1,411 @@
+{
+  "archive": {
+    "name": "synthea_csv.zip",
+    "bytes": 5960866,
+    "sha256": "d61417b551e5b0997c33851b339c157421751f0ea68c18ea686ceb1850907c35"
+  },
+  "tables": {
+    "patients": {
+      "rows": 108,
+      "bytes": 32471,
+      "columns": 28,
+      "sha256": "0e8a61760644976571e7ede02e8be5bfece5111bc179d2139af87f84b630c859",
+      "exact_duplicate_excess": 0,
+      "fields": {
+        "Id": {
+          "missing": 0,
+          "distinct_nonempty": 108
+        },
+        "BIRTHDATE": {
+          "missing": 0,
+          "distinct_nonempty": 97
+        },
+        "DEATHDATE": {
+          "missing": 99,
+          "distinct_nonempty": 9
+        },
+        "SSN": {
+          "missing": 0,
+          "distinct_nonempty": 108
+        },
+        "DRIVERS": {
+          "missing": 19,
+          "distinct_nonempty": 89
+        },
+        "PASSPORT": {
+          "missing": 28,
+          "distinct_nonempty": 80
+        },
+        "PREFIX": {
+          "missing": 22,
+          "distinct_nonempty": 3
+        },
+        "FIRST": {
+          "missing": 0,
+          "distinct_nonempty": 108
+        },
+        "MIDDLE": {
+          "missing": 23,
+          "distinct_nonempty": 84
+        },
+        "LAST": {
+          "missing": 0,
+          "distinct_nonempty": 96
+        },
+        "SUFFIX": {
+          "missing": 107,
+          "distinct_nonempty": 1
+        },
+        "MAIDEN": {
+          "missing": 88,
+          "distinct_nonempty": 20
+        },
+        "MARITAL": {
+          "missing": 39,
+          "distinct_nonempty": 4
+        },
+        "RACE": {
+          "missing": 0,
+          "distinct_nonempty": 3
+        },
+        "ETHNICITY": {
+          "missing": 0,
+          "distinct_nonempty": 2
+        },
+        "GENDER": {
+          "missing": 0,
+          "distinct_nonempty": 2
+        },
+        "BIRTHPLACE": {
+          "missing": 0,
+          "distinct_nonempty": 77
+        },
+        "ADDRESS": {
+          "missing": 0,
+          "distinct_nonempty": 108
+        },
+        "CITY": {
+          "missing": 0,
+          "distinct_nonempty": 73
+        },
+        "STATE": {
+          "missing": 0,
+          "distinct_nonempty": 1
+        },
+        "COUNTY": {
+          "missing": 0,
+          "distinct_nonempty": 12
+        },
+        "FIPS": {
+          "missing": 29,
+          "distinct_nonempty": 11
+        },
+        "ZIP": {
+          "missing": 0,
+          "distinct_nonempty": 69
+        },
+        "LAT": {
+          "missing": 0,
+          "distinct_nonempty": 108
+        },
+        "LON": {
+          "missing": 0,
+          "distinct_nonempty": 108
+        },
+        "HEALTHCARE_EXPENSES": {
+          "missing": 0,
+          "distinct_nonempty": 108
+        },
+        "HEALTHCARE_COVERAGE": {
+          "missing": 0,
+          "distinct_nonempty": 103
+        },
+        "INCOME": {
+          "missing": 0,
+          "distinct_nonempty": 99
+        }
+      }
+    },
+    "encounters": {
+      "rows": 5571,
+      "bytes": 1857081,
+      "columns": 15,
+      "sha256": "16d209cb1429605c90c80cd859ac16569108dc46890f50eb6a125a0602235b3a",
+      "exact_duplicate_excess": 0,
+      "fields": {
+        "Id": {
+          "missing": 0,
+          "distinct_nonempty": 5571
+        },
+        "START": {
+          "missing": 0,
+          "distinct_nonempty": 5530
+        },
+        "STOP": {
+          "missing": 0,
+          "distinct_nonempty": 5567
+        },
+        "PATIENT": {
+          "missing": 0,
+          "distinct_nonempty": 108
+        },
+        "ORGANIZATION": {
+          "missing": 0,
+          "distinct_nonempty": 245
+        },
+        "PROVIDER": {
+          "missing": 0,
+          "distinct_nonempty": 245
+        },
+        "PAYER": {
+          "missing": 0,
+          "distinct_nonempty": 10
+        },
+        "ENCOUNTERCLASS": {
+          "missing": 0,
+          "distinct_nonempty": 10
+        },
+        "CODE": {
+          "missing": 0,
+          "distinct_nonempty": 44
+        },
+        "DESCRIPTION": {
+          "missing": 0,
+          "distinct_nonempty": 44
+        },
+        "BASE_ENCOUNTER_COST": {
+          "missing": 0,
+          "distinct_nonempty": 11
+        },
+        "TOTAL_CLAIM_COST": {
+          "missing": 0,
+          "distinct_nonempty": 1763
+        },
+        "PAYER_COVERAGE": {
+          "missing": 0,
+          "distinct_nonempty": 1845
+        },
+        "REASONCODE": {
+          "missing": 2044,
+          "distinct_nonempty": 104
+        },
+        "REASONDESCRIPTION": {
+          "missing": 2044,
+          "distinct_nonempty": 104
+        }
+      }
+    },
+    "imaging_studies": {
+      "rows": 478,
+      "bytes": 187543,
+      "columns": 13,
+      "sha256": "bebfa122958cde7522706dddc1187663f11d34136dbf63a5a2aa16128638aa3f",
+      "exact_duplicate_excess": 0,
+      "fields": {
+        "Id": {
+          "missing": 0,
+          "distinct_nonempty": 413
+        },
+        "DATE": {
+          "missing": 0,
+          "distinct_nonempty": 410
+        },
+        "PATIENT": {
+          "missing": 0,
+          "distinct_nonempty": 96
+        },
+        "ENCOUNTER": {
+          "missing": 0,
+          "distinct_nonempty": 379
+        },
+        "SERIES_UID": {
+          "missing": 0,
+          "distinct_nonempty": 413
+        },
+        "BODYSITE_CODE": {
+          "missing": 0,
+          "distinct_nonempty": 11
+        },
+        "BODYSITE_DESCRIPTION": {
+          "missing": 0,
+          "distinct_nonempty": 11
+        },
+        "MODALITY_CODE": {
+          "missing": 0,
+          "distinct_nonempty": 6
+        },
+        "MODALITY_DESCRIPTION": {
+          "missing": 0,
+          "distinct_nonempty": 6
+        },
+        "INSTANCE_UID": {
+          "missing": 0,
+          "distinct_nonempty": 478
+        },
+        "SOP_CODE": {
+          "missing": 0,
+          "distinct_nonempty": 6
+        },
+        "SOP_DESCRIPTION": {
+          "missing": 0,
+          "distinct_nonempty": 7
+        },
+        "PROCEDURE_CODE": {
+          "missing": 0,
+          "distinct_nonempty": 14
+        }
+      }
+    }
+  },
+  "checks": {
+    "patients.Id.missing": 0,
+    "patients.BIRTHDATE.missing": 0,
+    "patients.GENDER.missing": 0,
+    "encounters.Id.missing": 0,
+    "encounters.PATIENT.missing": 0,
+    "encounters.START.missing": 0,
+    "imaging_studies.Id.missing": 0,
+    "imaging_studies.DATE.missing": 0,
+    "imaging_studies.PATIENT.missing": 0,
+    "imaging_studies.ENCOUNTER.missing": 0,
+    "imaging_studies.SERIES_UID.missing": 0,
+    "imaging_studies.INSTANCE_UID.missing": 0,
+    "patients.Id.duplicate_excess": 0,
+    "encounters.Id.duplicate_excess": 0,
+    "encounters.patient_orphan_rows": 0,
+    "imaging.patient_orphan_rows": 0,
+    "imaging.encounter_orphan_rows": 0,
+    "imaging.patient_encounter_mismatch_rows": 0,
+    "imaging.study_conflicting_PATIENT_keys": 0,
+    "imaging.study_conflicting_ENCOUNTER_keys": 0,
+    "imaging.study_conflicting_DATE_keys": 0,
+    "imaging.instance_uid_duplicate_excess": 0,
+    "imaging.series_uid_multiple_studies": 0,
+    "imaging.series_conflicting_MODALITY_CODE_keys": 0,
+    "imaging.series_conflicting_BODYSITE_CODE_keys": 0,
+    "imaging.series_conflicting_BODYSITE_DESCRIPTION_keys": 0,
+    "patients.BIRTHDATE.invalid_nonempty": 0,
+    "patients.DEATHDATE.invalid_nonempty": 0,
+    "encounters.START.invalid_nonempty": 0,
+    "encounters.STOP.invalid_nonempty": 0,
+    "imaging_studies.DATE.invalid_nonempty": 0,
+    "encounters.stop_before_start": 0,
+    "imaging.before_encounter_start_rows": 0,
+    "imaging.after_encounter_stop_rows": 0,
+    "imaging.before_patient_birth_rows": 0
+  },
+  "relationships": {
+    "patients": 108,
+    "encounters": 5571,
+    "imaging_rows": 478,
+    "studies": 413,
+    "series": 413,
+    "instances": 478,
+    "imaged_patients": 96,
+    "imaged_encounters": 379,
+    "patients_without_imaging": 12,
+    "patients_without_encounters": 0,
+    "encounters_without_imaging": 5192,
+    "patient_join_encounters_rows": 5571,
+    "imaging_join_encounters_rows": 478,
+    "multi_modality_studies": 0,
+    "daily_modality_groups": 401,
+    "patient_day_modality_duplicate_excess": 0
+  },
+  "distributions": {
+    "instances_per_study": {
+      "1": 348,
+      "2": 65
+    },
+    "series_per_study": {
+      "1": 413
+    },
+    "modalities_per_study": {
+      "1": 413
+    },
+    "instance_rows_by_modality": {
+      "CR": 23,
+      "CT": 1,
+      "DX": 307,
+      "OP": 90,
+      "OPT": 40,
+      "US": 17
+    },
+    "studies_by_modality": {
+      "CR": 23,
+      "CT": 1,
+      "DX": 307,
+      "OP": 45,
+      "OPT": 20,
+      "US": 17
+    },
+    "encounter_class": {
+      "ambulatory": 2939,
+      "emergency": 270,
+      "home": 63,
+      "hospice": 8,
+      "inpatient": 58,
+      "outpatient": 759,
+      "snf": 9,
+      "urgentcare": 195,
+      "virtual": 8,
+      "wellness": 1262
+    },
+    "gender": {
+      "F": 51,
+      "M": 57
+    }
+  },
+  "date_ranges": {
+    "patients.BIRTHDATE": {
+      "min": "1930-11-06 00:00:00+00:00",
+      "max": "2026-05-27 00:00:00+00:00",
+      "missing": 0
+    },
+    "patients.DEATHDATE": {
+      "min": "1961-08-23 00:00:00+00:00",
+      "max": "2026-05-03 00:00:00+00:00",
+      "missing": 99
+    },
+    "encounters.START": {
+      "min": "1942-11-26 20:44:21+00:00",
+      "max": "2026-08-16 23:50:14+00:00",
+      "missing": 0
+    },
+    "encounters.STOP": {
+      "min": "1942-11-26 21:08:48+00:00",
+      "max": "2026-08-17 00:50:14+00:00",
+      "missing": 0
+    },
+    "imaging_studies.DATE": {
+      "min": "1981-01-08 18:54:19+00:00",
+      "max": "2026-08-09 03:52:23+00:00",
+      "missing": 0
+    }
+  },
+  "lineage_example": {
+    "source_rows_are": "one-based CSV data record positions, excluding header; not physical text lines",
+    "patient_source_row": 14,
+    "encounter_source_row": 524,
+    "imaging_source_rows": [
+      35,
+      36
+    ],
+    "study_ref": "study-bbed2f69b5fa",
+    "patient_ref": "patient-5108bcd21356",
+    "encounter_ref": "encounter-9c8bac093b8b",
+    "series_count": 1,
+    "instance_rows": 2,
+    "modalities": [
+      "OP"
+    ],
+    "input_imaging_sha256": "bebfa122958cde7522706dddc1187663f11d34136dbf63a5a2aa16128638aa3f"
+  },
+  "profile_self_checks": {
+    "instance_group_sum": true,
+    "patient_partition": true,
+    "encounter_partition": true,
+    "study_distribution": true,
+    "weighted_instance_distribution": true
+  }
+}

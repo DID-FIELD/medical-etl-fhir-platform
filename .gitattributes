@@ -1,0 +1,17 @@
+# Acceptance manifests bind raw SHA-256 bytes across Windows and WSL.
+# Preserve these files exactly; automatic newline conversion breaks verification.
+docs/stage-*/** -text
+src/synthea_pipeline.py -text
+src/streaming_pipeline.py -text
+src/consumer_workflow.py -text
+src/snapshot_reader.py -text
+src/airflow_tasks.py -text
+src/database/streaming_load.py -text
+src/database/synthea_store.py -text
+src/fhir/streaming_export.py -text
+src/fhir/synthea_export.py -text
+src/spark/synthea_*.py -text
+dags/synthea_full_spark.py -text
+scripts/airflow/full_consumers_acceptance.py -text
+scripts/airflow/full_consumers_retry_dag.py -text
+scripts/verify_stage_m_evidence.py -text

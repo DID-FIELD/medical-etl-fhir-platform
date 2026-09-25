@@ -1,0 +1,36 @@
+{
+  "status": "RUNNING",
+  "session": "full-consumers-p10000-r1",
+  "source_run_id": "p10000-stream-local-r1",
+  "source_manifest_sha256": "69a9f6652041c7475bca33fa81ece23d5430f8a912721b5d08853ce266b0a11c",
+  "source_read_only": true,
+  "runtime": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "population": 10000,
+  "shared_output": "/mnt/f/project/medical-etl-fhir-platform/output/full-consumers-p10000-r1",
+  "fhir_reference": {
+    "path": "/opt/medical-etl-airflow/project/output/fhir/p10000-stream-r2",
+    "manifest_sha256": "f4ff8aac8668df4524576f2c8e9c4bc0497fbe31260960859cf6047cfea91a5a",
+    "counts": {
+      "Patient": 11476,
+      "Encounter": 677836,
+      "ImagingStudy": 19435
+    },
+    "artifacts": {
+      "Patient.ndjson": "5b79bd3071b78c9353c720d1b372e6e549d2c91a6df6226ce327132f52d580c0",
+      "Encounter.ndjson": "40fb3163d1f48530c7fc71d1f2aed151488694657c49929bc87e324a209f3b7a",
+      "ImagingStudy.ndjson": "906d7c9c40721c1eb2957908e297563224b7f7a68d06899b82087450439ec424"
+    }
+  },
+  "scheduler_timeout_seconds": 7200,
+  "database_worker": "Windows project venv via WSL interop; PostgreSQL remains localhost-only",
+  "archive_sha256": "cde7f394763863dae3123799a54fd21dbc90683c650ceb17fe7db85f79a28559",
+  "file_publication_before": {
+    "run_id": "stage-c-verified"
+  },
+  "database_before": {
+    "status": "SUCCESS",
+    "formal_database_run_id": "stage-c-verified"
+  },
+  "airflow_version": "2.11.2",
+  "dagbag": "PASSED"
+}

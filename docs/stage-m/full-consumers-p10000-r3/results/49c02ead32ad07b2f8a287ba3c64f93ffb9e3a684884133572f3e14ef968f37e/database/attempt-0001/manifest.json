@@ -1,0 +1,182 @@
+{
+  "status": "SUCCESS",
+  "run_id": "manual__2026-09-23T04:20:36.289785+00:00",
+  "component": "database",
+  "source_manifest_sha256": "be66f474357e69511120ccb418d07a5542b531336d8ecaaadb99d55a75d3ff07",
+  "code_sha256": {
+    "consumer_workflow.py": "7ddf8c55cd05f080e793fc1984547225d922e5bc2f0c0db97f224eb0b619fb4d",
+    "snapshot_reader.py": "7c91d63987a88557175f4fc15ed5884a24ba9dae6cc5af15f62824f3454c4afe",
+    "database/streaming_load.py": "14acfd836904c944123a2eb7efce8e4b5afe0146b9ceec36c26649a74e548a18",
+    "database/synthea_store.py": "92ecad0086732e113f9c391f9185a818697cf655f90a3a365a472a2553adf48f",
+    "fhir/streaming_export.py": "a1a37ff63eecee234cba779cc47f10e281cb7d9010585a31936337323464d3d7",
+    "fhir/synthea_export.py": "d15fcc69380d146508080c3218bee79f5305ebb3f1e7d3bee594d4e6a864402c"
+  },
+  "schema": "synthea_airflow_49c02ead32ad07b2f8a287ba3c64f93f",
+  "load": {
+    "run_id": "manual__2026-09-23T04:20:36.289785+00:00",
+    "status": "PUBLISHED",
+    "counts": {
+      "dim_patient": 11476,
+      "dwd_encounter": 677836,
+      "dwd_imaging_study": 19435,
+      "dwd_imaging_series": 19435,
+      "dwd_imaging_instance": 1036348,
+      "bridge_study_modality": 19435,
+      "dws_patient_imaging_summary": 11476,
+      "dws_imaging_daily_modality": 14682,
+      "ads_patient_imaging_profile": 11476
+    },
+    "checks": {
+      "dim_patient.count": true,
+      "dwd_encounter.count": true,
+      "dwd_imaging_study.count": true,
+      "dwd_imaging_series.count": true,
+      "dwd_imaging_instance.count": true,
+      "bridge_study_modality.count": true,
+      "dws_patient_imaging_summary.count": true,
+      "dws_imaging_daily_modality.count": true,
+      "ads_patient_imaging_profile.count": true,
+      "patients.ods_count": true,
+      "patients.ods_lineage_range": true,
+      "patients.input_balance": true,
+      "patients.quality": true,
+      "encounters.ods_count": true,
+      "encounters.ods_lineage_range": true,
+      "encounters.input_balance": true,
+      "encounters.quality": true,
+      "imaging_studies.ods_count": true,
+      "imaging_studies.ods_lineage_range": true,
+      "imaging_studies.input_balance": true,
+      "imaging_studies.quality": true,
+      "study_parent_consistency": true,
+      "dws_patient_imaging_summary.patient_coverage": true,
+      "dws_patient_imaging_summary.exam_balance": true,
+      "ads_patient_imaging_profile.patient_coverage": true,
+      "ads_patient_imaging_profile.exam_balance": true,
+      "daily_bridge_balance": true,
+      "dim_patient.source_lineage": true,
+      "dim_patient.accepted_coverage": true,
+      "dim_patient.unique_source_row": true,
+      "dwd_encounter.source_lineage": true,
+      "dwd_encounter.accepted_coverage": true,
+      "dwd_encounter.unique_source_row": true,
+      "dwd_imaging_instance.source_lineage": true,
+      "dwd_imaging_instance.accepted_coverage": true,
+      "dwd_imaging_instance.unique_source_row": true,
+      "dwd_imaging_study.source_lineage": true
+    },
+    "batch_rows": 1000,
+    "batch_bytes": 2097152,
+    "elapsed_seconds": 408.558
+  },
+  "verification": {
+    "counts": {
+      "dim_patient": 11476,
+      "dwd_encounter": 677836,
+      "dwd_imaging_study": 19435,
+      "dwd_imaging_series": 19435,
+      "dwd_imaging_instance": 1036348,
+      "bridge_study_modality": 19435,
+      "dws_patient_imaging_summary": 11476,
+      "dws_imaging_daily_modality": 14682,
+      "ads_patient_imaging_profile": 11476
+    },
+    "checks": {
+      "dim_patient.count": true,
+      "dwd_encounter.count": true,
+      "dwd_imaging_study.count": true,
+      "dwd_imaging_series.count": true,
+      "dwd_imaging_instance.count": true,
+      "bridge_study_modality.count": true,
+      "dws_patient_imaging_summary.count": true,
+      "dws_imaging_daily_modality.count": true,
+      "ads_patient_imaging_profile.count": true,
+      "patients.ods_count": true,
+      "patients.ods_lineage_range": true,
+      "patients.input_balance": true,
+      "patients.quality": true,
+      "encounters.ods_count": true,
+      "encounters.ods_lineage_range": true,
+      "encounters.input_balance": true,
+      "encounters.quality": true,
+      "imaging_studies.ods_count": true,
+      "imaging_studies.ods_lineage_range": true,
+      "imaging_studies.input_balance": true,
+      "imaging_studies.quality": true,
+      "study_parent_consistency": true,
+      "dws_patient_imaging_summary.patient_coverage": true,
+      "dws_patient_imaging_summary.exam_balance": true,
+      "ads_patient_imaging_profile.patient_coverage": true,
+      "ads_patient_imaging_profile.exam_balance": true,
+      "daily_bridge_balance": true,
+      "dim_patient.source_lineage": true,
+      "dim_patient.accepted_coverage": true,
+      "dim_patient.unique_source_row": true,
+      "dwd_encounter.source_lineage": true,
+      "dwd_encounter.accepted_coverage": true,
+      "dwd_encounter.unique_source_row": true,
+      "dwd_imaging_instance.source_lineage": true,
+      "dwd_imaging_instance.accepted_coverage": true,
+      "dwd_imaging_instance.unique_source_row": true,
+      "dwd_imaging_study.source_lineage": true
+    },
+    "comparisons": {
+      "dim_patient": {
+        "rows": 11476,
+        "missing": 0,
+        "extra": 0
+      },
+      "dwd_encounter": {
+        "rows": 677836,
+        "missing": 0,
+        "extra": 0
+      },
+      "dwd_imaging_study": {
+        "rows": 19435,
+        "missing": 0,
+        "extra": 0
+      },
+      "dwd_imaging_series": {
+        "rows": 19435,
+        "missing": 0,
+        "extra": 0
+      },
+      "dwd_imaging_instance": {
+        "rows": 1036348,
+        "missing": 0,
+        "extra": 0
+      },
+      "bridge_study_modality": {
+        "rows": 19435,
+        "missing": 0,
+        "extra": 0
+      },
+      "dws_patient_imaging_summary": {
+        "rows": 11476,
+        "missing": 0,
+        "extra": 0
+      },
+      "dws_imaging_daily_modality": {
+        "rows": 14682,
+        "missing": 0,
+        "extra": 0
+      },
+      "ads_patient_imaging_profile": {
+        "rows": 11476,
+        "missing": 0,
+        "extra": 0
+      },
+      "source_records": {
+        "rows": 1725660,
+        "missing": 0,
+        "extra": 0
+      },
+      "row_dispositions": {
+        "rows": 1725660,
+        "missing": 0,
+        "extra": 0
+      }
+    }
+  },
+  "artifacts": {}
+}

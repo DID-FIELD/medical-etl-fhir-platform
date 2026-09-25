@@ -23,7 +23,7 @@ class QualityCheckResult:
 
 def check_not_null(df: pd.DataFrame, columns: list[str]) -> QualityCheckResult:
     total_count = len(df)
-    missing = df[columns].isna().any(axis=1) if total_count else pd.Series(dtype=bool)
+    missing = (df[columns].isna() | df[columns].astype("string").apply(lambda col: col.str.strip().eq(""))).any(axis=1) if total_count else pd.Series(dtype=bool)
     failed_count = int(missing.sum()) if total_count else 0
     return QualityCheckResult(
         rule_name=f"not_null:{','.join(columns)}",

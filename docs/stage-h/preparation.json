@@ -1,0 +1,26 @@
+{
+  "status": "PREPARED_RUNTIME_BLOCKED",
+  "runtime_validation_completed": false,
+  "blocker": "WSL install rejected by automatic approval review: persistent system-level change requires explicit authorization. No Docker/Podman/Linux distro available.",
+  "target": {
+    "airflow": "2.11.2",
+    "python": "3.12",
+    "java": "21",
+    "distribution": "Ubuntu 24.04 on WSL2",
+    "distro_storage": "F:/project/medical-etl-fhir-platform/output/runtime/wsl-airflow",
+    "automatic_reboot": false
+  },
+  "syntax_checks": [
+    "Python compilation passed",
+    "bash -n passed"
+  ],
+  "code_sha256": {
+    "src/snapshot_workflow.py": "9103c1027f11bc4d9d0cbf68fd1e22183032e4475433c9de58cef4f5d80462f5",
+    "src/airflow_tasks.py": "c16e8531844390922db0c9441e18fb0c60eb277c78905a36c253e40bf3e4f3a9",
+    "dags/synthea_snapshot_validation.py": "8327284be9c20b956cc57512da9541ba44ec7d6f16523827382019d8e83be5f6",
+    "scripts/airflow/bootstrap_linux.sh": "6f3af8980f8a647159f4196a84edcb95eaf1d9d07ff0b622d9d0020afb15b43e",
+    "scripts/airflow/requirements-worker.txt": "11abd9e68c3834ef6b559eaf22e52707e12bbbcb1d19fbf6b1bd673caa2c78d1",
+    "scripts/airflow/acceptance.py": "2f5d4b4463683d3850c7da2ff9d316a6a7e444b9c2cd0906ea27de1c2abac273",
+    "scripts/airflow/retry_acceptance_dag.py": "a5f36a23e3015ea9354786d4690c9653c462e603fbdc1b441470b0ba5fcfdb94"
+  }
+}

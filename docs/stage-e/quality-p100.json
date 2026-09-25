@@ -1,0 +1,33 @@
+{
+  "population_requested": 100,
+  "quarantine_reasons": {
+    "encounter_before_birth": 3
+  },
+  "largest_study_instance_counts": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "quarantined_encounter_examples": [
+    {
+      "source_row": 3990,
+      "reasons": [
+        "encounter_before_birth"
+      ]
+    },
+    {
+      "source_row": 4042,
+      "reasons": [
+        "encounter_before_birth"
+      ]
+    },
+    {
+      "source_row": 4764,
+      "reasons": [
+        "encounter_before_birth"
+      ]
+    }
+  ]
+}

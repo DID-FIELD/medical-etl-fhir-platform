@@ -1,0 +1,235 @@
+{
+  "status": "SUCCESS",
+  "schema": "synthea_scale_consumers_p1000_r1",
+  "phase": "complete",
+  "sources": [
+    {
+      "run_id": "p1000-stream-local-r1",
+      "manifest_sha256": "20f048ccc48e9359ae21600d0c69a34bdacb6a8ae1d0281e80eb5de5b908e5b7"
+    },
+    {
+      "run_id": "spark-full-p1000-r1",
+      "manifest_sha256": "cbb3e2798cac1892430f7b2c46a103feb048593f2dfc54dc08da44f9b75eb98f"
+    }
+  ],
+  "fhir_exports": [
+    {
+      "source": "baseline",
+      "counts": {
+        "Patient": 1159,
+        "Encounter": 70229,
+        "ImagingStudy": 2239
+      },
+      "checks": {
+        "model_validation": true,
+        "unique_ids": true,
+        "references_and_patient_match": true,
+        "ndjson_readback": true,
+        "source_hashes": true
+      }
+    },
+    {
+      "source": "spark",
+      "counts": {
+        "Patient": 1159,
+        "Encounter": 70229,
+        "ImagingStudy": 2239
+      },
+      "checks": {
+        "model_validation": true,
+        "unique_ids": true,
+        "references_and_patient_match": true,
+        "ndjson_readback": true,
+        "source_hashes": true
+      }
+    }
+  ],
+  "fhir_differences": {
+    "baseline_minus_spark": 0,
+    "spark_minus_baseline": 0
+  },
+  "loads": [
+    {
+      "run_id": "p1000-stream-local-r1",
+      "status": "PUBLISHED",
+      "counts": {
+        "dim_patient": 1159,
+        "dwd_encounter": 70229,
+        "dwd_imaging_study": 2239,
+        "dwd_imaging_series": 2239,
+        "dwd_imaging_instance": 89354,
+        "bridge_study_modality": 2239,
+        "dws_patient_imaging_summary": 1159,
+        "dws_imaging_daily_modality": 2155,
+        "ads_patient_imaging_profile": 1159
+      },
+      "checks": {
+        "dim_patient.count": true,
+        "dwd_encounter.count": true,
+        "dwd_imaging_study.count": true,
+        "dwd_imaging_series.count": true,
+        "dwd_imaging_instance.count": true,
+        "bridge_study_modality.count": true,
+        "dws_patient_imaging_summary.count": true,
+        "dws_imaging_daily_modality.count": true,
+        "ads_patient_imaging_profile.count": true,
+        "patients.ods_count": true,
+        "patients.ods_lineage_range": true,
+        "patients.input_balance": true,
+        "patients.quality": true,
+        "encounters.ods_count": true,
+        "encounters.ods_lineage_range": true,
+        "encounters.input_balance": true,
+        "encounters.quality": true,
+        "imaging_studies.ods_count": true,
+        "imaging_studies.ods_lineage_range": true,
+        "imaging_studies.input_balance": true,
+        "imaging_studies.quality": true,
+        "study_parent_consistency": true,
+        "dws_patient_imaging_summary.patient_coverage": true,
+        "dws_patient_imaging_summary.exam_balance": true,
+        "ads_patient_imaging_profile.patient_coverage": true,
+        "ads_patient_imaging_profile.exam_balance": true,
+        "daily_bridge_balance": true,
+        "dim_patient.source_lineage": true,
+        "dim_patient.accepted_coverage": true,
+        "dim_patient.unique_source_row": true,
+        "dwd_encounter.source_lineage": true,
+        "dwd_encounter.accepted_coverage": true,
+        "dwd_encounter.unique_source_row": true,
+        "dwd_imaging_instance.source_lineage": true,
+        "dwd_imaging_instance.accepted_coverage": true,
+        "dwd_imaging_instance.unique_source_row": true,
+        "dwd_imaging_study.source_lineage": true
+      },
+      "batch_rows": 1000,
+      "batch_bytes": 2097152,
+      "elapsed_seconds": 23.732
+    },
+    {
+      "run_id": "spark-full-p1000-r1",
+      "status": "PUBLISHED",
+      "counts": {
+        "dim_patient": 1159,
+        "dwd_encounter": 70229,
+        "dwd_imaging_study": 2239,
+        "dwd_imaging_series": 2239,
+        "dwd_imaging_instance": 89354,
+        "bridge_study_modality": 2239,
+        "dws_patient_imaging_summary": 1159,
+        "dws_imaging_daily_modality": 2155,
+        "ads_patient_imaging_profile": 1159
+      },
+      "checks": {
+        "dim_patient.count": true,
+        "dwd_encounter.count": true,
+        "dwd_imaging_study.count": true,
+        "dwd_imaging_series.count": true,
+        "dwd_imaging_instance.count": true,
+        "bridge_study_modality.count": true,
+        "dws_patient_imaging_summary.count": true,
+        "dws_imaging_daily_modality.count": true,
+        "ads_patient_imaging_profile.count": true,
+        "patients.ods_count": true,
+        "patients.ods_lineage_range": true,
+        "patients.input_balance": true,
+        "patients.quality": true,
+        "encounters.ods_count": true,
+        "encounters.ods_lineage_range": true,
+        "encounters.input_balance": true,
+        "encounters.quality": true,
+        "imaging_studies.ods_count": true,
+        "imaging_studies.ods_lineage_range": true,
+        "imaging_studies.input_balance": true,
+        "imaging_studies.quality": true,
+        "study_parent_consistency": true,
+        "dws_patient_imaging_summary.patient_coverage": true,
+        "dws_patient_imaging_summary.exam_balance": true,
+        "ads_patient_imaging_profile.patient_coverage": true,
+        "ads_patient_imaging_profile.exam_balance": true,
+        "daily_bridge_balance": true,
+        "dim_patient.source_lineage": true,
+        "dim_patient.accepted_coverage": true,
+        "dim_patient.unique_source_row": true,
+        "dwd_encounter.source_lineage": true,
+        "dwd_encounter.accepted_coverage": true,
+        "dwd_encounter.unique_source_row": true,
+        "dwd_imaging_instance.source_lineage": true,
+        "dwd_imaging_instance.accepted_coverage": true,
+        "dwd_imaging_instance.unique_source_row": true,
+        "dwd_imaging_study.source_lineage": true
+      },
+      "batch_rows": 1000,
+      "batch_bytes": 2097152,
+      "elapsed_seconds": 24.066
+    }
+  ],
+  "database_differences": {
+    "dim_patient": [
+      0,
+      0
+    ],
+    "dwd_encounter": [
+      0,
+      0
+    ],
+    "dwd_imaging_study": [
+      0,
+      0
+    ],
+    "dwd_imaging_series": [
+      0,
+      0
+    ],
+    "dwd_imaging_instance": [
+      0,
+      0
+    ],
+    "bridge_study_modality": [
+      0,
+      0
+    ],
+    "dws_patient_imaging_summary": [
+      0,
+      0
+    ],
+    "dws_imaging_daily_modality": [
+      0,
+      0
+    ],
+    "ads_patient_imaging_profile": [
+      0,
+      0
+    ],
+    "source_records": [
+      0,
+      0
+    ],
+    "row_dispositions": [
+      0,
+      0
+    ]
+  },
+  "replay": {
+    "run_id": "spark-full-p1000-r1",
+    "status": "ALREADY_LOADED"
+  },
+  "api_checks": {
+    "api_status": true,
+    "patient_profiles": true,
+    "patient_studies": true,
+    "lineage": true,
+    "unknown_patient_404": true
+  },
+  "api_requests": 132,
+  "formal_file_unchanged": true,
+  "formal_database_unchanged": true,
+  "formal_database_run_id": "stage-c-verified",
+  "code_sha256": {
+    "src/snapshot_reader.py": "7c91d63987a88557175f4fc15ed5884a24ba9dae6cc5af15f62824f3454c4afe",
+    "src/fhir/streaming_export.py": "590e734ea5fef6897fdd6319487dc8c4257ce61a2d4f892f6dd76c9416e98097",
+    "src/database/streaming_load.py": "14acfd836904c944123a2eb7efce8e4b5afe0146b9ceec36c26649a74e548a18",
+    "scripts/verify_database_scale.py": "494efc2ac1a48a4c7048e91799dc9b32b4e816800bcc09b863f2ac119084e2cd",
+    "F:\\project\\medical-etl-fhir-platform\\scripts\\verify_spark_consumers.py": "56fb657e6426efba2edb424329b402a2bbb709bf969efa98288a5b32883c7af3"
+  }
+}

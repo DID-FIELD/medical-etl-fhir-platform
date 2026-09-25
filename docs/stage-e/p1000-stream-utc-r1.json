@@ -1,0 +1,62 @@
+{
+  "population_requested": 1000,
+  "rss_limit_bytes": 524288000,
+  "measurement": {
+    "command": [
+      "F:\\project\\medical-etl-fhir-platform\\.venv\\Scripts\\python.exe",
+      "-m",
+      "src.streaming_pipeline",
+      "--archive",
+      "F:\\project\\medical-etl-fhir-platform\\data\\generated\\scale-v4-p1000\\source.zip",
+      "--output-root",
+      "F:\\project\\medical-etl-fhir-platform\\output\\scale-stream-final",
+      "--run-id",
+      "p1000-stream-utc-r1",
+      "--birth-date-offset",
+      "+00:00"
+    ],
+    "exit_code": 1,
+    "seconds": 10.94,
+    "sampled_peak_tree_rss_bytes": 128102400,
+    "memory_method": "sum of launcher and descendant RSS sampled every 250ms; shared pages may be counted twice",
+    "minimum_available_memory_bytes": 5525360640,
+    "stop_reason": null,
+    "log": "data\\generated\\scale-v4-p1000\\p1000-stream-utc-r1.log"
+  },
+  "manifest": {
+    "run_id": "p1000-stream-utc-r1",
+    "status": "FAILED",
+    "model_version": "synthea-v1",
+    "backend": "sqlite-staged-parquet",
+    "birth_date_offset": "+00:00",
+    "batch_rows": 10000,
+    "code_sha256": "51f3aec94a737b52c0bc89500229efac34d191613f9f4265aae2da8ee4f8d07b",
+    "rules_sha256": "9eba26012e74cf63f6e1aa709cd197d18d8ef01a55151487de6482ab232b8ff3",
+    "source": {
+      "patients": {
+        "file": "patients.csv",
+        "rows": 1159,
+        "bytes": 349190,
+        "sha256": "7a589f7d35022929794679fdfef37154aa1795c6ef1a0b5834a7cec2108aa03a"
+      },
+      "encounters": {
+        "file": "encounters.csv",
+        "rows": 70229,
+        "bytes": 23377572,
+        "sha256": "4d8f917c4dd4c66b1d6da50225f56c96ac7e439d4c6965b5281314138eb0bebe"
+      },
+      "imaging_studies": {
+        "file": "imaging_studies.csv",
+        "rows": 89354,
+        "bytes": 31166693,
+        "sha256": "3fbcdbd45d13e3fca5253b428c069e4090096906ce4409fa20ea75feda20e27c"
+      }
+    },
+    "archive_sha256": "6775a19d38b29f363b025bf7676c2d21268b831c4afa44e92f00a17b2259ad2d",
+    "error_type": "ValueError",
+    "error": "Connected patient component exceeds batch budget; refusing unsafe split",
+    "exit_code": 1,
+    "stop_reason": null
+  },
+  "passed": false
+}

@@ -1,0 +1,35 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+26/09/21 10:16:59 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/21 10:17:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 6:>                  (0 + 1) / 1][Stage 7:>                  (0 + 1) / 1]                                                                                {
+  "status": "SUCCESS",
+  "source_run_id": "p10000-stream-local-r1",
+  "source_manifest_sha256": "69a9f6652041c7475bca33fa81ece23d5430f8a912721b5d08853ce266b0a11c",
+  "code_sha256": "d6e0a01536e4ce80f285eb7fda43dbff089e6f6f21828f925293e38fd08c0645",
+  "scope": "DIM/DWD to three DWS/ADS tables",
+  "spark_version": "4.0.1",
+  "checks": {
+    "dws_patient_imaging_summary": {
+      "expected_count": 11476,
+      "actual_count": 11476,
+      "missing": 0,
+      "extra": 0
+    },
+    "dws_imaging_daily_modality": {
+      "expected_count": 14682,
+      "actual_count": 14682,
+      "missing": 0,
+      "extra": 0
+    },
+    "ads_patient_imaging_profile": {
+      "expected_count": 11476,
+      "actual_count": 11476,
+      "missing": 0,
+      "extra": 0
+    }
+  }
+}
+´íÎó: ¾Ü¾ø·ÃÎÊ

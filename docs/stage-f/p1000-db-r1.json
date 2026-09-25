@@ -1,0 +1,152 @@
+{
+  "status": "FAILED",
+  "schema": "synthea_scale_db_20260920",
+  "run_dir": "output\\scale-stream-final\\runs\\p1000-stream-local-r1",
+  "official_before": "stage-c-verified",
+  "isolated_before": null,
+  "client_rss_limit_bytes": 524288000,
+  "measurement": {
+    "command": [
+      "F:\\project\\medical-etl-fhir-platform\\.venv\\Scripts\\python.exe",
+      "-m",
+      "scripts.verify_database_scale",
+      "--run-dir",
+      "F:\\project\\medical-etl-fhir-platform\\output\\scale-stream-final\\runs\\p1000-stream-local-r1",
+      "--schema",
+      "synthea_scale_db_20260920",
+      "--result",
+      "F:\\project\\medical-etl-fhir-platform\\output\\database-scale\\p1000-db-r1\\result.json"
+    ],
+    "exit_code": 1,
+    "seconds": 47.722,
+    "sampled_peak_tree_rss_bytes": 132292608,
+    "memory_method": "sum of launcher and descendant RSS sampled every 250ms; shared pages may be counted twice",
+    "minimum_available_memory_bytes": 5257641984,
+    "stop_reason": null,
+    "log": "output\\database-scale\\p1000-db-r1\\worker.log"
+  },
+  "worker": {
+    "status": "FAILED",
+    "schema": "synthea_scale_db_20260920",
+    "run_id": "p1000-stream-local-r1",
+    "code_sha256": {
+      "src/database/streaming_load.py": "0227dcff958be2944032fc54054bbef219df7c624f149c5d01679646b5d29623",
+      "src/database/synthea_store.py": "92ecad0086732e113f9c391f9185a818697cf655f90a3a365a472a2553adf48f",
+      "src/json_stream.py": "744f82983ed7106d5842e021c0a0d03cce89b03f46ed755b2b56300edd87dd38",
+      "scripts/verify_database_scale.py": "58842d0a719d092d0b5f4bacb88c9d0251c68abee388b6225287116a9ec6abe8"
+    },
+    "load": {
+      "run_id": "p1000-stream-local-r1",
+      "status": "PUBLISHED",
+      "counts": {
+        "dim_patient": 1159,
+        "dwd_encounter": 70229,
+        "dwd_imaging_study": 2239,
+        "dwd_imaging_series": 2239,
+        "dwd_imaging_instance": 89354,
+        "bridge_study_modality": 2239,
+        "dws_patient_imaging_summary": 1159,
+        "dws_imaging_daily_modality": 2155,
+        "ads_patient_imaging_profile": 1159
+      },
+      "checks": {
+        "dim_patient.count": true,
+        "dwd_encounter.count": true,
+        "dwd_imaging_study.count": true,
+        "dwd_imaging_series.count": true,
+        "dwd_imaging_instance.count": true,
+        "bridge_study_modality.count": true,
+        "dws_patient_imaging_summary.count": true,
+        "dws_imaging_daily_modality.count": true,
+        "ads_patient_imaging_profile.count": true,
+        "patients.ods_count": true,
+        "patients.input_balance": true,
+        "patients.quality": true,
+        "encounters.ods_count": true,
+        "encounters.input_balance": true,
+        "encounters.quality": true,
+        "imaging_studies.ods_count": true,
+        "imaging_studies.input_balance": true,
+        "imaging_studies.quality": true,
+        "study_parent_consistency": true,
+        "dws_patient_imaging_summary.patient_coverage": true,
+        "dws_patient_imaging_summary.exam_balance": true,
+        "ads_patient_imaging_profile.patient_coverage": true,
+        "ads_patient_imaging_profile.exam_balance": true,
+        "daily_bridge_balance": true,
+        "dim_patient.source_lineage": true,
+        "dim_patient.accepted_coverage": true,
+        "dim_patient.unique_source_row": true,
+        "dwd_encounter.source_lineage": true,
+        "dwd_encounter.accepted_coverage": true,
+        "dwd_encounter.unique_source_row": true,
+        "dwd_imaging_instance.source_lineage": true,
+        "dwd_imaging_instance.accepted_coverage": true,
+        "dwd_imaging_instance.unique_source_row": true,
+        "dwd_imaging_study.source_lineage": true
+      },
+      "batch_rows": 1000,
+      "batch_bytes": 2097152,
+      "elapsed_seconds": 38.069
+    },
+    "load_wall_seconds": 38.071,
+    "api_checks": {
+      "api_status": true,
+      "patient_profiles": false,
+      "patient_studies": false,
+      "lineage": true,
+      "unknown_patient_404": true
+    },
+    "api_latency": {
+      "status": {
+        "requests": 1,
+        "min_ms": 264.15,
+        "median_ms": 264.15,
+        "p95_ms": 264.15,
+        "max_ms": 264.15
+      },
+      "patient": {
+        "requests": 60,
+        "min_ms": 42.473,
+        "median_ms": 44.963,
+        "p95_ms": 138.993,
+        "max_ms": 155.448
+      },
+      "studies": {
+        "requests": 60,
+        "min_ms": 43.79,
+        "median_ms": 45.88,
+        "p95_ms": 141.822,
+        "max_ms": 157.338
+      },
+      "lineage": {
+        "requests": 10,
+        "min_ms": 43.081,
+        "median_ms": 45.373,
+        "p95_ms": 51.69,
+        "max_ms": 51.69
+      },
+      "missing": {
+        "requests": 1,
+        "min_ms": 47.774,
+        "median_ms": 47.774,
+        "p95_ms": 47.774,
+        "max_ms": 47.774
+      }
+    },
+    "sampled_patients": 60,
+    "sampled_zero_exam_patients": 10,
+    "sampled_studies": 10,
+    "api_method": "Serial ASGI TestClient with real PostgreSQL; not HTTP concurrency or throughput",
+    "error_type": "ValueError"
+  },
+  "postgres_server": {
+    "sampled_peak_tree_rss_bytes": 555339776,
+    "sample_count": 181,
+    "errors": 0
+  },
+  "isolated_after": "p1000-stream-local-r1",
+  "official_after": "stage-c-verified",
+  "memory_scope": "500 MiB guards the loader/API client tree only. Independent PostgreSQL server sampled separately; shared mappings counted per process, not exclusive RAM.",
+  "database_publication_observed": true
+}

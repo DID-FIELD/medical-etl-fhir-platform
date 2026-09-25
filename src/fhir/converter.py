@@ -1,15 +1,16 @@
 import json
 import os
+import hashlib
 
-from fhir.resources.codeableconcept import CodeableConcept
-from fhir.resources.observation import Observation
-from fhir.resources.patient import Patient
+from fhir.resources.R4B.codeableconcept import CodeableConcept
+from fhir.resources.R4B.observation import Observation
+from fhir.resources.R4B.patient import Patient
 
 from src.config import FHIR_OUTPUT_DIR
 
 
 def convert_to_fhir_patient(patient_row: dict) -> dict:
-    """Convert one patient row to a FHIR R4 Patient resource."""
+    """Convert one patient row to a FHIR R4B Patient resource."""
     gender = str(patient_row.get("gender", "unknown")).lower()
     gender_map = {"m": "male", "male": "male", "f": "female", "female": "female"}
     patient = Patient(
@@ -17,19 +18,22 @@ def convert_to_fhir_patient(patient_row: dict) -> dict:
         gender=gender_map.get(gender, "unknown"),
         active=True,
     )
-    return patient.model_dump(exclude_none=True)
+    return patient.model_dump(mode="json", exclude_none=True)
 
 
 def convert_to_fhir_observation(obs_row: dict) -> dict:
     """Convert one exam row to a FHIR Observation resource."""
     observation = Observation(
-        id=str(obs_row.get("obs_id", obs_row.get("patient_id", "obs_001"))),
+        id=str(obs_row.get("obs_id") or "OBS-" + hashlib.sha256(
+            json.dumps([str(obs_row.get(k, "")) for k in
+                        ("patient_id", "study_date", "exam_type")]).encode()
+        ).hexdigest()[:40]),
         status="final",
         code=CodeableConcept(text=obs_row.get("exam_type", "imaging study")),
         subject={"reference": f"Patient/{obs_row['patient_id']}"},
         effectiveDateTime=obs_row.get("study_date"),
     )
-    return observation.model_dump(exclude_none=True)
+    return observation.model_dump(mode="json", exclude_none=True)
 
 
 def save_fhir_json(data_list: list, resource_type: str):

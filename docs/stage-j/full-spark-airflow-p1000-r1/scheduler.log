@@ -1,0 +1,98 @@
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+[2026-09-21T22:17:41.007+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.schemas
+[2026-09-21T22:17:41.008+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.tables
+[2026-09-21T22:17:41.008+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.types
+[2026-09-21T22:17:41.008+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.constraints
+[2026-09-21T22:17:41.008+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.defaults
+[2026-09-21T22:17:41.008+0800] {plugins.py:37} INFO - setup plugin alembic.autogenerate.comments
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[2026-09-21T22:17:41.103+0800] {executor_loader.py:258} INFO - Loaded executor: SequentialExecutor
+[2026-09-21 22:17:41 +0800] [2137] [INFO] Starting gunicorn 25.1.0
+[2026-09-21 22:17:41 +0800] [2137] [INFO] Listening at: http://[::]:8793 (2137)
+[2026-09-21 22:17:41 +0800] [2137] [INFO] Using worker: sync
+[2026-09-21T22:17:41.389+0800] {scheduler_job_runner.py:959} INFO - Starting the scheduler
+[2026-09-21 22:17:41 +0800] [2137] [INFO] Control socket listening at /opt/medical-etl-airflow/runs/full-spark-airflow-p1000-r1/gunicorn.ctl
+[2026-09-21T22:17:41.389+0800] {scheduler_job_runner.py:966} INFO - Processing each file at most -1 times
+[2026-09-21 22:17:41 +0800] [2139] [INFO] Booting worker with pid: 2139
+[2026-09-21T22:17:41.432+0800] {manager.py:174} INFO - Launched DagFileProcessorManager with pid: 2140
+[2026-09-21T22:17:41.434+0800] {scheduler_job_runner.py:1993} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2026-09-21T22:17:41.435+0800] {settings.py:63} INFO - Configured default timezone UTC
+[2026-09-21T22:17:41.449+0800] {manager.py:406} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+[2026-09-21 22:17:41 +0800] [2142] [INFO] Booting worker with pid: 2142
+[2026-09-21T22:17:42.089+0800] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: synthea_full_spark_retry_acceptance.verify_inputs manual__full-spark-airflow-p1000-r1 [scheduled]>
+[2026-09-21T22:17:42.089+0800] {scheduler_job_runner.py:507} INFO - DAG synthea_full_spark_retry_acceptance has 0/16 running and queued tasks
+[2026-09-21T22:17:42.089+0800] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: synthea_full_spark_retry_acceptance.verify_inputs manual__full-spark-airflow-p1000-r1 [scheduled]>
+[2026-09-21T22:17:42.090+0800] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: synthea_full_spark_retry_acceptance.verify_inputs manual__full-spark-airflow-p1000-r1 [scheduled]>] for executor: SequentialExecutor(parallelism=1)
+[2026-09-21T22:17:42.090+0800] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='synthea_full_spark_retry_acceptance', task_id='verify_inputs', run_id='manual__full-spark-airflow-p1000-r1', try_number=1, map_index=-1) to SequentialExecutor with priority 2 and queue default
+[2026-09-21T22:17:42.091+0800] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'synthea_full_spark_retry_acceptance', 'verify_inputs', 'manual__full-spark-airflow-p1000-r1', '--local', '--subdir', 'DAGS_FOLDER/full_spark_retry_dag.py']
+[2026-09-21T22:17:42.190+0800] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'synthea_full_spark_retry_acceptance', 'verify_inputs', 'manual__full-spark-airflow-p1000-r1', '--local', '--subdir', 'DAGS_FOLDER/full_spark_retry_dag.py']
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+[2026-09-21T22:17:43.012+0800] {dagbag.py:588} INFO - Filling up the DagBag from /opt/medical-etl-airflow/runs/full-spark-airflow-p1000-r1/airflow/dags/full_spark_retry_dag.py
+[2026-09-21T22:17:43.144+0800] {task_command.py:467} INFO - Running <TaskInstance: synthea_full_spark_retry_acceptance.verify_inputs manual__full-spark-airflow-p1000-r1 [queued]> on host LAPTOP-LO2NU7PH.localdomain
+[2026-09-21T22:17:49.083+0800] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='synthea_full_spark_retry_acceptance', task_id='verify_inputs', run_id='manual__full-spark-airflow-p1000-r1', try_number=1, map_index=-1)
+[2026-09-21T22:17:49.086+0800] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=synthea_full_spark_retry_acceptance, task_id=verify_inputs, run_id=manual__full-spark-airflow-p1000-r1, map_index=-1, run_start_date=2026-09-21 14:17:43.356000+00:00, run_end_date=2026-09-21 14:17:48.222323+00:00, run_duration=4.866323, state=success, executor=SequentialExecutor(parallelism=1), executor_state=success, try_number=1, max_tries=1, job_id=2, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2026-09-21 14:17:42.089873+00:00, queued_by_job_id=1, pid=2145
+[2026-09-21T22:17:49.523+0800] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: synthea_full_spark_retry_acceptance.full_spark_etl manual__full-spark-airflow-p1000-r1 [scheduled]>
+[2026-09-21T22:17:49.523+0800] {scheduler_job_runner.py:507} INFO - DAG synthea_full_spark_retry_acceptance has 0/16 running and queued tasks
+[2026-09-21T22:17:49.523+0800] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: synthea_full_spark_retry_acceptance.full_spark_etl manual__full-spark-airflow-p1000-r1 [scheduled]>
+[2026-09-21T22:17:49.524+0800] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: synthea_full_spark_retry_acceptance.full_spark_etl manual__full-spark-airflow-p1000-r1 [scheduled]>] for executor: SequentialExecutor(parallelism=1)
+[2026-09-21T22:17:49.524+0800] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='synthea_full_spark_retry_acceptance', task_id='full_spark_etl', run_id='manual__full-spark-airflow-p1000-r1', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+[2026-09-21T22:17:49.524+0800] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'synthea_full_spark_retry_acceptance', 'full_spark_etl', 'manual__full-spark-airflow-p1000-r1', '--local', '--subdir', 'DAGS_FOLDER/full_spark_retry_dag.py']
+[2026-09-21T22:17:49.629+0800] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'synthea_full_spark_retry_acceptance', 'full_spark_etl', 'manual__full-spark-airflow-p1000-r1', '--local', '--subdir', 'DAGS_FOLDER/full_spark_retry_dag.py']
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+[2026-09-21T22:17:50.433+0800] {dagbag.py:588} INFO - Filling up the DagBag from /opt/medical-etl-airflow/runs/full-spark-airflow-p1000-r1/airflow/dags/full_spark_retry_dag.py
+[2026-09-21T22:17:50.558+0800] {task_command.py:467} INFO - Running <TaskInstance: synthea_full_spark_retry_acceptance.full_spark_etl manual__full-spark-airflow-p1000-r1 [queued]> on host LAPTOP-LO2NU7PH.localdomain
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/21 22:17:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 11:>                                                         (0 + 2) / 4][Stage 11:=============================>                            (2 + 2) / 4]                                                                                [Stage 27:=============================>                            (2 + 2) / 4]                                                                                [Stage 47:======================================>                   (2 + 1) / 3]                                                                                [Stage 170:============================>                            (2 + 2) / 4]                                                                                [Stage 692:======================================>                  (2 + 1) / 3]                                                                                [Stage 698:======================================>                  (2 + 1) / 3]                                                                                [Stage 728:==========================================>              (3 + 1) / 4]                                                                                [Stage 734:==========================================>              (3 + 1) / 4]                                                                                [Stage 742:============================>                            (2 + 2) / 4][Stage 742:==========================================>              (3 + 1) / 4]                                                                                [Stage 748:==========================================>              (3 + 1) / 4]                                                                                [2026-09-21T22:18:42.551+0800] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='synthea_full_spark_retry_acceptance', task_id='full_spark_etl', run_id='manual__full-spark-airflow-p1000-r1', try_number=1, map_index=-1)
+[2026-09-21T22:18:42.553+0800] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=synthea_full_spark_retry_acceptance, task_id=full_spark_etl, run_id=manual__full-spark-airflow-p1000-r1, map_index=-1, run_start_date=2026-09-21 14:17:50.685572+00:00, run_end_date=2026-09-21 14:18:41.627591+00:00, run_duration=50.942019, state=up_for_retry, executor=SequentialExecutor(parallelism=1), executor_state=success, try_number=1, max_tries=1, job_id=3, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2026-09-21 14:17:49.524142+00:00, queued_by_job_id=1, pid=2150
+[2026-09-21T22:18:42.564+0800] {manager.py:293} ERROR - DagFileProcessorManager (PID=2140) last sent a heartbeat 53.15 seconds ago! Restarting it
+[2026-09-21T22:18:42.565+0800] {process_utils.py:132} INFO - Sending 15 to group 2140. PIDs of all processes in the group: [2140]
+[2026-09-21T22:18:42.565+0800] {process_utils.py:87} INFO - Sending the signal 15 to group 2140
+[2026-09-21T22:18:42.652+0800] {process_utils.py:80} INFO - Process psutil.Process(pid=2140, status='terminated', exitcode=0) (2140) terminated with exit code 0
+[2026-09-21T22:18:42.655+0800] {manager.py:174} INFO - Launched DagFileProcessorManager with pid: 3719
+[2026-09-21T22:18:42.658+0800] {settings.py:63} INFO - Configured default timezone UTC
+[2026-09-21T22:18:42.671+0800] {manager.py:406} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+[2026-09-21T22:18:42.825+0800] {job.py:229} INFO - Heartbeat recovered after 53.73 seconds
+[2026-09-21T22:18:47.091+0800] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: synthea_full_spark_retry_acceptance.full_spark_etl manual__full-spark-airflow-p1000-r1 [scheduled]>
+[2026-09-21T22:18:47.091+0800] {scheduler_job_runner.py:507} INFO - DAG synthea_full_spark_retry_acceptance has 0/16 running and queued tasks
+[2026-09-21T22:18:47.091+0800] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: synthea_full_spark_retry_acceptance.full_spark_etl manual__full-spark-airflow-p1000-r1 [scheduled]>
+[2026-09-21T22:18:47.092+0800] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: synthea_full_spark_retry_acceptance.full_spark_etl manual__full-spark-airflow-p1000-r1 [scheduled]>] for executor: SequentialExecutor(parallelism=1)
+[2026-09-21T22:18:47.092+0800] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='synthea_full_spark_retry_acceptance', task_id='full_spark_etl', run_id='manual__full-spark-airflow-p1000-r1', try_number=2, map_index=-1) to SequentialExecutor with priority 1 and queue default
+[2026-09-21T22:18:47.093+0800] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'synthea_full_spark_retry_acceptance', 'full_spark_etl', 'manual__full-spark-airflow-p1000-r1', '--local', '--subdir', 'DAGS_FOLDER/full_spark_retry_dag.py']
+[2026-09-21T22:18:47.196+0800] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'synthea_full_spark_retry_acceptance', 'full_spark_etl', 'manual__full-spark-airflow-p1000-r1', '--local', '--subdir', 'DAGS_FOLDER/full_spark_retry_dag.py']
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/metrics/base_stats_logger.py:22 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+/opt/medical-etl-airflow/runtime/airflow-venv/lib/python3.12/site-packages/airflow/triggers/base.py:27 RemovedInAirflow3Warning: Timer and timing metrics publish in seconds were deprecated. It is enabled by default from Airflow 3 onwards. Enable timer_unit_consistency to publish all the timer and timing metrics in milliseconds.
+[2026-09-21T22:18:48.098+0800] {dagbag.py:588} INFO - Filling up the DagBag from /opt/medical-etl-airflow/runs/full-spark-airflow-p1000-r1/airflow/dags/full_spark_retry_dag.py
+[2026-09-21T22:18:48.235+0800] {task_command.py:467} INFO - Running <TaskInstance: synthea_full_spark_retry_acceptance.full_spark_etl manual__full-spark-airflow-p1000-r1 [queued]> on host LAPTOP-LO2NU7PH.localdomain
+[2026-09-21T22:18:52.282+0800] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='synthea_full_spark_retry_acceptance', task_id='full_spark_etl', run_id='manual__full-spark-airflow-p1000-r1', try_number=2, map_index=-1)
+[2026-09-21T22:18:52.285+0800] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=synthea_full_spark_retry_acceptance, task_id=full_spark_etl, run_id=manual__full-spark-airflow-p1000-r1, map_index=-1, run_start_date=2026-09-21 14:18:48.394103+00:00, run_end_date=2026-09-21 14:18:51.780664+00:00, run_duration=3.386561, state=success, executor=SequentialExecutor(parallelism=1), executor_state=success, try_number=2, max_tries=1, job_id=4, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2026-09-21 14:18:47.092107+00:00, queued_by_job_id=1, pid=3724
+[2026-09-21T22:18:52.771+0800] {dagrun.py:854} INFO - Marking run <DagRun synthea_full_spark_retry_acceptance @ 2026-09-21 14:17:39+00:00: manual__full-spark-airflow-p1000-r1, state:running, queued_at: 2026-09-21 14:17:39.560685+00:00. externally triggered: True> successful
+[2026-09-21T22:18:52.772+0800] {dagrun.py:905} INFO - DagRun Finished: dag_id=synthea_full_spark_retry_acceptance, execution_date=2026-09-21 14:17:39+00:00, run_id=manual__full-spark-airflow-p1000-r1, run_start_date=2026-09-21 14:17:41.793193+00:00, run_end_date=2026-09-21 14:18:52.772385+00:00, run_duration=70.979192, state=success, external_trigger=True, run_type=manual, data_interval_start=2026-09-21 14:17:39+00:00, data_interval_end=2026-09-21 14:17:39+00:00, dag_hash=c6dc004d539aba862b00450d4d44e9ae
+[2026-09-21 22:18:54 +0800] [2139] [INFO] Worker exiting (pid: 2139)
+[2026-09-21 22:18:54 +0800] [2142] [INFO] Worker exiting (pid: 2142)
+[2026-09-21 22:18:54 +0800] [2137] [INFO] Handling signal: term
+[2026-09-21T22:18:54.565+0800] {scheduler_job_runner.py:272} INFO - Exiting gracefully upon receiving signal 15
+[2026-09-21 22:18:54 +0800] [2137] [INFO] Shutting down: Master
+[2026-09-21T22:18:55.567+0800] {process_utils.py:132} INFO - Sending 15 to group 3719. PIDs of all processes in the group: [3719]
+[2026-09-21T22:18:55.567+0800] {process_utils.py:87} INFO - Sending the signal 15 to group 3719
+[2026-09-21T22:18:55.625+0800] {process_utils.py:80} INFO - Process psutil.Process(pid=3719, status='terminated', exitcode=0) (3719) terminated with exit code 0
+[2026-09-21T22:18:55.626+0800] {process_utils.py:132} INFO - Sending 15 to group 3719. PIDs of all processes in the group: []
+[2026-09-21T22:18:55.626+0800] {process_utils.py:87} INFO - Sending the signal 15 to group 3719
+[2026-09-21T22:18:55.626+0800] {process_utils.py:101} INFO - Sending the signal 15 to process 3719 as process group is missing.
+[2026-09-21T22:18:55.626+0800] {scheduler_job_runner.py:1038} INFO - Exited execute loop

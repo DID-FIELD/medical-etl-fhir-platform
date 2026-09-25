@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-25",
+  "purpose": "Teaching update and GitHub publication verification",
+  "chapters": 15,
+  "local_links_checked": 400,
+  "broken_links": [],
+  "rebuild_byte_identical": true,
+  "browser": "Edge headless",
+  "widths": [1366, 390],
+  "views": 30,
+  "layout_failures": [],
+  "visual_review": [
+    "390px overview evidence-reading section",
+    "390px interview r5-to-r6 diagnosis section",
+    "1366px interview r5-to-r6 diagnosis section"
+  ],
+  "core_pytest": {"passed": 175, "skipped": 35, "warnings": 2, "seconds": 34.36},
+  "test_scope": "Windows core environment; optional integration/runtime tests skipped. This does not replace archived WSL/Airflow and database acceptance evidence.",
+  "evidence_directory": "output/html-github-qa-20260925",
+  "stage_m_acceptance": "SUCCESS; full-consumers-p10000-r6"
+}

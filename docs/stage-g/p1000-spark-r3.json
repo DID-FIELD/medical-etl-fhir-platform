@@ -1,0 +1,28 @@
+{
+  "status": "SUCCESS",
+  "source_run_id": "p1000-stream-utc-r2",
+  "source_manifest_sha256": "c279ec97cbc96edf3e0d55906730efd1024e5e46e2fc0832023660ed0f44f458",
+  "code_sha256": "d6e0a01536e4ce80f285eb7fda43dbff089e6f6f21828f925293e38fd08c0645",
+  "scope": "DIM/DWD to three DWS/ADS tables",
+  "spark_version": "4.0.1",
+  "checks": {
+    "dws_patient_imaging_summary": {
+      "expected_count": 1159,
+      "actual_count": 1159,
+      "missing": 0,
+      "extra": 0
+    },
+    "dws_imaging_daily_modality": {
+      "expected_count": 2155,
+      "actual_count": 2155,
+      "missing": 0,
+      "extra": 0
+    },
+    "ads_patient_imaging_profile": {
+      "expected_count": 1159,
+      "actual_count": 1159,
+      "missing": 0,
+      "extra": 0
+    }
+  }
+}

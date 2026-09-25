@@ -1,0 +1,34 @@
+{
+  "status": "SUCCESS",
+  "fhir_version": "4.3.0",
+  "mapping_version": "synthea-summary-v1",
+  "source_run_id": "p10000-stream-local-r1",
+  "source_manifest_sha256": "69a9f6652041c7475bca33fa81ece23d5430f8a912721b5d08853ce266b0a11c",
+  "exporter_sha256": "6a247b9eabd898978abc793a0cc24eb45b83d29f85c8c7e7150d7ea52656bdc7",
+  "mapping_sha256": "d15fcc69380d146508080c3218bee79f5305ebb3f1e7d3bee594d4e6a864402c",
+  "fhir_resources_version": "8.2.0",
+  "created_at": "2026-09-21T02:13:17.563302+00:00",
+  "counts": {
+    "Patient": 11476,
+    "Encounter": 677836,
+    "ImagingStudy": 19435
+  },
+  "artifacts": {
+    "Patient.ndjson": "5b79bd3071b78c9353c720d1b372e6e549d2c91a6df6226ce327132f52d580c0",
+    "Encounter.ndjson": "40fb3163d1f48530c7fc71d1f2aed151488694657c49929bc87e324a209f3b7a",
+    "ImagingStudy.ndjson": "906d7c9c40721c1eb2957908e297563224b7f7a68d06899b82087450439ec424"
+  },
+  "checks": {
+    "model_validation": true,
+    "unique_ids": true,
+    "references_and_patient_match": true,
+    "ndjson_readback": true,
+    "source_hashes": true
+  },
+  "summary_only_studies": 19435,
+  "limitations": [
+    "No source StudyInstanceUID; summary only, no invented series or identifiers.",
+    "Python R4B models and local checks; no HL7 validator or terminology service.",
+    "NDJSON files, not a FHIR server or Bulk Data protocol."
+  ]
+}

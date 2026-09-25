@@ -1,0 +1,9 @@
+# Separate from Airflow constraints; versions match the verified Windows worker.
+fhir.resources==8.2.0
+fhir-core==1.1.11
+pydantic==2.13.5
+pyspark==4.0.1
+py4j==0.10.9.9
+# Full CSV Spark ETL adapter and driver contracts (WSL Stage I).
+pandas==2.2.3
+pyarrow==25.0.0

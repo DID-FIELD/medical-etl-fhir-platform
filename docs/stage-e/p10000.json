@@ -1,0 +1,112 @@
+{
+  "status": "ETL_FAILED",
+  "population_requested": 10000,
+  "seed": 20260920,
+  "clinician_seed": 20260920,
+  "reference_date": "20260920",
+  "end_date": "20260920",
+  "state": "Massachusetts",
+  "version": {
+    "tag": "v4.0.0",
+    "asset_url": "https://github.com/synthetichealth/synthea/releases/download/v4.0.0/synthea-with-dependencies.jar",
+    "size": 201164144,
+    "sha256": "ed43c20ad40ba5c3bc724503a5af032715fe3c491620b766148e7c2361e6ecc1",
+    "upstream_digest": "sha256:ed43c20ad40ba5c3bc724503a5af032715fe3c491620b766148e7c2361e6ecc1"
+  },
+  "history_years": 10,
+  "csv_scope": [
+    "patients",
+    "encounters",
+    "imaging_studies"
+  ],
+  "java_heap_limit": "2g",
+  "threads": 2,
+  "config": "exporter.baseDirectory=F:/project/medical-etl-fhir-platform/data/generated/scale-v4-p10000\nexporter.fhir.export=false\nexporter.csv.export=true\nexporter.csv.included_files=patients.csv,encounters.csv,imaging_studies.csv\nexporter.csv.excluded_files=\nexporter.csv.append_mode=false\nexporter.years_of_history=10\ngenerate.thread_pool_size=2\ngenerate.log_patients.detail=none\n",
+  "measurements": {
+    "generation": {
+      "command": [
+        "java",
+        "-Xmx2g",
+        "-jar",
+        "F:\\project\\medical-etl-fhir-platform\\data\\external\\synthea-generator\\synthea-v4.0.0.jar",
+        "-p",
+        "10000",
+        "-s",
+        "20260920",
+        "-cs",
+        "20260920",
+        "-r",
+        "20260920",
+        "-e",
+        "20260920",
+        "-c",
+        "F:\\project\\medical-etl-fhir-platform\\data\\generated\\scale-v4-p10000\\run.properties",
+        "Massachusetts"
+      ],
+      "exit_code": 0,
+      "seconds": 418.229,
+      "sampled_peak_tree_rss_bytes": 1730809856,
+      "memory_method": "sum of launcher and descendant RSS sampled every 250ms; shared pages may be counted twice",
+      "minimum_available_memory_bytes": 4011405312,
+      "stop_reason": null,
+      "log": "data\\generated\\scale-v4-p10000\\generation.log"
+    },
+    "file_etl": {
+      "command": [
+        "F:\\project\\medical-etl-fhir-platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "src.synthea_pipeline",
+        "--archive",
+        "F:\\project\\medical-etl-fhir-platform\\data\\generated\\scale-v4-p10000\\source.zip",
+        "--output-root",
+        "F:\\project\\medical-etl-fhir-platform\\output\\scale-v4",
+        "--run-id",
+        "p10000-r1"
+      ],
+      "exit_code": 15,
+      "seconds": 5.742,
+      "sampled_peak_tree_rss_bytes": 4543516672,
+      "memory_method": "sum of launcher and descendant RSS sampled every 250ms; shared pages may be counted twice",
+      "minimum_available_memory_bytes": 1625255936,
+      "stop_reason": "process_tree_rss_above_3.5GiB",
+      "log": "data\\generated\\scale-v4-p10000\\etl.log"
+    }
+  },
+  "source": {
+    "encounters": {
+      "rows": 677836,
+      "columns": 15,
+      "bytes": 225421496,
+      "sha256": "76328ca744b8d9422855ae76173c9d7f9b6165d30d1a151e9e75719488bdc020"
+    },
+    "imaging_studies": {
+      "rows": 1036348,
+      "columns": 13,
+      "bytes": 362207353,
+      "sha256": "5d3b454dda6a291f0cd2f2700160f28606aa1097efb19b16d0e1b27eb0c5870d"
+    },
+    "patients": {
+      "rows": 11476,
+      "columns": 28,
+      "bytes": 3447943,
+      "sha256": "bd3259af247e047ae3d8f60601aa73bab3c0fb1211670e845db62686fbca6b49"
+    }
+  },
+  "archive": {
+    "bytes": 38603995,
+    "sha256": "cde7f394763863dae3123799a54fd21dbc90683c650ceb17fe7db85f79a28559",
+    "pack_seconds": 5.144
+  },
+  "etl_manifest": {
+    "run_id": "p10000-r1",
+    "status": "RUNNING",
+    "model_version": "synthea-v1",
+    "backend": "parquet",
+    "python": "3.13.9",
+    "pandas": "3.0.6",
+    "code_sha256": "c6d9bb2ec26e4be0be56a1fdec3593d1062c89fa414deb5a4c1fca2ebdcf7692",
+    "started_at": "2026-09-20T12:44:59.697514+00:00"
+  },
+  "output_bytes": 296,
+  "etl_manifest_status": "FAILED"
+}
