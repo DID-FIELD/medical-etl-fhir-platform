@@ -63,7 +63,7 @@ Spark 批次先写 RUNNING，持久化产物回读、对账和哈希校验后才
 | src/spark/synthea_full.py | 完整 Spark CLI、回读、对账与 manifest |
 | src/spark_full_workflow.py | 新链路的尝试隔离与成功结果核验复用 |
 | src/airflow_tasks.py / dags/synthea_full_spark.py | 独立 worker 适配和完整 Spark DAG |
-| scripts/airflow/full_spark_acceptance.py | 新元数据库下的 DagBag、dag.test、真实 scheduler 验收 |
+| scripts/airflow/full_consumers_acceptance.py | 当前四任务 DAG 的 DagBag、dag.test、真实 scheduler 验收 |
 | src/database/streaming_load.py / api/synthea.py | Python 快照数据库加载与查询 |
 | src/fhir/streaming_export.py | 分块 FHIR 导出 |
 
@@ -75,4 +75,4 @@ Windows 工作目录为 F 盘，使用项目 .venv。Spark/Airflow 用既有 Med
 
 ## 8. 后续边界
 
-新 Spark Parquet 目录已接入 PostgreSQL/FHIR 并完成千人验收；Stage L 已将消费者加入完整 Spark DAG 并通过千人真实调度与重试；Stage M r6 已完成万人新链路。r5 曾因验收器查询 SQLite 遇锁而终止 scheduler；增加受截止时间约束的锁冲突重试后，r6 恢复 8 次锁冲突并完成整轮验收。FHIR 暂存已改用 worker 本地目录，Spark 显式配置 2g 堆；消费者仍保持 1800 秒上限。官方 FHIR Validator、术语服务、完整 FHIR Server、并发 HTTP 压测和增量 CDC 尚未验收。备份独立副本与完整性还需审计。继续工作从 [当前交接](docs/HANDOFF_SPARK_FULL_ETL.md) 进入；不修改简历，不覆盖历史失败现场。
+新 Spark Parquet 目录已接入 PostgreSQL/FHIR 并完成千人验收；Stage L 已将消费者加入完整 Spark DAG 并通过千人真实调度与重试；Stage M r6 已完成万人新链路。r5 曾因验收器查询 SQLite 遇锁而终止 scheduler；增加受截止时间约束的锁冲突重试后，r6 恢复 8 次锁冲突并完成整轮验收。FHIR 暂存已改用 worker 本地目录，Spark 显式配置 2g 堆；消费者仍保持 1800 秒上限。官方 FHIR Validator、术语服务、完整 FHIR Server、并发 HTTP 压测和增量 CDC 尚未验收。备份独立副本与完整性还需审计。继续工作从 [当前交接](docs/HANDOFF_STAGE_M.md) 进入；不修改简历，不覆盖历史失败现场。
